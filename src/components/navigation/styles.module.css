@@ -1,0 +1,31 @@
+.container {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    gap: 36px;
+    padding: 12px 12px 12px 36px;
+    width: 100%;
+    z-index: 99;
+}
+
+.menuContainer {
+    display: flex;
+    align-items: center;
+    gap: 36px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-regular);
+    height: fit-content;
+    padding: 8px 8px 8px 24px;
+}
+
+.menuContainer>a {
+    text-decoration: none;
+    color: var(--color-black);
+}
+
+.wordmark {
+    font-family: Recoleta;
+    font-size: 32px;
+    font-weight: 700;
+}

@@ -1,4 +1,4 @@
-.col_12 {
+/* .col_12 {
   grid-column: span 12;
   background: red;
   height: 100px;
@@ -12,4 +12,4 @@
   grid-column: 11 / 13;
   background: green;
   height: 100px;
-}
+} */

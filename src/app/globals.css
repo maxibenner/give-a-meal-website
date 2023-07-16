@@ -1,18 +1,53 @@
+@font-face {
+  font-family: Inter;
+  font-weight: 400;
+  src: url("../fonts/Inter-Regular.woff");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 500;
+  src: url("../fonts/Inter-Medium.woff");
+}
+
+@font-face {
+  font-family: Inter;
+  font-weight: 600;
+  src: url("../fonts/Inter-SemiBold.woff");
+}
+
+@font-face {
+  font-family: Recoleta;
+  font-weight: 500;
+  src: url("../fonts/Recoleta-Medium.woff");
+}
+
+@font-face {
+  font-family: Recoleta;
+  font-weight: 700;
+  src: url("../fonts/Recolete-Bold.woff");
+}
+
 :root {
   --max-width: 1440px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono",
-    "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro",
-    "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
 
-  --color-primary: #e5ff9b;
+  /* Color */
+  --color-primary: #E5FF75;
   --color-background: #f6f6f6;
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-text: rgba(0, 0, 0, 0.75);
+
+  --shadow-regular: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05));
+
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  font-family: Inter;
 }
 
 html,
@@ -23,12 +58,14 @@ body {
   overflow-x: hidden;
 }
 
-.grid {
-  /* background-color: rgb(205, 205, 205); */
+main {
+  max-width: var(--max-width);
+}
 
+.grid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 0 12px;
+  gap: 24px 12px;
   padding: 0 24px;
 }
 
@@ -36,4 +73,74 @@ body {
   html {
     color-scheme: dark;
   }
+}
+
+/* Text */
+h1 {
+  font-size: 60px;
+  line-height: 120%;
+  font-weight: 400;
+  font-family: Recoleta;
+}
+
+h2 {
+  font-size: 48px;
+  line-height: 120%;
+  font-family: Recoleta;
+  font-weight: 500;
+}
+
+h3 {
+  font-size: 36px;
+  line-height: 140%;
+  font-family: Recoleta;
+  font-weight: 500;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 120%;
+}
+
+h5 {
+  font-size: 18px;
+  line-height: 120%;
+  font-weight: 500;
+}
+
+.body_s,
+.body_s_bold {
+  font-size: 14px;
+  line-height: 140%;
+}
+
+.body_s_bold {
+  font-weight: bold;
+}
+
+.body,
+.body_bold {
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.body_bold {
+  font-size: 16px;
+  line-height: 140%;
+  font-weight: bold;
+}
+
+.body_l,
+.body_l_bold {
+  font-size: 18px;
+  line-height: 150%;
+}
+
+.body_l_bold {
+  font-weight: bold;
+}
+
+.label {
+  font-size: 12px;
+  line-height: 115%;
 }

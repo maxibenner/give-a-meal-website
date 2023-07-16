@@ -1,0 +1,9 @@
+.textContainer {
+    grid-column: 2/ 10;
+
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    margin: 120px 0;
+}
