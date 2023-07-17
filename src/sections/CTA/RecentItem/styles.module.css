@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    gap: 24px;
+    padding: 16px;
+    width: 456px;
+    flex-shrink: 0;
+    border-radius: var(--border-radius);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--color-white);
+    width: 86px;
+    height: 86px;
+    border-radius: var(--border-radius-small);
+    flex-shrink: 0;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

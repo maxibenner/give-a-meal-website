@@ -1,11 +1,12 @@
 .container {
     display: flex;
     justify-content: center;
+    align-items: center;
 
     width: fit-content;
     min-width: 145px;
     min-height: 36px;
-    padding: 10px 16px;
+    padding: 0 16px;
     border-radius: 10px;
 
     text-decoration: none;
@@ -14,5 +15,5 @@
 }
 
 .container:hover {
-    filter: invert(100%);
+    filter: invert(97%);
 }

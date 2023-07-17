@@ -30,6 +30,7 @@
 
 :root {
   --max-width: 1440px;
+  --border-radius-small: 8px;
   --border-radius: 12px;
 
   /* Color */
@@ -56,6 +57,7 @@ body {
   margin: 0 auto;
   background-color: var(--color-background);
   overflow-x: hidden;
+  color: var(--color-black);
 }
 
 main {
@@ -67,12 +69,6 @@ main {
   grid-template-columns: repeat(12, 1fr);
   gap: 24px 12px;
   padding: 0 24px;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
 }
 
 /* Text */

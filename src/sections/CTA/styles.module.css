@@ -1,0 +1,49 @@
+.container {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    margin-bottom: 120px;
+    grid-column: 2 / 12;
+}
+
+.textContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    padding: 72px 24px 60px 24px;
+}
+
+.textContainer h2 {
+    text-align: center;
+    width: 548px;
+}
+
+.buttonContainer {
+    display: flex;
+    gap: 24px;
+}
+
+.button {
+    width: 184px;
+}
+
+.recentItemsContainer {
+    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.marqueeContainer {
+    display: flex;
+    gap: 12px;
+    animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc((456px + 12px) * -4));
+    }
+}

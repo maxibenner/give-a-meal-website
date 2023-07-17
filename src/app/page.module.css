@@ -1,15 +1,5 @@
-/* .col_12 {
-  grid-column: span 12;
-  background: red;
-  height: 100px;
+.overlay {
+  position: relative;
+  width: 100%;
+  background-color: var(--color-background);
 }
-.col_center {
-  grid-column: 3 / 11;
-  background: blue;
-  height: 100px;
-}
-.col_left {
-  grid-column: 11 / 13;
-  background: green;
-  height: 100px;
-} */

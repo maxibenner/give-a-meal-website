@@ -1,9 +1,11 @@
 .container {
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 24px;
-    min-height: 398px;
+    padding: 24px 24px 0 24px;
+    min-height: 400px;
 
     background-color: transparent;
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -12,10 +14,12 @@
     transition: .3s;
 }
 
+
 .textContainer {
     display: flex;
     flex-direction: column;
     gap: 24px;
+    overflow: hidden;
 
     transition: .3s;
 }
@@ -26,14 +30,16 @@
     transition: .3s;
 }
 
-.container p {
-    display: none;
-
-    transition: .3s;
+.textContainer p {
+    transition: 0.3s;
 }
 
+.padding {
+    height: 24px;
+}
+
+
 .number {
-    cursor: default;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,17 +55,13 @@
     transition: .3s;
 }
 
-.container:hover {
-    background-color: var(--color-primary);
+.active {
     border-color: rgba(0, 0, 0, 0);
+    background-color: var(--color-primary);
 }
 
-.container:hover .number {
+.active .number {
     margin: 0;
     min-width: 72px;
     min-height: 72px;
-}
-
-.container:hover p {
-    display: block;
 }
