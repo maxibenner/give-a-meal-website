@@ -1,9 +1,9 @@
 import Button from "@/components/Button"
 import styles from "./styles.module.css"
 import Image from "next/image"
-import Tomato from "../../assets/tomato.svg"
-import Cucumber from "../../assets/cucumber.svg"
-import Onion from "../../assets/onion.svg"
+import Tomato from "@/public/assets/tomato.svg"
+import Cucumber from "@/public/assets/cucumber.svg"
+import Onion from "@/public/assets/onion.svg"
 
 export default function Hero() {
     return (
@@ -16,7 +16,7 @@ export default function Hero() {
                 </div>
 
                 <div className={styles.textContainer}>
-                    <h1>Find Donated Meals Near You</h1>
+                    <h1>Find Donated <br /> Meals Near You</h1>
                     <p className="body_l">Together with our partner restaurants and their customers, Give A Meal provides meals to people in need in New York City.</p>
                     <Button href="/">Find a Meal</Button>
                 </div>

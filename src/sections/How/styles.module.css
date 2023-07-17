@@ -17,3 +17,21 @@
 .cardThree {
     grid-column: 9 / span 4;
 }
+
+@media (max-width: 880px) {
+    .badge {
+        grid-column: 1 / span 12;
+    }
+
+    .cardOne {
+        grid-column: 1 / span 12;
+    }
+
+    .cardTwo {
+        grid-column: 1 / span 12;
+    }
+
+    .cardThree {
+        grid-column: 1 / span 12;
+    }
+}

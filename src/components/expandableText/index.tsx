@@ -2,7 +2,7 @@
 
 import styles from "./styles.module.css"
 import React from "react"
-import Plus from "../../assets/icon_plus.svg"
+import Plus from "@/public/assets/icon_plus.svg"
 import Image from "next/image"
 
 export default function ExpandableText({ title, body, active, onClick }: { title: string, body: string, active: boolean, onClick: () => void }) {

@@ -33,7 +33,6 @@
   --border-radius-small: 8px;
   --border-radius: 12px;
 
-  /* Color */
   --color-primary: #E5FF75;
   --color-background: #f6f6f6;
   --color-black: #000000;
@@ -143,4 +142,21 @@ h5 {
 .label {
   font-size: 12px;
   line-height: 115%;
+}
+
+@media (max-width: 880px) {
+  h1 {
+    font-size: 48px;
+    line-height: 120%;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 120%;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 120%;
+  }
 }

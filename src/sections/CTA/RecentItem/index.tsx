@@ -2,8 +2,8 @@
 
 import styles from "./styles.module.css";
 import Image from "next/image";
-import NewDonation from "../../../assets/icons/newDonation.svg"
-import NewBusiness from "../../../assets/icons/newBusiness.svg"
+import NewDonation from "@/public/assets/icons/newDonation.svg"
+import NewBusiness from "@/public/assets/icons/newBusiness.svg"
 
 export default function RecentItem({ action, businessName, time, donorName, item }: { action: "newDonation" | "newBusiness", businessName: string, time: string, donorName: string, item: string }) {
 

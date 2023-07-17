@@ -13,3 +13,16 @@
 
     margin-bottom: 272px;
 }
+
+@media (max-width: 880px) {
+    .badge {
+        grid-column: 1 / 13;
+        justify-self: flex-start;
+    }
+
+    .faqContainer {
+        grid-column: 1 / 13;
+        padding: 24px 24px;
+        margin-bottom: 120px;
+    }
+}

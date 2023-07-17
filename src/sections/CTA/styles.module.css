@@ -31,3 +31,28 @@
     overflow: hidden;
     margin-bottom: 25px;
 }
+
+@media (max-width: 880px) {
+    .container {
+        grid-column: 1 / 13;
+    }
+
+    .button {
+        width: inherit;
+    }
+
+    .textContainer {
+        padding: 48px 24px 48px 24px;
+    }
+
+    .textContainer h2 {
+        width: 100%;
+    }
+
+    .buttonContainer {
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        align-items: center;
+    }
+}

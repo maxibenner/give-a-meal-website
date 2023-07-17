@@ -12,6 +12,7 @@
 }
 
 .textContainer {
+    padding: 12px;
     position: absolute;
     height: 100%;
     width: 100%;
@@ -23,12 +24,12 @@
 }
 
 .textContainer>h1 {
-    width: 500px;
+    max-width: 500px;
     text-align: center;
 }
 
 .textContainer>p {
-    width: 541px;
+    max-width: 541px;
     text-align: center;
 }
 
@@ -66,4 +67,25 @@
     height: 100vh;
     background-color: red;
     content: "";
+}
+
+@media (max-width: 880px) {
+    .vegContainer>img:nth-child(1) {
+        top: 40%;
+        left: -200px;
+        transform-origin: center center;
+        transform: translateY(-50%) rotate(-120deg) scale(0.5);
+    }
+
+    .vegContainer>img:nth-child(2) {
+        bottom: -25px;
+        right: -25px;
+        transform: translate(35%, 35%) rotate(90deg) scale(0.5);
+    }
+
+    .vegContainer>img:nth-child(3) {
+        top: 0;
+        right: -50px;
+        transform: translateY(-50%) rotate(140deg) scale(0.5);
+    }
 }

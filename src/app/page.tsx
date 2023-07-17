@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      
       <div className={styles.overlay}>
         <Why />
         <How />

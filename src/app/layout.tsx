@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
 import "./globals.css";
-import Navigation from "@/components/navigation";
+import Navigation from "@/components/Navigation";
 
 export const metadata = {
   title: "Give a Meal",
@@ -21,9 +21,5 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
-
-
-
-
   );
 }
