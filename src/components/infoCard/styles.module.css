@@ -68,6 +68,10 @@
 
 @media (max-width: 880px) {
 
+    .container {
+        min-height: 340px;
+    }
+
     .textContainer h3 {
         max-width: 200px;
     }

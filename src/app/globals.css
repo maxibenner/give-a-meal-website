@@ -51,18 +51,13 @@
 
 html,
 body {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  background-color: var(--color-background);
+  /* margin: 0 auto; */
   overflow-x: hidden;
   color: var(--color-black);
 }
 
-main {
-  max-width: var(--max-width);
-}
-
 .grid {
+  position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: 24px 12px;

@@ -1,21 +1,15 @@
-.container {
-    position: relative;
-    background-color: var(--color-background);
-    display: flex;
-    align-items: center;
-    gap: 36px;
-    padding: 12px;
-    height: fit-content;
-    z-index: 99;
-}
-
 .footer {
-    grid-column: 1 / 13;
+    position: absolute;
+    bottom: 12px;
+    left: calc(50%);
+    transform: translateX(-50%);
+
 
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: calc(100% - 24px);
+    max-width: var(--max-width);
     background-color: var(--color-white);
     padding: 16px 24px;
     border-radius: var(--border-radius);

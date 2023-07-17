@@ -1,7 +1,10 @@
 .container {
+    position: relative;
+    z-index: 1;
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
-    margin-bottom: 120px;
+    margin-top: 272px;
+    margin-bottom: 180px;
     grid-column: 2 / 12;
 }
 
@@ -32,9 +35,41 @@
     margin-bottom: 25px;
 }
 
+.vegContainer {
+    position: absolute;
+    width: 100%;
+    min-height: 100vh;
+    left: 0;
+    top: 0;
+}
+
+.vegContainer>img {
+    position: absolute;
+}
+
+.vegContainer>img:nth-child(1) {
+    top: 50%;
+    left: -50px;
+    transform-origin: center center;
+    transform: translateY(-50%) rotate(-120deg);
+}
+
+.vegContainer>img:nth-child(2) {
+    bottom: -20px;
+    right: 40%;
+    transform: translate(35%, 35%) rotate(0deg);
+}
+
+.vegContainer>img:nth-child(3) {
+    top: 400px;
+    right: 0;
+    transform: translateY(-50%) rotate(45deg);
+}
+
 @media (max-width: 880px) {
     .container {
         grid-column: 1 / 13;
+        margin-top: 120px;
     }
 
     .button {
@@ -54,5 +89,17 @@
         gap: 12px;
         width: 100%;
         align-items: center;
+    }
+
+    .vegContainer>img:nth-child(1) {
+        transform: translate(-40%, -60%) rotate(-120deg) scale(0.8);
+    }
+
+    .vegContainer>img:nth-child(2) {
+        transform: translate(50%, 0%) rotate(90deg) scale(0.8);
+    }
+
+    .vegContainer>img:nth-child(3) {
+        transform: translate(50%, -100%) rotate(200deg) scale(0.8);
     }
 }

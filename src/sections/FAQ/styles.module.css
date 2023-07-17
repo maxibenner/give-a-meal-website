@@ -10,8 +10,6 @@
     padding: 24px 60px;
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
-
-    margin-bottom: 272px;
 }
 
 @media (max-width: 880px) {
@@ -23,6 +21,5 @@
     .faqContainer {
         grid-column: 1 / 13;
         padding: 12px;
-        margin-bottom: 120px;
     }
 }

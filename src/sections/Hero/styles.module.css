@@ -1,14 +1,17 @@
 .container {
     position: fixed;
-
-    display: flex;
-    justify-content: center;
-    min-height: 100vh;
+    left: 50%;
+    transform: translateX(-50%);
     width: 100%;
     overflow: hidden;
-
     background-color: var(--color-primary);
-    background-position: center center;
+}
+
+.maxWidth {
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
 }
 
 .textContainer {
@@ -74,9 +77,14 @@
         position: relative;
     }
 
+    .textContainer {
+        padding: 0 24px;
+        max-width: 400px;
+    }
+
     .vegContainer>img:nth-child(1) {
         top: 40%;
-        left: -200px;
+        left: -230px;
         transform-origin: center center;
         transform: translateY(-50%) rotate(-120deg) scale(0.5);
     }

@@ -4,6 +4,10 @@ import Button from "@/components/button"
 import styles from "./styles.module.css"
 import RecentItem from "./RecentItem"
 import Marquee from "react-fast-marquee";
+import Image from "next/image";
+import Tomato from "@/public/assets/tomato.svg"
+import Cucumber from "@/public/assets/cucumber.svg"
+import Onion from "@/public/assets/onion.svg"
 
 export default function CTA() {
     const data = [
@@ -42,7 +46,7 @@ export default function CTA() {
         donorName: string,
         item: string
     }[]
-    
+
     return (
         <div className="grid">
             <div className={styles.container}>
@@ -60,6 +64,12 @@ export default function CTA() {
                     </Marquee>
                 </div>
             </div>
-        </div >
+
+            <div className={styles.vegContainer}>
+                <Image src={Tomato} alt="tomato" width={287} height={420} />
+                <Image src={Cucumber} alt="cucumber" width={377} height={430} />
+                <Image src={Onion} alt="onion" width={285} height={420} />
+            </div>
+        </div>
     )
 }
