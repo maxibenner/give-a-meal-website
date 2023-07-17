@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
-import Badge from "@/components/badge"
+import Badge from "@/components/Badge"
 
 export default function Why() {
     return (
