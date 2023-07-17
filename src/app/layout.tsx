@@ -1,5 +1,5 @@
-import Footer from "@/components/footer2";
-import Navigation from "@/components/navigation2";
+import Footer from "@/components/footer";
+import Navigation from "@/components/navigation";
 import "./globals.css";
 
 export const metadata = {

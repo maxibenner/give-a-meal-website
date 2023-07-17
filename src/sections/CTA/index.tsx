@@ -1,6 +1,6 @@
 'use client'
 
-import Button from "@/components/button2"
+import Button from "@/components/button"
 import styles from "./styles.module.css"
 import RecentItem from "./RecentItem"
 import Marquee from "react-fast-marquee";
