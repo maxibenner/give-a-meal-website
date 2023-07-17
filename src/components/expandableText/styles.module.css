@@ -36,3 +36,9 @@
     opacity: 0;
     scale: 0;
 }
+
+@media (max-width: 880px) {
+    .container {
+        gap: 24px;
+    }
+}

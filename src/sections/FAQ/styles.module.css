@@ -22,7 +22,7 @@
 
     .faqContainer {
         grid-column: 1 / 13;
-        padding: 24px 24px;
+        padding: 12px;
         margin-bottom: 120px;
     }
 }

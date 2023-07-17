@@ -25,3 +25,20 @@
     flex-direction: column;
     justify-content: space-between;
 }
+
+@media (max-width: 880px) {
+    .container {
+        width: 300px;
+        min-height: 150px;
+    }
+
+    .imageContainer {
+        width: 55px;
+        height: 55px;
+    }
+
+    .imageContainer img {
+        width: 30px;
+        height: 30px;
+    }
+}

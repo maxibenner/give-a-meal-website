@@ -145,7 +145,7 @@ h5 {
 }
 
 @media (max-width: 880px) {
-  h1 {
+  /* h1 {
     font-size: 48px;
     line-height: 120%;
   }
@@ -158,5 +158,79 @@ h5 {
   h5 {
     font-size: 16px;
     line-height: 120%;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  } */
+
+  h1 {
+    font-size: 48px;
+    line-height: 115%;
+    font-weight: 400;
+    font-family: Recoleta;
+  }
+
+  h2 {
+    font-size: 36px;
+    line-height: 115%;
+    font-family: Recoleta;
+    font-weight: 500;
+  }
+
+  h3 {
+    font-size: 30px;
+    line-height: 120%;
+    font-family: Recoleta;
+    font-weight: 500;
+  }
+
+  h4 {
+    font-size: 18px;
+    line-height: 115%;
+  }
+
+  h5 {
+    font-size: 16px;
+    line-height: 115%;
+    font-weight: 500;
+  }
+
+  .body_l,
+  .body_l_bold {
+    font-size: 16px;
+    line-height: 140%;
+  }
+
+  .body_l_bold {
+    font-weight: bold;
+  }
+
+  .body,
+  .body_bold {
+    font-size: 16px;
+    line-height: 150%;
+  }
+
+  .body_bold {
+    font-size: 16px;
+    line-height: 120%;
+    font-weight: bold;
+  }
+
+  .body_s,
+  .body_s_bold {
+    font-size: 12px;
+    line-height: 120%;
+  }
+
+  .body_s_bold {
+    font-weight: bold;
+  }
+
+  .label {
+    font-size: 10px;
+    line-height: 110%;
   }
 }

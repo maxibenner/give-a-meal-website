@@ -24,7 +24,7 @@
     transition: .3s;
 }
 
-.container h3 {
+.textContainer h3 {
     max-width: 275px;
 
     transition: .3s;
@@ -64,4 +64,11 @@
     margin: 0;
     min-width: 72px;
     min-height: 72px;
+}
+
+@media (max-width: 880px) {
+
+    .textContainer h3 {
+        max-width: 200px;
+    }
 }
