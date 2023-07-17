@@ -1,4 +1,4 @@
-import Button from "@/components/Button"
+import Button from "@/components/button2"
 import styles from "./styles.module.css"
 import Image from "next/image"
 import Tomato from "@/public/assets/tomato.svg"

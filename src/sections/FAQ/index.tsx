@@ -1,6 +1,6 @@
 'use client'
 
-import Badge from "@/components/Badge"
+import Badge from "@/components/badge2"
 import styles from "./styles.module.css"
 import ExpandableText from "@/components/ExpandableText"
 import React from "react"

@@ -2,7 +2,7 @@
 
 import InfoCard from "@/components/InfoCard"
 import styles from "./styles.module.css"
-import Badge from "@/components/Badge"
+import Badge from "@/components/badge2"
 import React, { useEffect } from "react"
 
 export default function How() {
