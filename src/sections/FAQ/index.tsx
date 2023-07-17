@@ -1,8 +1,8 @@
 'use client'
 
-import Badge from "@/components/Badge"
+import Badge from "@/components/badge"
 import styles from "./styles.module.css"
-import ExpandableText from "@/components/ExpandableText"
+import ExpandableText from "@/components/expandableText"
 import React from "react"
 
 export default function FAQ() {

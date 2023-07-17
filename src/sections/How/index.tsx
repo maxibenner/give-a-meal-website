@@ -1,8 +1,8 @@
 'use client'
 
-import InfoCard from "@/components/InfoCard"
+import InfoCard from "@/components/infoCard"
 import styles from "./styles.module.css"
-import Badge from "@/components/Badge"
+import Badge from "@/components/badge"
 import React, { useEffect } from "react"
 
 export default function How() {
