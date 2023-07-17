@@ -2,6 +2,7 @@
     display: flex;
     gap: 24px;
     padding: 16px;
+    margin-right: 12px;
     width: 456px;
     flex-shrink: 0;
     border-radius: var(--border-radius);
