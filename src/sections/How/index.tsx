@@ -1,6 +1,6 @@
 'use client'
 
-import InfoCard from "@/components/InfoCard"
+import InfoCard from "@/components/infoCard2"
 import styles from "./styles.module.css"
 import Badge from "@/components/badge2"
 import React, { useEffect } from "react"

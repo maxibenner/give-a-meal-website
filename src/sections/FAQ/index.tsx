@@ -2,7 +2,7 @@
 
 import Badge from "@/components/badge2"
 import styles from "./styles.module.css"
-import ExpandableText from "@/components/ExpandableText"
+import ExpandableText from "@/components/expandableText2"
 import React from "react"
 
 export default function FAQ() {
