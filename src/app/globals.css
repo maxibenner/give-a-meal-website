@@ -40,8 +40,7 @@
   --color-white: #ffffff;
   --color-text: rgba(0, 0, 0, 0.75);
 
-  --shadow-regular: drop-shadow(0px 4px 8px rgba(0, 0, 0, 0.05));
-
+  --shadow-regular: 0px 4px 8px rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -72,6 +71,11 @@ main {
 }
 
 /* Text */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
 h1 {
   font-size: 60px;
   line-height: 120%;
