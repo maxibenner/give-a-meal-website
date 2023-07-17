@@ -1,6 +1,6 @@
 import Footer from "@/components/Footer";
-import "./globals.css";
 import Navigation from "@/components/Navigation";
+import "./globals.css";
 
 export const metadata = {
   title: "Give a Meal",
