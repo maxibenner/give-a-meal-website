@@ -42,6 +42,7 @@ export default function CTA() {
         donorName: string,
         item: string
     }[]
+    
 
     return (
         <div className="grid">
