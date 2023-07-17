@@ -43,7 +43,6 @@ export default function CTA() {
         item: string
     }[]
     
-
     return (
         <div className="grid">
             <div className={styles.container}>
