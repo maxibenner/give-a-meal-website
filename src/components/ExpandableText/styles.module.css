@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 24px 24px 0 24px;
+
+    cursor: pointer;
+}
+
+.titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleContainer img {
+    opacity: 1;
+    scale: 1;
+    transition: .3s;
+}
+
+.bodyContainer {
+    overflow: hidden;
+}
+
+.bodyContainer p {
+    opacity: 0;
+    transition: .3s;
+}
+
+.active p {
+    opacity: 1;
+}
+
+.active .titleContainer img {
+    opacity: 0;
+    scale: 0;
+}
