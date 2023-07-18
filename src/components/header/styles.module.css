@@ -1,0 +1,64 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 24px 60px;
+    height: 321px;
+
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+}
+
+.container h1 {
+    position: relative;
+}
+
+.cucumber,
+.onion {
+    position: absolute;
+}
+
+.cucumber {
+    bottom: -90%;
+    left: 40%;
+    transform: translate(0, 0) rotate(90deg);
+}
+
+.onion {
+    bottom: 10%;
+    left: 70%;
+    transform: rotate(80deg);
+}
+
+.tomato {
+    display: none;
+}
+
+/* .tomato {
+    top: 400px;
+    right: 0;
+    transform: translateY(-50%) rotate(0deg);
+} */
+
+@media (max-width: 880px) {
+    .container {
+        padding: 12px 24px;
+        height: 280px;
+    }
+
+    .container h1 {
+        max-width: 420px;
+    }
+
+    .cucumber {
+        left: 30%;
+        transform: rotate(90deg) scale(0.8);
+    }
+
+    .onion {
+        bottom: 30%;
+        transform: rotate(80deg) scale(0.8);
+    }
+}

@@ -1,19 +1,22 @@
+.footerBg {
+    position: relative;
+    background-color: var(--color-background);
+    padding: 0 12px 12px 12px;
+}
+
 .footer {
-    position: absolute;
-    bottom: 12px;
-    left: calc(50%);
-    transform: translateX(-50%);
-
-
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: calc(100% - 24px);
     max-width: var(--max-width);
-    background-color: var(--color-white);
+
+    margin: 0 auto;
     padding: 16px 24px;
+
+    background-color: var(--color-white);
     border-radius: var(--border-radius);
-    box-shadow: var(--shadow-regular);
+    /* box-shadow: var(--shadow-regular); */
 }
 
 .footer>div {
@@ -28,14 +31,14 @@
 
     .footer {
         flex-direction: column;
-        align-items: center;
+        align-items: flex-start;
         gap: 48px;
         padding: 24px;
     }
 
     .footer>div {
         flex-direction: column;
-        align-items: center;
+        /* align-items: center; */
         width: 100%;
         gap: 12px;
     }

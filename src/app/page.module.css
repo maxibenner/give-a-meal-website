@@ -1,3 +1,7 @@
+.container {
+  position: relative;
+}
+
 .overlay {
   position: relative;
   background-color: var(--color-background);

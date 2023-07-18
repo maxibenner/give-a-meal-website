@@ -1,0 +1,55 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 383px;
+    overflow: hidden;
+    padding: 24px;
+
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+}
+
+.textContainer {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 465px;
+}
+
+.button {
+    position: relative;
+    min-width: 184px;
+}
+
+.tomato,
+.cucumber {
+    position: absolute;
+}
+
+.tomato {
+    top: -10%;
+    right: 80%;
+    transform: rotate(-132deg);
+}
+
+.cucumber {
+    left: 80%;
+    bottom: -180px;
+    transform: rotate(90deg);
+}
+
+@media (max-width: 880px) {
+    .tomato {
+        transform: rotate(-132deg) scale(0.8);
+    }
+
+    .cucumber {
+        transform: rotate(-132deg) scale(0.8);
+    }
+}

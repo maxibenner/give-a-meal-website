@@ -4,11 +4,10 @@ import Why from "@/sections/Why";
 import How from "@/sections/How";
 import FAQ from "@/sections/FAQ";
 import CTA from "@/sections/CTA";
-import Footer from "@/components/footer";
 
 export default function Home() {
   return (
-    <>
+    <div className={styles.container}>
       <Hero />
 
       <div className={styles.overlay}>
@@ -18,11 +17,8 @@ export default function Home() {
           <FAQ />
           <CTA />
         </div>
-
-        <Footer />
-
       </div>
-    </>
+    </div>
 
   );
 }

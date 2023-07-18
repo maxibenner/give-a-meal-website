@@ -51,7 +51,7 @@
 
 html,
 body {
-  /* margin: 0 auto; */
+  background-color: var(--color-background);
   overflow-x: hidden;
   color: var(--color-black);
 }
@@ -60,7 +60,7 @@ body {
   position: relative;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 24px 12px;
+  gap: 12px;
   padding: 0 24px;
 }
 
