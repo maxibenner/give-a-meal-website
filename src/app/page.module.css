@@ -12,9 +12,3 @@
   max-width: var(--max-width);
   margin: 0 auto;
 }
-
-@media (max-width: 950px) {
-  .maxWidth {
-    margin-bottom: 180px;
-  }
-}

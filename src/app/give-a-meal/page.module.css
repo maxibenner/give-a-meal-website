@@ -15,7 +15,6 @@
 
 .badgeHowItWorks {
     grid-column: 1 / 13;
-    padding: 60px 0;
 }
 
 .infoCardContainer {
@@ -42,6 +41,7 @@
     .description {
         grid-column: 1 / 13;
     }
+
     .badgeFAQ {
         grid-column: 1 / 13;
         justify-self: flex-start;

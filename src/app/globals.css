@@ -52,8 +52,13 @@
 html,
 body {
   background-color: var(--color-background);
+  /* background-color: var(--color-primary); */
   overflow-x: hidden;
   color: var(--color-black);
+}
+
+main {
+  /* background-color: var(--color-background); */
 }
 
 .grid {
