@@ -2,52 +2,32 @@
     padding-top: 76px;
     max-width: var(--max-width);
     margin: 0 auto;
+    margin-bottom: 120px;
 }
 
 .header {
     grid-column: 1 / 13;
-}
-
-.description {
-    grid-column: 3 / 11;
-    padding: 60px 0;
-}
-
-.badgeHowItWorks {
-    grid-column: 1 / 13;
-    padding: 60px 0;
-}
-
-.infoCardContainer {
-    grid-column: 1 / 13;
     margin-bottom: 120px;
 }
 
-.badgeFAQ {
-    grid-column: 4 / 7;
-    justify-self: flex-end;
+.cardOne {
+    grid-column: 3 / 6;
 }
 
-.faqContainer {
-    grid-column: 7 / 13;
-    margin-bottom: 120px;
+.cardTwo {
+    grid-column: 6 / 11;
 }
 
-.cta {
-    grid-column: 1 / 13;
-    margin-bottom: 120px;
-}
-
-@media (max-width: 880px) {
-    .description {
-        grid-column: 1 / 13;
-    }
-    .badgeFAQ {
-        grid-column: 1 / 13;
-        justify-self: flex-start;
+@media (max-width: 1000px) {
+    .header {
+        margin-bottom: 60px;
     }
 
-    .faqContainer {
+    .cardOne {
+        grid-column: 1 / 13;
+    }
+
+    .cardTwo {
         grid-column: 1 / 13;
     }
 }

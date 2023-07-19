@@ -1,20 +1,15 @@
 import Header from '@/components/header';
 import styles from './page.module.css';
-import Badge from '@/components/badge';
-import InfoCards from './infoCards';
-import FAQ from './faq';
-import CTA from '@/components/cta';
+import AppCard from '@/components/appCard';
+import UserIcon from '@/public/assets/images/icon-user.png';
+import BusinessIcon from '@/public/assets/images/icon-business.png';
 
 export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
             <Header title="Get the App" className={styles.header} />
-            <h2 className={styles.description}>We believe access to food is a basic human right. We provide food to anyone, anytime- no questions asked.</h2>
-            <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
-            <InfoCards className={styles.infoCardContainer} />
-            <Badge className={styles.badgeFAQ}>Frequently Asked Questions</Badge>
-            <FAQ className={styles.faqContainer} />
-            <CTA className={styles.cta} title="Get a Meal Today" description="Download our free app to browse the meal list and reserve one to pick up." buttonLabel="Get the App" href="/" />
+            <AppCard appStoreLink="https://apps.apple.com/app/id1631730593" playStoreLink="https://play.google.com/store/apps/details?id=com.fotura.giveamealuser&pli=1" className={styles.cardOne} title="Give a Meal" description="For people looking for meals. Find meals near you and reserve them for free pick up." imageSrc={UserIcon} />
+            <AppCard appStoreLink="https://apps.apple.com/app/id6449883589" playStoreLink="https://play.google.com/store/apps/details?id=com.fotura.giveamealbusiness" className={styles.cardTwo} title="Give a Meal Business" description="For partner restaurants. Manage Give a Meal operations, add and redeem donations." imageSrc={BusinessIcon} />
         </div>
     )
 }
