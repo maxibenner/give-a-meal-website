@@ -8,7 +8,7 @@ import CTA from '@/components/cta';
 export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
-            <Header title="Give a Meal" className={styles.header} />
+            <Header title="Give a Meal" className={styles.header} variant={2} />
             <h2 className={styles.description}>We believe in a community driven approach to food security. Neighbours donating to neighbours through local small businesses.</h2>
             <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
             <InfoCards className={styles.infoCardContainer} />

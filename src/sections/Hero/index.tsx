@@ -19,7 +19,7 @@ export default function Hero() {
                     <div className={styles.textContainer}>
                         <h1>Find Donated <br /> Meals Near You</h1>
                         <p className="body_l">Together with our partner restaurants and their customers, Give A Meal provides meals to people in need in New York City.</p>
-                        <Button href="/">Find a Meal</Button>
+                        <Button href="/get-a-meal">Get a Meal</Button>
                     </div>
                 </div>
 

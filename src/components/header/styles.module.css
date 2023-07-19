@@ -15,32 +15,23 @@
     position: relative;
 }
 
-.cucumber,
-.onion {
+.imageOne,
+.imageTwo {
     position: absolute;
 }
 
-.cucumber {
+.imageOne {
     bottom: -90%;
     left: 40%;
     transform: translate(0, 0) rotate(90deg);
 }
 
-.onion {
+.imageTwo {
     bottom: 10%;
     left: 70%;
     transform: rotate(80deg);
 }
 
-.tomato {
-    display: none;
-}
-
-/* .tomato {
-    top: 400px;
-    right: 0;
-    transform: translateY(-50%) rotate(0deg);
-} */
 
 @media (max-width: 880px) {
     .container {
@@ -52,12 +43,12 @@
         max-width: 420px;
     }
 
-    .cucumber {
+    .imageOne {
         left: 30%;
         transform: rotate(90deg) scale(0.8);
     }
 
-    .onion {
+    .imageTwo {
         bottom: 30%;
         transform: rotate(80deg) scale(0.8);
     }
