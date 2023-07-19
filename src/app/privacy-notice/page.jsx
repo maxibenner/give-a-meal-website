@@ -521,9 +521,11 @@ export default function PrivacyNotice() {
           <div className={styles.tableScroll}>
             <table>
               <thead>
-                <th>Category</th>
-                <th>Examples</th>
-                <th>Collected</th>
+                <tr>
+                  <th>Category</th>
+                  <th>Examples</th>
+                  <th>Collected</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>

@@ -124,13 +124,15 @@ export default function PrivacyNotice() {
           <div className={styles.tableScroll}>
             <table>
               <thead>
-                <th>Name</th>
-                <th>Purpose</th>
-                <th>Provider</th>
-                <th>Service</th>
-                <th>Country</th>
-                <th>Type</th>
-                <th>Expires in</th>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Provider</th>
+                  <th>Service</th>
+                  <th>Country</th>
+                  <th>Type</th>
+                  <th>Expires in</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
@@ -158,13 +160,15 @@ export default function PrivacyNotice() {
           <div className={styles.tableScroll}>
             <table>
               <thead>
-                <th>Name</th>
-                <th>Purpose</th>
-                <th>Provider</th>
-                <th>Service</th>
-                <th>Country</th>
-                <th>Type</th>
-                <th>Expires in</th>
+                <tr>
+                  <th>Name</th>
+                  <th>Purpose</th>
+                  <th>Provider</th>
+                  <th>Service</th>
+                  <th>Country</th>
+                  <th>Type</th>
+                  <th>Expires in</th>
+                </tr>
               </thead>
               <tbody>
                 <tr>
