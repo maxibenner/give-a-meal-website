@@ -23,3 +23,12 @@
 .image {
     border-radius: var(--border-radius);
 }
+
+@media (max-width: 1000px) {
+    .container {
+        padding: 24px;
+    }
+    .storeContainer {
+        flex-direction: column;
+    }
+}
