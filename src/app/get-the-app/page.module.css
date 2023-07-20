@@ -11,11 +11,11 @@
 }
 
 .cardOne {
-    grid-column: 3 / 6;
+    grid-column: 3 / 7;
 }
 
 .cardTwo {
-    grid-column: 6 / 11;
+    grid-column: 7 / 11;
 }
 
 @media (max-width: 1000px) {

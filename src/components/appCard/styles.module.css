@@ -1,7 +1,6 @@
 .container {
     display: flex;
     flex-direction: column;
-    width: 100%;
     min-width: fit-content;
     gap: 48px;
     padding: 48px;
@@ -17,6 +16,7 @@
 
 .storeContainer {
     display: flex;
+    flex-wrap: wrap;
     gap: 12px;
 }
 
@@ -27,8 +27,5 @@
 @media (max-width: 1000px) {
     .container {
         padding: 24px;
-    }
-    .storeContainer {
-        flex-direction: column;
     }
 }
