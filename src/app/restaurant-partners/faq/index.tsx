@@ -9,12 +9,11 @@ export default function FAQ({ className }: { className?: string }) {
 
     return (
         <div className={`${styles.container} ${className}`}>
-            <ExpandableText onClick={() => setActiveIndex(0)} active={activeIndex === 0} title="Is Give a Meal for me?" body="Yes! There are no requirements or documentation required to receive a meal. Food for those in need, no questions asked." />
-            <ExpandableText onClick={() => setActiveIndex(1)} active={activeIndex === 1} title="How often can I receive meals?" body="There is no limit to how often you can receive meals. However, reservations are limited to 3 meals at a time." />
-            <ExpandableText onClick={() => setActiveIndex(3)} active={activeIndex === 3} title="What do I need to become a partner?" body="Download the Give a Meal Business app, register your business, and you are ready to go!" />
-            <ExpandableText onClick={() => setActiveIndex(4)} active={activeIndex === 4} title="Do people need a phone to use give a meal?" body="Yes, people do currently need a phone to get meals. However, this may change in the future." />
-            <ExpandableText onClick={() => setActiveIndex(5)} active={activeIndex === 5} title="Why give a meal?" body="100% of each Give a Meal donation goes to people in need. Local donations help strengthen the community." />
-            <ExpandableText onClick={() => setActiveIndex(6)} active={activeIndex === 6} title="Who runs give a meal?" body="Give a Meal is run by Fotura, a digital product studio." />
+            <ExpandableText onClick={() => setActiveIndex(0)} active={activeIndex === 0} title="Is there a cost to partner with Give a Meal?" body="No, there's no charge to become a Give a Meal partner. We believe in working together to benefit the community." />
+            <ExpandableText onClick={() => setActiveIndex(1)} active={activeIndex === 1} title="What type of restaurants can join Give a Meal?" body="We welcome all types of restaurants! From fine dining to fast food, as long as you serve food, you can help serve the community." />
+            <ExpandableText onClick={() => setActiveIndex(3)} active={activeIndex === 3} title="How will my restaurant be promoted?" body="We welcome all types of restaurants! From fine dining to fast food, as long as you serve food, you can help serve the community." />
+            <ExpandableText onClick={() => setActiveIndex(4)} active={activeIndex === 4} title="Can customers donate any meal?" body="That is the idea! However, in the end you are the ones who decides which items can be donated." />
+            <ExpandableText onClick={() => setActiveIndex(5)} active={activeIndex === 5} title="What do we do if someone comes to claim a meal?" body="When someone comes to claim a donated meal, they will show a QR code from the Give a Meal app. Simply scan the code using the Give a Meal Business app and provide the meal." />
         </div>
     )
 }

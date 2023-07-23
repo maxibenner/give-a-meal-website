@@ -9,12 +9,12 @@ export default function FAQ({ className }: { className?: string }) {
 
     return (
         <div className={`${styles.container} ${className}`}>
-            <ExpandableText onClick={() => setActiveIndex(0)} active={activeIndex === 0} title="Is Give a Meal for me?" body="Yes! There are no requirements or documentation required to receive a meal. Food for those in need, no questions asked." />
-            <ExpandableText onClick={() => setActiveIndex(1)} active={activeIndex === 1} title="How often can I receive meals?" body="There is no limit to how often you can receive meals. However, reservations are limited to 3 meals at a time." />
-            <ExpandableText onClick={() => setActiveIndex(3)} active={activeIndex === 3} title="What do I need to become a partner?" body="Download the Give a Meal Business app, register your business, and you are ready to go!" />
-            <ExpandableText onClick={() => setActiveIndex(4)} active={activeIndex === 4} title="Do people need a phone to use give a meal?" body="Yes, people do currently need a phone to get meals. However, this may change in the future." />
-            <ExpandableText onClick={() => setActiveIndex(5)} active={activeIndex === 5} title="Why give a meal?" body="100% of each Give a Meal donation goes to people in need. Local donations help strengthen the community." />
-            <ExpandableText onClick={() => setActiveIndex(6)} active={activeIndex === 6} title="Who runs give a meal?" body="Give a Meal is run by Fotura, a digital product studio." />
+            <ExpandableText onClick={() => setActiveIndex(0)} active={activeIndex === 0} title="How do I know my donated meal reaches someone in need?" body="At Give a Meal, we ensure all donated meals are listed on our app for individuals facing food insecurity. You might not see the smiles, but rest assured, your kindness is making a difference." />
+            <ExpandableText onClick={() => setActiveIndex(1)} active={activeIndex === 1} title="What's the cost of donating a meal?" body="The cost of donating a meal depends on the restaurant and the meal itself. The price is usually equivalent to the cost of the meal on the restaurant's menu." />
+            <ExpandableText onClick={() => setActiveIndex(3)} active={activeIndex === 3} title="Can I choose what meal I donate?" body="Absolutely! When ordering at our partner restaurants, you can choose any meal to donate." />
+            <ExpandableText onClick={() => setActiveIndex(4)} active={activeIndex === 4} title="Can I donate more than one meal at a time?" body="Yes, there is no limit to generosity. You can donate as many meals as you'd like." />
+            <ExpandableText onClick={() => setActiveIndex(5)} active={activeIndex === 5} title="Can I donate a meal from any restaurant?" body="Donations can currently be made at our partner restaurants only. If your favorite restaurant isn't listed, why not suggest they join us?" />
+            <ExpandableText onClick={() => setActiveIndex(6)} active={activeIndex === 6} title="Will I receive a confirmation of my donation?" body="Not currently. However, you can provide your name when you donate and then find your donation in the Give a Meal app." />
         </div>
     )
 }

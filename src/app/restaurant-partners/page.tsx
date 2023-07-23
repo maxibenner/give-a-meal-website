@@ -9,12 +9,12 @@ export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
             <Header title="Restaurant Partners" className={styles.header} variant={3} />
-            <h2 className={styles.description}>We believe access to food is a basic human right. We provide food to anyone, anytime- no questions asked.</h2>
+            <h2 className={styles.description}>With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business.</h2>
             <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
             <InfoCards className={styles.infoCardContainer} />
             <Badge className={styles.badgeFAQ}>Frequently Asked Questions</Badge>
             <FAQ className={styles.faqContainer} />
-            <CTA className={styles.cta} title="Get a Meal Today" description="Download our free app to browse the meal list and reserve one to pick up." buttonLabel="Get the App" href="/" />
+            <CTA className={styles.cta} title="Register your restaurant today" description="Download our free Give a Meal Business app to register your restaurant and start accepting donations." buttonLabel="Get the App" href="/get-the-app" />
         </div>
     )
 }
