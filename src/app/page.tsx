@@ -8,7 +8,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: "Give a Meal",
-  description: "We combat food insecurity and fostering an environment of connection and compassion in local communities.",
+  description: "We combat food insecurity and are fostering an environment of connection and compassion in local communities.",
 }
 
 export default function Home() {
