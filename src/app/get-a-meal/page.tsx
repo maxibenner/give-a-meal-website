@@ -4,15 +4,17 @@ import Badge from '@/components/badge';
 import InfoCards from './infoCards';
 import FAQ from './faq';
 import CTA from '@/components/cta';
-import Head from 'next/head';
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: "Get a Meal",
+  description: "Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community.",
+}
+
 
 export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
-            <Head key="get-a-meal">
-                <title>Get a Meal</title>
-                <meta name="description" content="Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community." />
-            </Head>
             <Header title="Get a Meal" className={styles.header} />
             <h2 className={styles.description}>Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community.</h2>
             <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
