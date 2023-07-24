@@ -2,30 +2,35 @@
   font-family: Inter;
   font-weight: 400;
   src: url("../fonts/Inter-Regular.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Inter;
   font-weight: 500;
   src: url("../fonts/Inter-Medium.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Inter;
   font-weight: 600;
   src: url("../fonts/Inter-SemiBold.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Recoleta;
   font-weight: 500;
   src: url("../fonts/Recoleta-Medium.woff");
+  font-display: swap;
 }
 
 @font-face {
   font-family: Recoleta;
   font-weight: 700;
   src: url("../fonts/Recolete-Bold.woff");
+  font-display: swap;
 }
 
 :root {
