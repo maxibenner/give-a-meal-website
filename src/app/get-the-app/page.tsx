@@ -1,8 +1,8 @@
 import Header from '@/components/header';
 import styles from './page.module.css';
 import AppCard from '@/components/appCard';
-import UserIcon from '@/public/assets/images/icon-user.png';
-import BusinessIcon from '@/public/assets/images/icon-business.png';
+import UserIcon from '@/public/assets/images/icon-user.jpg';
+import BusinessIcon from '@/public/assets/images/icon-business.jpg';
 
 export default function Page() {
     return (
