@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
-            <Header title="" className={styles.header} variant={2} />
+            <Header title="Give a Meal" className={styles.header} variant={2} />
             <h2 className={styles.description}>We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone&apos;s day.</h2>
             <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
             <InfoCards className={styles.infoCardContainer} />
