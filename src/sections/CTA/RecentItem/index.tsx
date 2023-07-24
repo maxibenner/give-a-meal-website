@@ -10,7 +10,12 @@ export default function RecentItem({ action, businessName, time, donorName, item
     let icon = action === "newDonation" ? NewDonation : NewBusiness
     let message;
     if (action === "newDonation") {
-        message = (<><span className="body_l_bold">{donorName}</span> donated a {item} at <span className="body_l_bold">{businessName}</span></>)
+        if (donorName) {
+            message = (<><span className="body_l_bold">{donorName}</span> donated a {item} at <span className="body_l_bold">{businessName}</span></>)
+        } else {
+            message = (<>A {item} has been donated at <span className="body_l_bold">{businessName}</span></>)
+        }
+
     } else {
         message = (<><span className="body_l_bold">{businessName}</span> became a restaurant partner</>)
     }
