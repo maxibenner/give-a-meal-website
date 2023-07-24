@@ -6,10 +6,9 @@ import styles from "@/styles/document.module.css"
 export default function PrivacyNotice() {
   return (
     <>
-      <Head>
+      <Head key="cookie-policy">
         <title>Privacy Notice</title>
         <meta name="description" content="Our privacy notice" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="grid">

@@ -5,10 +5,9 @@ import styles from "@/styles/document.module.css"
 export default function Page() {
   return (
     <>
-      <Head>
+      <Head key="account-deletion">
         <title>Account deletion</title>
         <meta name="description" content="Contact us to request deletion of your account." />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className={`grid ${styles.wrapper}`}>

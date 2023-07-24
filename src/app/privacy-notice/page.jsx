@@ -6,10 +6,9 @@ import Link from "next/link";
 export default function PrivacyNotice() {
   return (
     <>
-      <Head>
+      <Head key="privacy-notice">
         <title>Privacy Notice</title>
         <meta name="description" content="Our privacy notice" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <div className="grid">

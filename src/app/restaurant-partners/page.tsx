@@ -4,10 +4,15 @@ import Badge from '@/components/badge';
 import InfoCards from './infoCards';
 import FAQ from './faq';
 import CTA from '@/components/cta';
+import Head from 'next/head';
 
 export default function Page() {
     return (
         <div className={`grid ${styles.container}`}>
+            <Head key="partner-restaurants">
+                <title>Restaurant Partners</title>
+                <meta name="description" content="With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business." />
+            </Head>
             <Header title="Restaurant Partners" className={styles.header} variant={3} />
             <h2 className={styles.description}>With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business.</h2>
             <Badge className={styles.badgeHowItWorks}>How It Works</Badge>
