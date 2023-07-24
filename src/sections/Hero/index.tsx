@@ -11,9 +11,9 @@ export default function Hero() {
             <div className={styles.container}>
                 <div className={styles.maxWidth}>
                     <div className={styles.vegContainer}>
-                        <Image src={Tomato} alt="tomato" width={332} height={484} />
-                        <Image src={Cucumber} alt="cucumber" width={377} height={430} />
-                        <Image src={Onion} alt="onion" width={285} height={420} />
+                        <Image loading="eager" src={Tomato} alt="tomato" width={332} height={484} />
+                        <Image loading="eager" src={Cucumber} alt="cucumber" width={377} height={430} />
+                        <Image loading="eager" src={Onion} alt="onion" width={285} height={420} />
                     </div>
 
                     <div className={styles.textContainer}>
