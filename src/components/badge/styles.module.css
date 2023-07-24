@@ -10,4 +10,8 @@
     background-color: var(--color-white);
 
     white-space: nowrap;
+
+    font-size: 18px;
+    line-height: 120%;
+    font-weight: 500;
 }
