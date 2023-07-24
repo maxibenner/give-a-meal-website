@@ -5,6 +5,7 @@
     margin-right: 12px;
     width: 456px;
     flex-shrink: 0;
+    height: 100%;
     border-radius: var(--border-radius);
     border: 1px solid rgba(0, 0, 0, 0.15);
 }
