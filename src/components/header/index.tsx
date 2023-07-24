@@ -8,29 +8,29 @@ export default function Header({ title, className, variant }: { title: string, c
 
     if (variant === 1) return (
         <div className={`${styles.container} ${className}`}>
-            <Image className={styles.imageOne} src={Cucumber} alt="cucumber" width={377} height={430} />
-            <Image className={styles.imageTwo} src={Tomato} alt="tomato" width={287} height={420} />
+            <Image loading="eager" className={styles.imageOne} src={Cucumber} alt="cucumber" width={377} height={430} />
+            <Image loading="eager" className={styles.imageTwo} src={Tomato} alt="tomato" width={287} height={420} />
             <h1>{title}</h1>
         </div>
     )
     else if (variant === 2) return (
         <div className={`${styles.container} ${className}`}>
-            <Image className={styles.imageTwo} src={Tomato} alt="tomato" width={285} height={420} />
-            <Image className={styles.imageOne} src={Tomato} alt="tomato" width={287} height={420} />
+            <Image loading="eager" className={styles.imageTwo} src={Tomato} alt="tomato" width={285} height={420} />
+            <Image loading="eager" className={styles.imageOne} src={Tomato} alt="tomato" width={287} height={420} />
             <h1>{title}</h1>
         </div>
     )
     else if (variant === 3) return (
         <div className={`${styles.container} ${className}`}>
-            <Image className={styles.imageOne} src={Onion} alt="onion" width={377} height={430} />
-            <Image className={styles.imageTwo} src={Onion} alt="onion" width={287} height={420} />
+            <Image loading="eager" className={styles.imageOne} src={Onion} alt="onion" width={377} height={430} />
+            <Image loading="eager" className={styles.imageTwo} src={Onion} alt="onion" width={287} height={420} />
             <h1>{title}</h1>
         </div>
     )
     else return (
         <div className={`${styles.container} ${className}`}>
-            <Image className={styles.imageOne} src={Cucumber} alt="cucumber" width={377} height={430} />
-            <Image className={styles.imageTwo} src={Cucumber} alt="cucumber" width={377} height={430} />
+            <Image loading="eager" className={styles.imageOne} src={Cucumber} alt="cucumber" width={377} height={430} />
+            <Image loading="eager" className={styles.imageTwo} src={Cucumber} alt="cucumber" width={377} height={430} />
             <h1>{title}</h1>
         </div>
     )
