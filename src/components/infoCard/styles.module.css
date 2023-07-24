@@ -52,6 +52,10 @@
     background-color: var(--color-white);
     border-radius: var(--border-radius);
 
+    font-family: Inter;
+    font-size: 24px;
+    line-height: 120%;
+
     transition: .3s;
 }
 
@@ -70,6 +74,11 @@
 
     .container {
         min-height: 340px;
+    }
+
+    .number {
+        font-size: 18px;
+        line-height: 115%;
     }
 
     .textContainer h3 {

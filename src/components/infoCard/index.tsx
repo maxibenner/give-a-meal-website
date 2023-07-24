@@ -19,7 +19,7 @@ export default function InfoCard({ title, body, number, active, onPointerEnter, 
 
     return (
         <div onPointerEnter={onPointerEnter} className={`${styles.container} ${className} ${active && styles.active}`}>
-            <h4 className={styles.number}>{number}</h4>
+            <p className={styles.number}>{number}</p>
             <div className={styles.textContainer}>
                 <h3>{title}</h3>
                 <p ref={bodyRef} className="body" style={{ height: bodyHeight }}>{body}</p>
