@@ -5,6 +5,8 @@
     width: 100%;
     overflow: hidden;
     background-color: var(--color-primary);
+    background-size: cover;
+    background-position: center;
 }
 
 .maxWidth {
@@ -68,7 +70,6 @@
 .spacer {
     width: 1%;
     height: 100vh;
-    background-color: red;
     content: "";
 }
 

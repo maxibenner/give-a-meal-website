@@ -4,11 +4,12 @@ import Image from "next/image"
 import Tomato from "@/public/assets/tomato.svg"
 import Cucumber from "@/public/assets/cucumber.svg"
 import Onion from "@/public/assets/onion.svg"
+import Background from "@/public/assets/bg.jpg"
 
 export default function Hero() {
     return (
         <>
-            <div className={styles.container}>
+            <div className={styles.container}/* style={{ backgroundImage: `url(${Background.src})` }}*/>
                 <div className={styles.maxWidth}>
                     <div className={styles.vegContainer}>
                         <Image loading="eager" src={Tomato} alt="tomato" width={332} height={484} />
