@@ -23,14 +23,14 @@ export default function Navigation() {
     <div className={styles.menuContainer}>
       <Link href="/get-a-meal" className="body">Get a Meal</Link>
       <Link href="/give-a-meal" className="body">Give a Meal</Link>
-      <Link href="/restaurant-partners" className="body">Restaurant Partners</Link>
+      <Link href="/restaurants" className="body">Restaurant Partners</Link>
       <Button href="/get-the-app">Get the App</Button >
     </div>
 
     <div className={`${styles.menuContainerMobile} ${active && styles.menuContainerMobileActive}`}>
       <Link onClick={closeMenu} href="/get-a-meal" className="body">Get a Meal</Link>
       <Link onClick={closeMenu} href="/give-a-meal" className="body">Give a Meal</Link>
-      <Link onClick={closeMenu} href="/restaurant-partners" className="body">Restaurant Partners</Link>
+      <Link onClick={closeMenu} href="/restaurants" className="body">Restaurant Partners</Link>
       <Button onClick={closeMenu} href="/get-the-app">Get the App</Button >
     </div>
 

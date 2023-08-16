@@ -105,7 +105,7 @@ export default function CTA() {
                     <div className={styles.buttonContainer}>
                         <Button className={styles.button} href="/get-a-meal">Get a Meal</Button>
                         <Button className={styles.button} href="/give-a-meal">Give a Meal</Button>
-                        <Button className={styles.button} href="/restaurant-partners">Restaurant Partners</Button>
+                        <Button className={styles.button} href="/restaurants">Restaurant Partners</Button>
                     </div>
                 </div>
                 <div className={styles.recentItemsContainer}>
