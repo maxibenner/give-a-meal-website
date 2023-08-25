@@ -42,7 +42,7 @@ export default function CTA() {
                     if ("place_id" in data) {
                         return {
                             action: "newBusiness",
-                            businessName: data.business_name.charAt(0).toUpperCase() + data.business_name.slice(1),
+                            businessName: data.business_name,
                             time: timeSince(data.created_at),
                             donorName: "",
                             item: "",
@@ -51,9 +51,9 @@ export default function CTA() {
                     } else {
                         return {
                             action: "newDonation",
-                            businessName: data.business_id.business_name.charAt(0).toUpperCase() + data.business_name.slice(1),
+                            businessName: data.business_id.business_name,
                             time: timeSince(data.created_at),
-                            donorName: data.donor_name,
+                            donorName: data.donor_name ? data.donor_name.charAt(0).toUpperCase() + data.donor_name.slice(1) : "",
                             item: data.item_id.title,
                             id: data.id + "_donation"
                         }
