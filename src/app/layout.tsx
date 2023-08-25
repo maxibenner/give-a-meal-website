@@ -1,7 +1,7 @@
 import Footer from "@/components/footer";
 import Navigation from "@/components/navigation";
 import "./globals.css";
-import Head from "next/head";
+import Script from 'next/script'
 
 export const metadata = {
   title: "Give a Meal",
@@ -16,6 +16,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Script async src="https://www.googletagmanager.com/gtag/js?id=G-HVJX7THRRW"></Script>
+      <Script>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-HVJX7THRRW');
+        `}
+      </Script>
       <body>
         <Navigation />
         <main>{children}</main>
