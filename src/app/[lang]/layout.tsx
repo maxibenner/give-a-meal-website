@@ -24,7 +24,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang={params.lang}>
-      <Script id="google-tag-manager">
+      <Script id="google-tag-manager" defer={true}>
         {`
           (function(w,d,s,l,i){
             w[l]=w[l]||[];
