@@ -3,16 +3,30 @@ import Navigation from "@/components/navigation";
 import "../globals.css";
 import Script from 'next/script'
 import { Locale, i18n } from "@/i18n-config";
-
-
-export const metadata = {
-  title: "Give a Meal",
-  description:
-    "We combat food insecurity and fostering an environment of connection and compassion in local communities.",
-};
+import { getDictionary } from "@/get-dictionary-server";
+import { Metadata } from "next";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
+export async function generateMetadata(
+  { params }: { params: { lang: Locale } }
+): Promise<Metadata> {
+
+  const { pages: { home: { meta } } } = await getDictionary(params.lang)
+
+  return {
+    title: meta.title,
+    description: meta.description,
+    openGraph: {
+      images: [{
+        url: `/assets/images/opengraph-image-${params.lang}.jpg`,
+        width: 830,
+        height: 498,
+      }]
+    }
+  }
 }
 
 export default function RootLayout({

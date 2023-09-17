@@ -9,25 +9,6 @@ import { getDictionary } from "@/get-dictionary-server"
 import Badge from "@/components/badge";
 import InfoCards from "@/components/infoCards";
 
-export async function generateMetadata(
-  { params }: { params: { lang: Locale } }
-): Promise<Metadata> {
-
-  const { pages: { home: { meta } } } = await getDictionary(params.lang)
-
-  return {
-    title: meta.title,
-    description: meta.description,
-    openGraph: {
-      images: [{
-        url: `/images/opengraph-image-${params.lang}.jpg`,
-        width: 830,
-        height: 498,
-      }]
-    }
-  }
-}
-
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 
   const { pages: { giveAMeal: { faq, howTo } } } = await getDictionary(lang)
