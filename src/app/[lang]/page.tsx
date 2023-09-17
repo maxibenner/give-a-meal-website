@@ -20,7 +20,7 @@ export async function generateMetadata(
     description: meta.description,
     openGraph: {
       images: [{
-        url: `/opengraph-image-${params.lang}.jpg`,
+        url: `/images/opengraph-image-${params.lang}.jpg`,
         width: 830,
         height: 498,
       }]
