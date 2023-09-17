@@ -18,6 +18,13 @@ export async function generateMetadata(
   return {
     title: meta.title,
     description: meta.description,
+    openGraph: {
+      images: [{
+        url: `/opengraph-image-${params.lang}`,
+        width: 830,
+        height: 498,
+      }]
+    }
   }
 }
 
