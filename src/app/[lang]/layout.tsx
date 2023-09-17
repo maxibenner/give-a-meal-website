@@ -15,10 +15,11 @@ export async function generateMetadata(
 ): Promise<Metadata> {
 
   const { pages: { home: { meta } } } = await getDictionary(params.lang)
-
+  console.log(`/assets/images/opengraph-image-${params.lang}.jpg`,)
   return {
     title: meta.title,
     description: meta.description,
+    metadataBase: new URL("https://www.give-a-meal.org"),
     openGraph: {
       images: [{
         url: `/assets/images/opengraph-image-${params.lang}.jpg`,
