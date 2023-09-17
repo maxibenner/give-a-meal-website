@@ -10,12 +10,12 @@
     border-radius: 10px;
 
     text-decoration: none;
-    background-color: var(--color-black) !important;
-    color: var(--color-white) !important;
+    background-color: var(--color-white) !important;
+    color: var(--color-black) !important;
 }
 
 .container:hover {
-    filter: invert(97%);
+    filter: invert(3%);
 }
 
 @media (max-width: 880px) {

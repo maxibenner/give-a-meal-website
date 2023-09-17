@@ -1,12 +1,17 @@
+import { Locale } from "@/i18n-config"
 import styles from "./styles.module.css"
 import Badge from "@/components/badge"
+import { getDictionary } from "@/get-dictionary-server"
 
-export default function Why() {
+export default async function Why({ lang }: { lang: Locale }) {
+
+    const d = await getDictionary(lang)
+
     return (
         <div className="grid">
             <div className={styles.textContainer}>
-                <Badge>Why We Exist</Badge>
-                <h2>We believe in combating food insecurity and fostering an environment of connection and compassion in local communities.</h2>
+                <Badge>{d.pages.home.why.title}</Badge>
+                <h2>{d.pages.home.why.sub}</h2>
             </div>
         </div>
     )

@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+}
+
+.overlay {
+  position: relative;
+  background-color: var(--color-background);
+  overflow: hidden;
+}
+
+.maxWidth {
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.infoCardContainer {
+  grid-column: 1 / 13;
+  margin-bottom: 120px;
+}
+
+
+.faqContainer {
+  grid-column: 7 / 13;
+}
+
+
+.badgeFAQ {
+  grid-column: 4 / 7;
+  justify-self: flex-end;
+}
+
+@media (max-width: 880px) {
+  .faqContainer {
+    grid-column: 1 / 13;
+  }
+
+  .badgeFAQ {
+    grid-column: 1 / 13;
+    justify-self: flex-start;
+  }
+}

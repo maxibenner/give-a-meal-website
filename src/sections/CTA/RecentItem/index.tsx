@@ -4,21 +4,41 @@ import styles from "./styles.module.css";
 import Image from "next/image";
 import NewDonation from "@/public/assets/icons/newDonation.svg"
 import NewBusiness from "@/public/assets/icons/newBusiness.svg"
+import { Locale } from "@/i18n-config";
 
-export default function RecentItem({ action, businessName, time, donorName, item }: { action: "newDonation" | "newBusiness", businessName: string, time: string, donorName: string, item: string }) {
+export default function RecentItem({ lang, action, businessName, time, donorName, item }: { lang: Locale, action: "newDonation" | "newBusiness", businessName: string, time: string, donorName: string, item: string }) {
 
     let icon = action === "newDonation" ? NewDonation : NewBusiness
     let message;
-    if (action === "newDonation") {
-        if (donorName) {
-            message = (<><span className="body_l_bold">{donorName}</span> donated a {item} at <span className="body_l_bold">{businessName}</span></>)
-        } else {
-            message = (<>A {item} has been donated at <span className="body_l_bold">{businessName}</span></>)
-        }
 
+
+    if (lang === "es") {
+        // Spanish
+        if (action === "newDonation") {
+            if (donorName) {
+                "Spindrift donado en Livite por Abby."
+                message = (<>{item} donado en <span className="body_l_bold">{businessName}</span> por <span className="body_l_bold">{donorName}</span></>)
+            } else {
+                message = (<>A {item} has been donated at <span className="body_l_bold">{businessName}</span></>)
+            }
+
+        } else {
+            message = (<><span className="body_l_bold">{businessName}</span> ahora es socio de restaurante</>)
+        }
     } else {
-        message = (<><span className="body_l_bold">{businessName}</span> became a restaurant partner</>)
+        // English
+        if (action === "newDonation") {
+            if (donorName) {
+                message = (<><span className="body_l_bold">{donorName}</span> donated a {item} at <span className="body_l_bold">{businessName}</span></>)
+            } else {
+                message = (<>A {item} has been donated at <span className="body_l_bold">{businessName}</span></>)
+            }
+
+        } else {
+            message = (<><span className="body_l_bold">{businessName}</span> became a restaurant partner</>)
+        }
     }
+
 
     return (
         <div className={styles.container}>

@@ -9,6 +9,8 @@ import Tomato from "@/public/assets/tomato.svg"
 import Cucumber from "@/public/assets/cucumber.svg"
 import Onion from "@/public/assets/onion.svg"
 import { useEffect, useState } from "react";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary-client";
 
 type recentData = {
     action: "newDonation" | "newBusiness",
@@ -19,11 +21,13 @@ type recentData = {
     id: string
 }
 
-export default function CTA() {
+export default function CTA({ lang }: { lang: Locale }) {
     const [data, setData] = useState<recentData[]>()
+    const [dictionary, setDictionary] = useState<any>(null)
 
     useEffect(() => {
         getRecentDonationsAndBusinesses()
+        getDictionary(lang).then((res) => setDictionary(res))
     }, [])
 
     async function getRecentDonationsAndBusinesses() {
@@ -42,7 +46,7 @@ export default function CTA() {
                     if ("place_id" in data) {
                         return {
                             action: "newBusiness",
-                            businessName: data.business_name,
+                            businessName: data.business_name ? data.business_name.charAt(0).toUpperCase() + data.business_name.slice(1) : "",
                             time: timeSince(data.created_at),
                             donorName: "",
                             item: "",
@@ -51,10 +55,10 @@ export default function CTA() {
                     } else {
                         return {
                             action: "newDonation",
-                            businessName: data.business_id.business_name,
+                            businessName: data.business_id.business_name ? data.business_id.business_name.charAt(0).toUpperCase() + data.business_id.business_name.slice(1) : "",
                             time: timeSince(data.created_at),
                             donorName: data.donor_name ? data.donor_name.charAt(0).toUpperCase() + data.donor_name.slice(1) : "",
-                            item: data.item_id.title,
+                            item: data.item_id.title ? data.item_id.title.charAt(0).toUpperCase() + data.item_id.title.slice(1) : "",
                             id: data.id + "_donation"
                         }
 
@@ -75,43 +79,66 @@ export default function CTA() {
 
         let interval = seconds / 31536000;
 
-        if (interval > 1) {
+        if (interval >= 2) {
             return Math.floor(interval) + " years ago";
+        } else if (interval >= 1) {
+            return "1 year ago";
         }
+
         interval = seconds / 2592000;
-        if (interval > 1) {
+        if (interval >= 2) {
             return Math.floor(interval) + " months ago";
+        } else if (interval >= 1) {
+            return "1 month ago";
         }
+
+        interval = seconds / 604800; // 7 days in seconds
+        if (interval >= 2) {
+            return Math.floor(interval) + " weeks ago";
+        } else if (interval >= 1) {
+            return "1 week ago";
+        }
+
         interval = seconds / 86400;
-        if (interval > 1) {
+        if (interval >= 2) {
             return Math.floor(interval) + " days ago";
+        } else if (interval >= 1) {
+            return "1 day ago";
         }
+
         interval = seconds / 3600;
-        if (interval > 1) {
+        if (interval >= 2) {
             return Math.floor(interval) + " hours ago";
+        } else if (interval >= 1) {
+            return "1 hour ago";
         }
+
         interval = seconds / 60;
-        if (interval > 1) {
+        if (interval >= 2) {
             return Math.floor(interval) + " minutes ago";
+        } else if (interval >= 1) {
+            return "1 minute ago";
         }
-        return "Just now"
+
+        return "Just now";
     }
 
+    if (!dictionary) return null
     return (
         <div className="grid">
             <div className={styles.container}>
                 <div className={styles.textContainer}>
-                    <h2>Become Part of the Give a Meal Community</h2>
+                    <h2>{dictionary.pages.home.cta.title}</h2>
                     <div className={styles.buttonContainer}>
-                        <Button className={styles.button} href="/get-a-meal">Get a Meal</Button>
-                        <Button className={styles.button} href="/give-a-meal">Give a Meal</Button>
-                        <Button className={styles.button} href="/restaurants">Restaurant Partners</Button>
+                        <Button className={styles.button} href={`/${lang}/get-a-meal`}>{dictionary.pages.home.cta.button_1}</Button>
+                        <Button className={styles.button} href={`/${lang}/give-a-meal`}>{dictionary.pages.home.cta.button_2}</Button>
+                        <Button className={styles.button} href={`/${lang}/restaurants`}>{dictionary.pages.home.cta.button_3}</Button>
                     </div>
                 </div>
                 <div className={styles.recentItemsContainer}>
                     {data &&
                         <Marquee>
-                            {data.map((data: any) => <RecentItem key={data.id} action={data.action} businessName={data.businessName} time={data.time} donorName={data.donorName} item={data.item} />)}
+                            {data.map((data: any) => <RecentItem lang={lang} key={data.id} action={data.action} businessName={data.businessName} time={data.time} donorName={data.donorName} item={data.item} />)}
                         </Marquee>
                     }
                 </div>

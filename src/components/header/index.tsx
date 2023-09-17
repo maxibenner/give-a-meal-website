@@ -4,7 +4,8 @@ import Tomato from '@/public/assets/tomato.svg';
 import Cucumber from '@/public/assets/cucumber.svg';
 import Onion from '@/public/assets/onion.svg';
 
-export default function Header({ title, className, variant }: { title: string, className?: string, variant?: 1 | 2 | 3 }) {
+export default async function Header({ title, className, variant }: { title: string, className?: string, variant?: 1 | 2 | 3 }) {
+
 
     if (variant === 1) return (
         <div className={`${styles.container} ${className}`}>

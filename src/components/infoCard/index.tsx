@@ -3,8 +3,7 @@
 import styles from "./styles.module.css"
 import React, { useEffect } from "react"
 
-export default function InfoCard({ title, body, number, active, onPointerEnter, className }: { title: string, body: string, number: string, active: boolean, onPointerEnter: () => void, className?: string }) {
-
+export default function InfoCard({ title, sub, number, active, onPointerEnter, className }: { title: string, sub: string, number: number, active: boolean, onPointerEnter: () => void, className?: string }) {
     const [bodyHeight, setBodyHeight] = React.useState(0)
     const bodyRef = React.useRef<HTMLParagraphElement>(null)
 
@@ -22,9 +21,8 @@ export default function InfoCard({ title, body, number, active, onPointerEnter, 
             <p className={styles.number}>{number}</p>
             <div className={styles.textContainer}>
                 <h3>{title}</h3>
-                <p ref={bodyRef} className="body" style={{ height: bodyHeight }}>{body}</p>
+                <p ref={bodyRef} className="body" style={{ height: bodyHeight }}>{sub}</p>
             </div >
-
         </div >
     )
 }

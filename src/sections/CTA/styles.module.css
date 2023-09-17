@@ -27,7 +27,8 @@
 }
 
 .button {
-    width: 184px;
+    min-width: 184px;
+    width: max-content;
 }
 
 .recentItemsContainer {

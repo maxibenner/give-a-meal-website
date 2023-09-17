@@ -1,0 +1,272 @@
+{
+    "elements": {
+        "nav": {
+            "pickUp": "Obtener Comida",
+            "donate": "Donar Comida",
+            "partners": "Restaurantes Asociados",
+            "apps": "Descargar App"
+        }
+    },
+    "pages": {
+        "home": {
+            "meta": {
+                "title": "Obtén una Comida",
+                "description": "Combatimos la inseguridad alimentaria y fomentamos un ambiente de conexión y compasión en las comunidades locales."
+            },
+            "hero": {
+                "title": "Encuentra Comidas Donadas Cerca de Ti",
+                "sub": "Junto a nuestros restaurantes asociados y sus clientes, Give a Meal ofrece comidas a quienes lo necesitan en Brookline y más allá.",
+                "cta": "Obtener Comida"
+            },
+            "why": {
+                "title": "Por Qué Existimos",
+                "sub": "Creemos en combatir la inseguridad alimentaria y fomentar un ambiente de conexión y compasión en las comunidades locales."
+            },
+            "howTo": {
+                "title": "Cómo Funciona",
+                "cards": [
+                    {
+                        "title": "Restaurantes Se Unen",
+                        "sub": "Los restaurantes interesados se inscriben como asociados."
+                    },
+                    {
+                        "title": "Clientes Donan Comidas",
+                        "sub": "Cuando comes en un restaurante asociado y pides algo para nosotros, lo añadimos a nuestra lista de comidas."
+                    },
+                    {
+                        "title": "Cualquiera Las Recoge",
+                        "sub": "Elige una comida y se preparará y reservará para ti, sin costo."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Preguntas Frecuentes",
+                "questions": [
+                    {
+                        "title": "¿Qué es Give a Meal?",
+                        "text": "Give a Meal es una iniciativa comunitaria que colabora con restaurantes locales para combatir la inseguridad alimentaria. Facilitamos donaciones de comidas de clientes a individuos que las necesitan. Nuestro objetivo es asegurar que todos en nuestra comunidad tengan acceso a una comida."
+                    },
+                    {
+                        "title": "¿Quién puede beneficiarse de Give a Meal?",
+                        "text": "¡Todos pueden beneficiarse de Give a Meal! Si enfrentas inseguridad alimentaria, puedes reservar una comida a través de nuestra app. Si puedes donar, puedes añadir una comida a tu pedido en un restaurante asociado. Los restaurantes pueden unirse a nosotros como socios para ayudar a su comunidad y potenciar su negocio."
+                    },
+                    {
+                        "title": "¿Cómo puedo apoyar a Give a Meal?",
+                        "text": "Hay varias formas de apoyar a Give a Meal. Puedes donar una comida en uno de nuestros restaurantes asociados, difundir la palabra sobre nuestro programa a amigos, familiares y restaurantes favoritos, o incluso unirte a nosotros como un restaurante asociado."
+                    },
+                    {
+                        "title": "¿Give a Meal opera en mi área?",
+                        "text": "Give a Meal se está expandiendo rápidamente en varias ciudades. Puedes revisar nuestra app para ver si estamos activos en tu área. Si aún no llegamos, ¡mantente atento! Estamos trabajando duro para llegar a tantas comunidades como sea posible."
+                    },
+                    {
+                        "title": "¿Give a Meal es una organización sin fines de lucro?",
+                        "text": "Give a Meal es una iniciativa dirigida por Fotura, un estudio de productos digitales. Aunque no somos una organización sin fines de lucro, nuestra misión se centra en el servicio comunitario y la lucha contra la inseguridad alimentaria."
+                    },
+                    {
+                        "title": "¿Cómo asegura Give a Meal que las comidas lleguen a quienes las necesitan?",
+                        "text": "Todas las comidas donadas se enumeran en nuestra app, donde pueden ser reservadas por individuos necesitados. No imponemos restricciones ni requerimos prueba de necesidad para acceder a estas comidas."
+                    }
+                ]
+            },
+            "cta": {
+                "title": "Forma Parte de la Comunidad Give a Meal",
+                "button_1": "Obtener Comida",
+                "button_2": "Donar Comida",
+                "button_3": "Restaurantes Asociados"
+            }
+        },
+        "getAMeal": {
+            "meta": {
+                "title": "Obtén una Comida",
+                "description": "Nadie debería pasar hambre. Recoge comidas nutritivas gratuitas de restaurantes locales, donadas por tu comunidad."
+            },
+            "hero": {
+                "title": "Obtener Comida",
+                "sub": "Nadie debería pasar hambre. Recoge comidas nutritivas gratuitas de restaurantes locales, donadas por tu comunidad."
+            },
+            "howTo": {
+                "title": "Cómo Funciona",
+                "cards": [
+                    {
+                        "title": "Descargar la App",
+                        "sub": "¿Necesitas una comida? Solo descarga la app Give a Meal, disponible para Android e iOS."
+                    },
+                    {
+                        "title": "Encuentra una Comida",
+                        "sub": "Revisa las comidas gratuitas disponibles cerca de ti en nuestra app y reserva una."
+                    },
+                    {
+                        "title": "Disfruta Tu Comida",
+                        "sub": "¿Listo para comer? Muestra el código QR de tu app en el restaurante y disfruta de tu comida. Es así de simple."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Preguntas Frecuentes",
+                "questions": [
+                    {
+                        "title": "¿Give a Meal es para mí?",
+                        "text": "¡Sí! No hay requisitos ni documentación necesaria para recibir una comida. Comida para aquellos en necesidad, sin preguntas."
+                    },
+                    {
+                        "title": "¿Las comidas están disponibles solo en ciertos horarios?",
+                        "text": "La disponibilidad de comidas depende del horario de operación de nuestros restaurantes asociados."
+                    },
+                    {
+                        "title": "¿Puedo reservar comidas para mi familia o amigos?",
+                        "text": "Sí, puedes reservar hasta tres comidas a la vez."
+                    },
+                    {
+                        "title": "¿Tengo que comer mi comida en el restaurante?",
+                        "text": "No, puedes comer donde quieras. Si quieres llevar tu comida, asegúrate de decirlo al restaurante cuando pidas tu comida."
+                    },
+                    {
+                        "title": "¿Qué pasa si no tengo un smartphone?",
+                        "text": "Actualmente, se necesita un smartphone para reservar y recoger comidas. Estamos explorando otras opciones para aquellos sin acceso a smartphones y actualizaremos a nuestra comunidad cuando estén disponibles."
+                    },
+                    {
+                        "title": "Tengo restricciones dietéticas. ¿Puedo obtener comidas?",
+                        "text": "Sí, nuestros restaurantes asociados a menudo ofrecen varias opciones de comidas. Al navegar por la app, puedes ver lo que incluye cada comida. Además, informa a los restaurantes sobre cualquier alergia o restricción cuando recojas la comida."
+                    }
+                ]
+            },
+            "cta": {
+                "title": "Obtén una Comida Hoy",
+                "sub": "Descarga nuestra app gratuita para ver la lista de comidas y reservar una para recoger.",
+                "button": "Descargar App"
+            }
+        },
+        "giveAMeal": {
+            "meta": {
+                "title": "Donar",
+                "description": "Nos asociamos con restaurantes locales para permitir que miembros generosos de la comunidad donen comidas. Un simple gesto con el poder de cambiar el día de alguien."
+            },
+            "hero": {
+                "title": "Donar Comida",
+                "sub": "Nos asociamos con restaurantes locales para permitir que miembros generosos de la comunidad donen comidas. Un simple gesto con el poder de cambiar el día de alguien."
+            },
+            "howTo": {
+                "title": "Cómo Funciona",
+                "cards": [
+                    {
+                        "title": "Visita un Restaurante Asociado",
+                        "sub": "¿Listo para hacer la diferencia? Visita uno de nuestros restaurantes asociados y elige la comida que te gustaría compartir."
+                    },
+                    {
+                        "title": "Donar una Comida",
+                        "sub": "Al hacer tu pedido, pide al restaurante que lo añada a Give a Meal."
+                    },
+                    {
+                        "title": "Entregamos Tu Generosidad",
+                        "sub": "Tu comida donada se lista en nuestra app, lista para ser reclamada y saboreada por alguien que enfrenta inseguridad alimentaria."
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Preguntas Frecuentes",
+                "questions": [
+                    {
+                        "title": "¿Cómo sé que mi comida donada llega a alguien en necesidad?",
+                        "text": "En Give a Meal, nos aseguramos de que todas las comidas donadas se enumeren en nuestra app para individuos que enfrentan inseguridad alimentaria. Puede que no veas las sonrisas, pero ten la seguridad de que tu generosidad está marcando la diferencia."
+                    },
+                    {
+                        "title": "¿Cuál es el costo de donar una comida?",
+                        "text": "El costo de donar una comida depende del restaurante y de la comida en sí. El precio suele ser equivalente al costo de la comida en el menú del restaurante."
+                    },
+                    {
+                        "title": "¿Puedo elegir qué comida dono?",
+                        "text": "¡Absolutamente! Al ordenar en nuestros restaurantes asociados, puedes elegir cualquier comida para donar."
+                    },
+                    {
+                        "title": "¿Puedo donar más de una comida a la vez?",
+                        "text": "Sí, no hay límite para la generosidad. Puedes donar tantas comidas como desees."
+                    },
+                    {
+                        "title": "¿Puedo donar una comida de cualquier restaurante?",
+                        "text": "Actualmente, las donaciones solo pueden hacerse en nuestros restaurantes asociados. Si tu restaurante favorito no está en la lista, ¿por qué no sugerir que se unan a nosotros?"
+                    },
+                    {
+                        "title": "¿Recibiré una confirmación de mi donación?",
+                        "text": "No por el momento. Sin embargo, puedes proporcionar tu nombre cuando dones y luego encontrar tu donación en la app Give a Meal."
+                    }
+                ]
+            }
+        },
+        "restaurantPartners": {
+            "meta": {
+                "title": "Restaurantes Asociados",
+                "description": "Con 'Give a Meal', tu restaurante puede unirse a una misión para combatir la inseguridad alimentaria, mientras construye una comunidad más fuerte y potencia tu negocio."
+            },
+            "hero": {
+                "title": "Restaurantes Asociados",
+                "sub": "Con Give a Meal, tu restaurante puede unirse a una misión para combatir la inseguridad alimentaria, mientras construye una comunidad más fuerte y potencia tu negocio."
+            },
+            "howTo": {
+                "title": "Cómo Funciona",
+                "cards": [
+                    {
+                        "title": "Registra Tu Restaurante",
+                        "sub": "¿Listo para unirte a nuestra misión? Descarga la app Give a Meal para Negocios y registra tu restaurante para comenzar."
+                    },
+                    {
+                        "title": "Acepta Donaciones de Comidas",
+                        "sub": "Cuando los clientes donen una comida, añádela a la lista de Give a Meal usando la app Give a Meal para Negocios."
+                    },
+                    {
+                        "title": "Sirve Comidas Donadas",
+                        "sub": "Cuando alguien llegue con su código QR de Give a Meal, prepara la comida y entrégala. ¡Acabas de alegrar el día de alguien!"
+                    }
+                ]
+            },
+            "faq": {
+                "title": "Preguntas Frecuentes",
+                "questions": [
+                    {
+                        "title": "¿Hay un costo para asociarse con Give a Meal?",
+                        "text": "No, no hay ningún cargo por convertirse en un socio de Give a Meal. Creemos en trabajar juntos para beneficiar a la comunidad."
+                    },
+                    {
+                        "title": "¿Qué tipo de restaurantes pueden unirse a Give a Meal?",
+                        "text": "¡Damos la bienvenida a todo tipo de restaurantes! Desde alta cocina hasta comida rápida, siempre que sirvas comida, puedes ayudar a servir a la comunidad."
+                    },
+                    {
+                        "title": "¿Cómo se promocionará mi restaurante?",
+                        "text": "Tu restaurante aparecerá en la lista de comidas, en alguna publicación ocasional en redes sociales, así como en el deslizador de donaciones recientes en la página principal."
+                    },
+                    {
+                        "title": "¿Los clientes pueden donar cualquier comida?",
+                        "text": "¡Esa es la idea! Sin embargo, al final decides qué ítems pueden ser donados."
+                    },
+                    {
+                        "title": "¿Qué hacemos si alguien viene a reclamar una comida?",
+                        "text": "Cuando alguien viene a reclamar una comida donada, mostrará un código QR de la app Give a Meal. Simplemente escanea el código usando la app Give a Meal para Negocios y proporciona la comida."
+                    }
+                ]
+            },
+            "cta": {
+                "title": "Registra tu restaurante hoy",
+                "sub": "Descarga nuestra app gratuita Give a Meal para Negocios para registrar tu restaurante y comenzar a aceptar donaciones.",
+                "button": "Descargar App"
+            }
+        },
+        "getTheApp": {
+            "meta": {
+                "title": "Descarga la App",
+                "description": "Descarga nuestras apps gratuitas para ver la lista de comidas o para gestionar tus operaciones de 'Give a Meal'."
+            },
+            "hero": {
+                "title": "Descargar la App"
+            },
+            "apps": [
+                {
+                    "title": "Give a Meal",
+                    "sub": "Para personas buscando comidas. Encuentra comidas cerca de ti y resérvalas para recogerlas gratis."
+                },
+                {
+                    "title": "Give a Meal Negocios",
+                    "sub": "Para restaurantes asociados. Gestiona las operaciones de Give a Meal, añade y canjea donaciones."
+                }
+            ]
+        }
+    }
+}
