@@ -10,6 +10,7 @@ import USFlag from "@/public/assets/images/flagUS.svg"
 import { getDictionary } from "@/get-dictionary-client"
 import { Locale } from "@/i18n-config";
 import LinkWithHover from "../linkWithHover";
+import localeLink from "@/utils/localeLink";
 
 export default function Navigation({ lang }: { lang: Locale }) {
   const [active, setActive] = React.useState(false)
@@ -27,14 +28,25 @@ export default function Navigation({ lang }: { lang: Locale }) {
   }
 
   function toggleLang() {
-    // Replace lang path
-    const newLang = window.location.pathname.includes("en") ? "es" : "en"
-    window.location.pathname = window.location.pathname.replace(lang, newLang)
+    const currentPath = window.location.pathname;
+    const newLang = currentPath.includes("/es") ? "en" : "es";
+
+    let newPath;
+    if (newLang === "en") {
+      // Remove the existing language prefix
+      newPath = currentPath.replace("/es", "");
+    } else {
+      // Prepend the new language to the current path
+      newPath = `/${newLang}${currentPath}`;
+    }
+
+    window.location.pathname = newPath;
   }
+
 
   if (!dictionary) return null
   return <nav className={styles.container}>
-    <Link className={styles.wordmark} href={`/${lang}`}>Give a Meal</Link>
+    <Link className={styles.wordmark} href={localeLink("/", lang)}>Give a Meal</Link>
 
     <div className={styles.menuWrapperMobile}>
       <div className={styles.buttonBox} onClick={toggleLang}>
@@ -50,19 +62,19 @@ export default function Navigation({ lang }: { lang: Locale }) {
       </div>
       <div className={styles.contentBox}>
         <div className={styles.linkContainer}>
-          <LinkWithHover href={`/${lang}/get-a-meal`} className="body">{dictionary.elements.nav.pickUp}</LinkWithHover>
-          <LinkWithHover href={`/${lang}/give-a-meal`} className="body">{dictionary.elements.nav.donate}</LinkWithHover>
-          <LinkWithHover href={`/${lang}/restaurants`} className="body">{dictionary.elements.nav.partners}</LinkWithHover>
+          <LinkWithHover href={localeLink("/get-a-meal", lang)} className="body">{dictionary.elements.nav.pickUp}</LinkWithHover>
+          <LinkWithHover href={localeLink("/give-a-meal", lang)} className="body">{dictionary.elements.nav.donate}</LinkWithHover>
+          <LinkWithHover href={localeLink("/restaurants", lang)} className="body">{dictionary.elements.nav.partners}</LinkWithHover>
         </div>
-        <Button href={`/${lang}/get-the-app`}>{dictionary.elements.nav.apps}</Button >
+        <Button href={localeLink("/get-the-app", lang)}>{dictionary.elements.nav.apps}</Button >
       </div>
     </div>
 
     <div className={`${styles.menuContainerMobile} ${active && styles.menuContainerMobileActive}`}>
-      <LinkWithHover onClick={closeMenu} href={`/${lang}/get-a-meal`} className="body">{dictionary.elements.nav.pickUp}</LinkWithHover>
-      <LinkWithHover onClick={closeMenu} href={`/${lang}/give-a-meal`} className="body">{dictionary.elements.nav.donate}</LinkWithHover>
-      <LinkWithHover onClick={closeMenu} href={`/${lang}/restaurants`} className="body">{dictionary.elements.nav.partners}</LinkWithHover>
-      <Button onClick={closeMenu} href={`/${lang}/get-the-app`}>{dictionary.elements.nav.apps}</Button >
+      <LinkWithHover onClick={closeMenu} href={localeLink("/get-a-meal", lang)} className="body">{dictionary.elements.nav.pickUp}</LinkWithHover>
+      <LinkWithHover onClick={closeMenu} href={localeLink("/give-a-meal", lang)} className="body">{dictionary.elements.nav.donate}</LinkWithHover>
+      <LinkWithHover onClick={closeMenu} href={localeLink("/restaurants", lang)} className="body">{dictionary.elements.nav.partners}</LinkWithHover>
+      <Button onClick={closeMenu} href={localeLink("/get-the-app", lang)}>{dictionary.elements.nav.apps}</Button >
     </div>
 
 

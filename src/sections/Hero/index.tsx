@@ -6,6 +6,7 @@ import Cucumber from "@/public/assets/cucumber.svg"
 import Onion from "@/public/assets/onion.svg"
 import { getDictionary } from "@/get-dictionary-server"
 import { Locale } from "@/i18n-config"
+import localeLink from "@/utils/localeLink"
 
 
 export default async function Hero({ lang }: { lang: Locale }) {
@@ -25,7 +26,7 @@ export default async function Hero({ lang }: { lang: Locale }) {
                     <div className={styles.textContainer}>
                         <h1>{title}</h1>
                         <p className="body_l">{sub}</p>
-                        <Button href={`${lang}/get-a-meal`}>{cta}</Button>
+                        <Button href={localeLink("/get-a-meal", lang)}>{cta}</Button>
                     </div>
                 </div>
 

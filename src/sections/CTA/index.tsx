@@ -11,6 +11,7 @@ import Onion from "@/public/assets/onion.svg"
 import { useEffect, useState } from "react";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary-client";
+import localeLink from "@/utils/localeLink";
 
 type recentData = {
     action: "newDonation" | "newBusiness",
@@ -130,9 +131,9 @@ export default function CTA({ lang }: { lang: Locale }) {
                 <div className={styles.textContainer}>
                     <h2>{dictionary.pages.home.cta.title}</h2>
                     <div className={styles.buttonContainer}>
-                        <Button className={styles.button} href={`/${lang}/get-a-meal`}>{dictionary.pages.home.cta.button_1}</Button>
-                        <Button className={styles.button} href={`/${lang}/give-a-meal`}>{dictionary.pages.home.cta.button_2}</Button>
-                        <Button className={styles.button} href={`/${lang}/restaurants`}>{dictionary.pages.home.cta.button_3}</Button>
+                        <Button className={styles.button} href={localeLink("/get-a-meal", lang)}>{dictionary.pages.home.cta.button_1}</Button>
+                        <Button className={styles.button} href={localeLink("/give-a-meal", lang)}>{dictionary.pages.home.cta.button_2}</Button>
+                        <Button className={styles.button} href={localeLink("/restaurants", lang)}>{dictionary.pages.home.cta.button_3}</Button>
                     </div>
                 </div>
                 <div className={styles.recentItemsContainer}>
