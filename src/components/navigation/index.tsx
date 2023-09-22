@@ -4,7 +4,6 @@ import Button from "../button";
 import styles from "./styles.module.css";
 import Link from "next/link";
 import React, { useEffect } from "react"
-import Image from "next/image"
 import { getDictionary } from "@/get-dictionary-client"
 import { Locale } from "@/i18n-config";
 import LinkWithHover from "../linkWithHover";
