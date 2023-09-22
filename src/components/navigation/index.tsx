@@ -5,12 +5,11 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import React, { useEffect } from "react"
 import Image from "next/image"
-import SpainFlag from "@/public/assets/images/flagES.svg"
-import USFlag from "@/public/assets/images/flagUS.svg"
 import { getDictionary } from "@/get-dictionary-client"
 import { Locale } from "@/i18n-config";
 import LinkWithHover from "../linkWithHover";
 import localeLink from "@/utils/localeLink";
+import LocaleSwitcher from "../localeSwitcher/LocaleSwitcher";
 
 export default function Navigation({ lang }: { lang: Locale }) {
   const [active, setActive] = React.useState(false)
@@ -34,10 +33,10 @@ export default function Navigation({ lang }: { lang: Locale }) {
     let newPath;
     if (newLang === "en") {
       // Remove the existing language prefix
-      newPath = currentPath.replace("/es", "");
+      newPath = currentPath.replace("/es", "/en");
     } else {
       // Prepend the new language to the current path
-      newPath = `/${newLang}${currentPath}`;
+      newPath = currentPath.replace("/en", "/es");
     }
 
     window.location.pathname = newPath;
@@ -49,17 +48,13 @@ export default function Navigation({ lang }: { lang: Locale }) {
     <Link className={styles.wordmark} href={localeLink("/", lang)}>Give a Meal</Link>
 
     <div className={styles.menuWrapperMobile}>
-      <div className={styles.buttonBox} onClick={toggleLang}>
-        <Image height={18} src={lang === "en" ? SpainFlag : USFlag} alt={lang === "en" ? "us flag" : "spain flag"} />
-      </div>
+      <LocaleSwitcher className={styles.buttonBox} />
       <button onClick={() => setActive((prev) => !prev)} className={`${styles.navButton} ${active && styles.navButtonActive}`}><p>&#9776;</p></button>
     </div>
 
 
     <div className={styles.menuContainerDesktop}>
-      <div className={styles.buttonBox} onClick={toggleLang}>
-        <Image height={18} src={lang === "en" ? SpainFlag : USFlag} alt={lang === "en" ? "us flag" : "spain flag"} />
-      </div>
+      <LocaleSwitcher className={styles.buttonBox} />
       <div className={styles.contentBox}>
         <div className={styles.linkContainer}>
           <LinkWithHover href={localeLink("/get-a-meal", lang)} className="body">{dictionary.elements.nav.pickUp}</LinkWithHover>

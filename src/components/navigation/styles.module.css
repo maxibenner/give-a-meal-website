@@ -46,21 +46,10 @@
 
 .buttonBox {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
-    min-height: 50px;
-    min-width: 50px;
-    cursor: pointer;
     gap: 8px;
-    background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-regular);
-    border: 8px solid var(--color-white);
-}
-
-.buttonBox:hover {
-    background-color: rgb(245, 245, 245);
+    overflow: hidden;
 }
 
 .contentBox {

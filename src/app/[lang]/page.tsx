@@ -11,8 +11,6 @@ import InfoCards from "@/components/infoCards";
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 
-  console.log(lang)
-
   const { pages: { giveAMeal: { faq, howTo } } } = await getDictionary(lang)
 
   return (
