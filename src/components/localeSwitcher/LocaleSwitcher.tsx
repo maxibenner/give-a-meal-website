@@ -22,7 +22,7 @@ export default function LocaleSwitcher({ className }: { className?: string }) {
         <>
             {i18n.locales.map((locale) => {
                 return (
-                    <Link style={{ display: nextLocale === locale ? "block" : "none" }} href={redirectedPathName(nextLocale!)}>
+                    <Link key={locale} style={{ display: nextLocale === locale ? "block" : "none" }} href={redirectedPathName(nextLocale!)}>
                         <div className={`${styles.wrapper} ${className}`}>
                             <div className={styles.container}>
                                 <Image height={18} width={27} src={require(`@/public/assets/flags/${nextLocale}.svg`)} alt={`${nextLocale} flag`} />
