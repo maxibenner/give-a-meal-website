@@ -8,6 +8,7 @@ import { Metadata } from 'next'
 import { getDictionary } from '@/get-dictionary-server';
 import { Locale } from '@/i18n-config';
 import localeLink from '@/utils/localeLink';
+import GetTheApp from '@/components/getTheApp/GetTheApp';
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }
@@ -27,6 +28,7 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
 
     return (
         <div className={`grid ${styles.container}`}>
+            <GetTheApp lang={lang} />
             <Header title={hero.title} className={styles.header} variant={3} />
             <h2 className={styles.description}>{hero.sub}</h2>
             <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>
