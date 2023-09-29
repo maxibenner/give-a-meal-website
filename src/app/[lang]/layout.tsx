@@ -21,8 +21,7 @@ export async function generateMetadata(
     metadataBase: new URL("https://www.give-a-meal.org"),
     openGraph: {
       images: [{
-        // url: `/assets/images/opengraph-image-${params.lang}.jpg`,
-        url: `@/public/assets/images/opengraph-image-${params.lang}.jpg`,
+        url: `./opengraph-image-${params.lang}.jpg`,
         width: 830,
         height: 498,
       }]
