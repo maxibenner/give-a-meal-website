@@ -18,14 +18,14 @@ export async function generateMetadata(
   return {
     title: meta.title,
     description: meta.description,
-    // metadataBase: new URL("https://www.give-a-meal.org"),
-    // openGraph: {
-    //   images: [{
-    //     url: `/assets/images/opengraph-image-${params.lang}.jpg`,
-    //     width: 830,
-    //     height: 498,
-    //   }]
-    // }
+    metadataBase: new URL("https://www.give-a-meal.org"),
+    openGraph: {
+      images: [{
+        url: `/assets/images/opengraph-image-${params.lang}.jpg`,
+        width: 830,
+        height: 498,
+      }]
+    }
   }
 }
 
