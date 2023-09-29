@@ -2,7 +2,7 @@ import { Locale } from "@/i18n-config";
 import styles from "./styles.module.css";
 import localeLink from "@/utils/localeLink";
 
-export default function Footer({ lang, style }: { lang: Locale, style: React.CSSProperties }) {
+export default function Footer({ lang, style }: { lang: Locale, style?: React.CSSProperties }) {
     return <div className={styles.footerBg}>
         <footer className={styles.footer} style={style}>
             <div>
