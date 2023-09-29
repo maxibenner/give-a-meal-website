@@ -58,7 +58,7 @@
     height: fit-content;
     min-height: 52px;
     padding: 8px;
-    gap: 36px;
+    gap: 16px;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-regular);
