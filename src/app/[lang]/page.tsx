@@ -7,7 +7,7 @@ import { Locale } from "@/i18n-config"
 import { getDictionary } from "@/get-dictionary-server"
 import Badge from "@/components/badge";
 import InfoCards from "@/components/infoCards";
-import GetTheApp from "@/components/getTheApp/GetTheApp";
+import Footer from "@/components/footer";
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 
@@ -15,7 +15,6 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
   return (
     <div className={styles.container}>
-      <GetTheApp lang={lang} />
       <Hero lang={lang} />
       <div className={styles.overlay}>
         <div className={styles.maxWidth}>
@@ -31,6 +30,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
           <CTA lang={lang} />
         </div>
       </div>
+      <Footer lang={lang} />
     </div>
   );
 }

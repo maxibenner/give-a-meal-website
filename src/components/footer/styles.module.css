@@ -16,7 +16,7 @@
 
     background-color: var(--color-white);
     border-radius: var(--border-radius);
-    /* box-shadow: var(--shadow-regular); */
+    box-shadow: var(--shadow-regular);
 }
 
 .footer>div {

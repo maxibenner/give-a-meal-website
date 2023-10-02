@@ -7,8 +7,7 @@
     left: 0;
     padding: 16px 24px;
     background-color: var(--color-white);
-    /* border-top-left-radius: var(--border-radius);
-    border-top-right-radius: var(--border-radius); */
+    background-color: var(--color-primary);
     width: 100%;
 }
 

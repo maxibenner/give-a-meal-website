@@ -48,7 +48,7 @@ export default function RootLayout({
         </noscript>
         <Navigation lang={params.lang} />
         <main>{children}</main>
-        <Footer lang={params.lang} />
+        {/* <Footer lang={params.lang} /> */}
       </body>
     </html>
   );

@@ -41,6 +41,7 @@
     .description {
         grid-column: 1 / 13;
     }
+
     .badgeFAQ {
         grid-column: 1 / 13;
         justify-self: flex-start;
@@ -48,5 +49,13 @@
 
     .faqContainer {
         grid-column: 1 / 13;
+    }
+
+
+}
+
+@media (max-width: 1050px) {
+    .ctaAdjustements {
+        height: 70px;
     }
 }
