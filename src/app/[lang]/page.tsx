@@ -11,7 +11,7 @@ import Footer from "@/components/footer";
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 
-  const { pages: { giveAMeal: { faq, howTo } } } = await getDictionary(lang)
+  const { pages: { home: { faq, howTo } } } = await getDictionary(lang)
 
   return (
     <div className={styles.container}>
