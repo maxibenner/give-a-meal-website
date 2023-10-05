@@ -1,11 +1,11 @@
 'use client'
 
-import InfoCard from "@/components/infoCard"
-import styles from "./styles.module.css"
 import Badge from "@/components/badge"
-import React, { useEffect } from "react"
-import { Locale } from "@/i18n-config"
+import InfoCard from "@/components/infoCard"
 import { getDictionary } from "@/get-dictionary-client"
+import { Locale } from "@/i18n-config"
+import React, { useEffect } from "react"
+import styles from "./styles.module.css"
 
 export default function How({ lang }: { lang: Locale }) {
     const [activeIndex, setActiveIndex] = React.useState(0)

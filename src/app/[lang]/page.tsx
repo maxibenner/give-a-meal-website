@@ -8,6 +8,18 @@ import { getDictionary } from "@/get-dictionary-server"
 import Badge from "@/components/badge";
 import InfoCards from "@/components/infoCards";
 import Footer from "@/components/footer";
+import { Metadata } from "next";
+
+export async function generateMetadata(
+  { params }: { params: { lang: Locale } }
+): Promise<Metadata> {
+
+  const { pages: { home: { meta } } } = await getDictionary(params.lang)
+  return {
+    title: meta.title,
+    description: meta.description,
+  }
+}
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 

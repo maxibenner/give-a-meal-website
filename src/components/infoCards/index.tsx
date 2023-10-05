@@ -1,8 +1,8 @@
 'use client'
 
 import InfoCard from "@/components/infoCard"
-import styles from "./styles.module.css"
 import React from "react"
+import styles from "./styles.module.css"
 
 export default function InfoCards({ items, className }: { items: { title: string, sub: string }[], className?: string }) {
     const [activeIndex, setActiveIndex] = React.useState(0)

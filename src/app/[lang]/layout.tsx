@@ -1,24 +1,10 @@
-import Footer from "@/components/footer";
 import Navigation from "@/components/navigation";
-import "../globals.css";
-import Script from 'next/script'
 import { Locale, i18n } from "@/i18n-config";
-import { getDictionary } from "@/get-dictionary-server";
-import { Metadata } from "next";
+import Script from 'next/script';
+import "../globals.css";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
-}
-
-export async function generateMetadata(
-  { params }: { params: { lang: Locale } }
-): Promise<Metadata> {
-
-  const { pages: { home: { meta } } } = await getDictionary(params.lang)
-  return {
-    title: meta.title,
-    description: meta.description,
-  }
 }
 
 export default function RootLayout({
