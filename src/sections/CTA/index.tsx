@@ -12,6 +12,7 @@ import { useEffect, useState } from "react";
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary-client";
 import localeLink from "@/utils/localeLink";
+import fillTemplate from "@/utils/fillTemplate";
 
 type recentData = {
     action: "newDonation" | "newBusiness",
@@ -27,9 +28,12 @@ export default function CTA({ lang }: { lang: Locale }) {
     const [dictionary, setDictionary] = useState<any>(null)
 
     useEffect(() => {
-        getRecentDonationsAndBusinesses()
         getDictionary(lang).then((res) => setDictionary(res))
     }, [])
+
+    useEffect(() => {
+        if (dictionary) getRecentDonationsAndBusinesses()
+    }, [dictionary])
 
     async function getRecentDonationsAndBusinesses() {
         try {
@@ -48,7 +52,7 @@ export default function CTA({ lang }: { lang: Locale }) {
                         return {
                             action: "newBusiness",
                             businessName: data.business_name ? data.business_name.charAt(0).toUpperCase() + data.business_name.slice(1) : "",
-                            time: timeSince(data.created_at),
+                            time: timeSince(data.created_at, dictionary),
                             donorName: "",
                             item: "",
                             id: data.id + "_business"
@@ -57,7 +61,7 @@ export default function CTA({ lang }: { lang: Locale }) {
                         return {
                             action: "newDonation",
                             businessName: data.business_id.business_name ? data.business_id.business_name.charAt(0).toUpperCase() + data.business_id.business_name.slice(1) : "",
-                            time: timeSince(data.created_at),
+                            time: timeSince(data.created_at, dictionary),
                             donorName: data.donor_name ? data.donor_name.charAt(0).toUpperCase() + data.donor_name.slice(1) : "",
                             item: data.item_id.title ? data.item_id.title.charAt(0).toUpperCase() + data.item_id.title.slice(1) : "",
                             id: data.id + "_donation"
@@ -75,53 +79,53 @@ export default function CTA({ lang }: { lang: Locale }) {
     }
 
     // Function to turn date string into formatted time (30 minutes ago, 1 hour ago, etc.)
-    function timeSince(date: string) {
+    function timeSince(date: string, dictionary: any) {
         const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
 
         let interval = seconds / 31536000;
 
         if (interval >= 2) {
-            return Math.floor(interval) + " years ago";
+            return fillTemplate(dictionary.pages.home.cta.time.years, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 year ago";
+            return dictionary.pages.home.cta.time.year
         }
 
         interval = seconds / 2592000;
         if (interval >= 2) {
-            return Math.floor(interval) + " months ago";
+            return fillTemplate(dictionary.pages.home.cta.time.months, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 month ago";
+            return dictionary.pages.home.cta.time.month
         }
 
         interval = seconds / 604800; // 7 days in seconds
         if (interval >= 2) {
-            return Math.floor(interval) + " weeks ago";
+            return fillTemplate(dictionary.pages.home.cta.time.weeks, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 week ago";
+            return dictionary.pages.home.cta.time.week
         }
 
         interval = seconds / 86400;
         if (interval >= 2) {
-            return Math.floor(interval) + " days ago";
+            return fillTemplate(dictionary.pages.home.cta.time.days, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 day ago";
+            return dictionary.pages.home.cta.time.day
         }
 
         interval = seconds / 3600;
         if (interval >= 2) {
-            return Math.floor(interval) + " hours ago";
+            return fillTemplate(dictionary.pages.home.cta.time.hours, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 hour ago";
+            return dictionary.pages.home.cta.time.hour
         }
 
         interval = seconds / 60;
         if (interval >= 2) {
-            return Math.floor(interval) + " minutes ago";
+            return fillTemplate(dictionary.pages.home.cta.time.minutes, Math.floor(interval))
         } else if (interval >= 1) {
-            return "1 minute ago";
+            return dictionary.pages.home.cta.time.minute
         }
 
-        return "Just now";
+        return dictionary.pages.home.cta.time.recently
     }
 
     if (!dictionary) return null
@@ -152,4 +156,4 @@ export default function CTA({ lang }: { lang: Locale }) {
             </div>
         </div>
     )
-}
+} 

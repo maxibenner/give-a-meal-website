@@ -72,7 +72,22 @@
                 "title": "Become Part of the Give a Meal Community",
                 "button_1": "Get a Meal",
                 "button_2": "Give a Meal",
-                "button_3": "Restaurant Partners"
+                "button_3": "Restaurant Partners",
+                "time": {
+                    "year": "1 year ago",
+                    "years": "%d years ago",
+                    "month": "1 month ago",
+                    "months": "%d months ago",
+                    "week": "1 week ago",
+                    "weeks": "%d weeks ago",
+                    "day": "1 day ago",
+                    "days": "%d days ago",
+                    "hour": "1 hour ago",
+                    "hours": "%d hours ago",
+                    "minute": "1 minute ago",
+                    "minutes": "%d minutes ago",
+                    "recently": "Just now"
+                }
             }
         },
         "getAMeal": {

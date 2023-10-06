@@ -72,7 +72,20 @@
                 "title": "Forma Parte de la Comunidad Give a Meal",
                 "button_1": "Obtener Comida",
                 "button_2": "Donar Comida",
-                "button_3": "Restaurantes Asociados"
+                "button_3": "Restaurantes Asociados",
+                "time": {
+                    "year": "Hace 1 año",
+                    "years": "Hace %d años",
+                    "month": "Hace 1 mes",
+                    "months": "Hace %d meses",
+                    "day": "Hace 1 día",
+                    "days": "Hace %d días",
+                    "hour": "Hace 1 hora",
+                    "hours": "Hace %d horas",
+                    "minute": "Hace 1 minuto",
+                    "minutes": "Hace %d minutos",
+                    "recently": "Ahora mismo"
+                }
             }
         },
         "getAMeal": {
