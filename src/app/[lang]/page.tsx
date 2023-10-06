@@ -9,7 +9,6 @@ import Badge from "@/components/badge";
 import InfoCards from "@/components/infoCards";
 import Footer from "@/components/footer";
 import { Metadata } from "next";
-import { FAQPage, WithContext } from 'schema-dts'
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } }

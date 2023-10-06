@@ -16,23 +16,52 @@
     display: flex;
 }
 
-.navButton {
-    display: none;
+.drawer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.navButtonOpen,
+.navButtonClose {
     user-select: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     cursor: pointer;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
-    /* box-shadow: var(--shadow-regular); */
     height: fit-content;
     width: 50px;
     height: 50px;
-
 }
 
-.navButton>p {
+.navButtonOpen>p,
+.navButtonClose>p {
     padding-bottom: 2px;
     font-size: 30px;
+    width: fit-content;
+    height: fit-content;
 }
+
+.navButtonClose {
+    position: fixed;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+}
+
+.navButtonClose>p {
+    font-size: 24px;
+}
+
+
+
+
 
 .menuContainerDesktop {
     display: flex;
@@ -65,12 +94,11 @@
 }
 
 .menuContainerMobile {
-    display: none;
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-regular);
-    height: fit-content;
     padding: 8px 8px 8px 24px;
+    height: 100%;
 }
 
 .wordmark {
@@ -101,6 +129,7 @@
         z-index: 2;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
     }
+
     .navButton:hover {
         background-color: rgb(245, 245, 245);
     }
@@ -119,23 +148,23 @@
         gap: 12px;
     }
 
+    .drawer:target {
+        opacity: 1;
+        pointer-events: all;
+    }
+
     .menuContainerMobile {
-        position: fixed;
         display: flex;
         align-items: center;
         gap: 36px;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        top: 0;
-        right: 0;
-        width: 100%;
-        height: 100vh;
         padding: 0 48px 48px 48px;
         transform-origin: calc(100% - 18px) 18px;
         transform: scale(0);
         border-radius: 48px;
-        z-index: 1;
+        width: 100%;
         transition: .3s;
     }
 
@@ -145,12 +174,12 @@
         transition: .3s;
     }
 
-    .menuContainerMobileActive {
+    .drawer:target>.menuContainerMobile {
         transform: scale(1);
         border-radius: 0;
     }
 
-    .menuContainerMobileActive a {
+    .drawer:target>.menuContainerMobile a {
         opacity: 1
     }
 
