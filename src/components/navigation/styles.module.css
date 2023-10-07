@@ -24,10 +24,21 @@
     height: 100vh;
     opacity: 0;
     pointer-events: none;
+    transition: opacity 0.3s ease; /* Added transition for opacity */
 }
 
-.navButtonOpen,
-.navButtonClose {
+.drawer>.menuContainerMobile {
+    transform: scale(0);
+    border-radius: 0;
+    transition: transform 0.3s ease; /* Ensure transition is defined here */
+}
+
+.drawer>.menuContainerMobile a {
+    opacity: 0;
+    transition: opacity 0.3s ease; /* Ensure transition is defined here */
+}
+
+.navButton {
     user-select: none;
     display: flex;
     justify-content: center;
@@ -38,30 +49,20 @@
     height: fit-content;
     width: 50px;
     height: 50px;
+    z-index: 3;
 }
 
-.navButtonOpen>p,
-.navButtonClose>p {
+.navButton>p {
     padding-bottom: 2px;
     font-size: 30px;
     width: fit-content;
     height: fit-content;
 }
 
-.navButtonClose {
-    position: fixed;
-    top: 12px;
-    right: 12px;
-    z-index: 2;
+.closeButton {
+    padding-top: 2px;
+    font-size: 24px !important;
 }
-
-.navButtonClose>p {
-    font-size: 24px;
-}
-
-
-
-
 
 .menuContainerDesktop {
     display: flex;
@@ -69,8 +70,9 @@
     gap: 12px;
 }
 
-.menuWrapperMobile {
-    display: none;
+.menuWrapper {
+    display: flex;
+    gap: 12px;
 }
 
 .buttonBox {
@@ -111,7 +113,23 @@
     display: none;
 }
 
+.desktop {
+    display: flex;
+}
+
+.mobile {
+    display: none;
+}
+
 @media (max-width: 1050px) {
+    .desktop {
+        display: none;
+    }
+
+    .mobile {
+        display: flex;
+    }
+
     .container {
         padding: 12px;
     }
@@ -142,15 +160,24 @@
         display: none;
     }
 
-    .menuWrapperMobile {
+    .menuWrapper {
         display: flex;
         align-items: center;
         gap: 12px;
     }
 
-    .drawer:target {
+    .drawerActive {
         opacity: 1;
         pointer-events: all;
+    }
+
+    .drawerActive>.menuContainerMobile {
+        transform: scale(1);
+        border-radius: 0;
+    }
+
+    .drawerActive>.menuContainerMobile a {
+        opacity: 1;
     }
 
     .menuContainerMobile {
@@ -172,15 +199,6 @@
         opacity: 0;
         text-align: center;
         transition: .3s;
-    }
-
-    .drawer:target>.menuContainerMobile {
-        transform: scale(1);
-        border-radius: 0;
-    }
-
-    .drawer:target>.menuContainerMobile a {
-        opacity: 1
     }
 
     .mobileButton {
