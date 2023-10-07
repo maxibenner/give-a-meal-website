@@ -9,7 +9,7 @@ import { useEffect, useState } from "react"
  * @returns null
  */
 export default function MobileMenuCloser() {
-    const [width, setWidth] = useState(window.innerWidth);
+    const [width, setWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 0);
     const pathname = usePathname()
 
     useEffect(() => {
