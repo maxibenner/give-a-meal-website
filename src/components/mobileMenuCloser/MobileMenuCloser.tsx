@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 /**
  * This is a hack to close the mobile menu when the user navigates to a new page.
  * It is necessary because of the SPA nature of Nextjs which prevents the URL hash from being reset.
- * @returns 
+ * @returns null
  */
 export default function MobileMenuCloser() {
     const [width, setWidth] = useState(window.innerWidth);
