@@ -2,6 +2,7 @@ import Navigation from "@/components/navigation";
 import { Locale, i18n } from "@/i18n-config";
 import Script from 'next/script';
 import "../globals.css";
+import MobileMenuCloser from "@/components/mobileMenuCloser/MobileMenuCloser";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
@@ -34,7 +35,7 @@ export default function RootLayout({
         </noscript>
         <Navigation lang={params.lang} />
         <main>{children}</main>
-        {/* <Footer lang={params.lang} /> */}
+        <MobileMenuCloser />
       </body>
     </html>
   );
