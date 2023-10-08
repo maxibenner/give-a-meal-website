@@ -22,20 +22,20 @@
     right: 0;
     width: 100%;
     height: 100vh;
-    opacity: 0;
     pointer-events: none;
-    transition: opacity 0.3s ease; /* Added transition for opacity */
 }
 
 .drawer>.menuContainerMobile {
     transform: scale(0);
     border-radius: 0;
-    transition: transform 0.3s ease; /* Ensure transition is defined here */
+    transition: transform 0.3s ease;
+    /* Ensure transition is defined here */
 }
 
 .drawer>.menuContainerMobile a {
     opacity: 0;
-    transition: opacity 0.3s ease; /* Ensure transition is defined here */
+    transition: opacity 0.3s ease;
+    /* Ensure transition is defined here */
 }
 
 .navButton {
@@ -167,7 +167,6 @@
     }
 
     .drawerActive {
-        opacity: 1;
         pointer-events: all;
     }
 

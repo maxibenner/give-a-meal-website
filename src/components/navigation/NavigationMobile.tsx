@@ -12,7 +12,7 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
 
     return (
         <div className={className}>
-            <button onClick={() => setActive(prev => !prev)} className={styles.navButton}>
+            <button onClick={() => setActive(prev => !prev)} className={styles.navButton} style={{ boxShadow: active ? "none" : undefined }}>
                 {active ? <p className={styles.closeButton}>&#10005;</p> : <p >&#9776;</p>}
             </button>
             <div className={`${styles.drawer} ${active && styles.drawerActive}`}>
