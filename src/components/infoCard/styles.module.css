@@ -14,7 +14,6 @@
     transition: .3s;
 }
 
-
 .textContainer {
     display: flex;
     flex-direction: column;
@@ -61,6 +60,7 @@
 }
 
 .active {
+    position: relative;
     border-color: rgba(0, 0, 0, 0);
     background-color: var(--color-primary);
 }

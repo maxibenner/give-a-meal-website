@@ -5,10 +5,19 @@ import LinkWithHover from "../linkWithHover";
 import styles from "./styles.module.css";
 import localeLink from "@/utils/localeLink";
 import Button from "../button";
-import React from "react";
+import React, { useEffect } from "react";
 
 export default function NavigationMobile({ lang, nav, className }: { lang: Locale, nav: { pickUp: string, donate: string, partners: string, apps: string }, className?: string }) {
     const [active, setActive] = React.useState(false)
+
+    // Prevent body from scrolling while drawer is open
+    useEffect(() => {
+        if (active) {
+            document.body.style.overflow = "hidden"
+        } else {
+            document.body.style.overflow = "unset"
+        }
+    }, [active])
 
     return (
         <div className={className}>
