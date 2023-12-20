@@ -14,7 +14,7 @@ export default async function NavigationDesktop({ lang, nav, className }: { lang
                 <LinkWithHover href={localeLink("/give-a-meal", lang)} className="body">{nav.donate}</LinkWithHover>
                 <LinkWithHover href={localeLink("/restaurants", lang)} className="body">{nav.partners}</LinkWithHover>
             </div>
-            <Button href={localeLink("/get-the-app", lang)}>{nav.apps}</Button >
+            <Button href={localeLink("/app", lang)}>{nav.apps}</Button >
         </div>
     </div>
 }

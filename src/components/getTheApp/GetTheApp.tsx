@@ -10,7 +10,7 @@ export default async function GetTheApp({ lang }: { lang: Locale }) {
 
     return (
         <div className={styles.container}>
-            <Button icon={svg} href={localeLink("/get-the-app", lang)}>{dictionary.elements.nav.apps}</Button >
+            <Button icon={svg} href={localeLink("/app", lang)}>{dictionary.elements.nav.apps}</Button >
         </div>
     )
 }

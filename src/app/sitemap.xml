@@ -49,15 +49,15 @@
             href="https://www.give-a-meal.org/es/restaurants"/>
     </url>
     <url>
-        <loc>https://www.give-a-meal.org/en/get-the-app</loc>
+        <loc>https://www.give-a-meal.org/en/app</loc>
         <xhtml:link 
             rel="alternate"
             hreflang="en"
-            href="https://www.give-a-meal.org/en/get-the-app"/>
+            href="https://www.give-a-meal.org/en/app"/>
         <xhtml:link 
             rel="alternate"
             hreflang="es"
-            href="https://www.give-a-meal.org/es/get-the-app"/>
+            href="https://www.give-a-meal.org/es/app"/>
     </url>
     <url>
         <loc>https://www.give-a-meal.org/en/terms-of-use</loc>

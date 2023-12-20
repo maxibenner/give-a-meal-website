@@ -29,7 +29,7 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/get-a-meal", lang)} className="body">{nav.pickUp}</LinkWithHover>
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body">{nav.donate}</LinkWithHover>
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body">{nav.partners}</LinkWithHover>
-                    <Button onClick={() => setActive(false)} href={localeLink("/get-the-app", lang)}>{nav.apps}</Button >
+                    <Button onClick={() => setActive(false)} href={localeLink("/app", lang)}>{nav.apps}</Button >
                 </div>
             </div>
         </div>

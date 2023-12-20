@@ -37,7 +37,7 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
                 <InfoCards items={howTo.cards} className={styles.infoCardContainer} />
                 <Badge className={styles.badgeFAQ}>{faq.title}</Badge>
                 <FAQ items={faq.questions} className={styles.faqContainer} />
-                <CTA className={styles.cta} title={cta.title} description={cta.sub} buttonLabel={cta.button} href={localeLink("/get-the-app", lang)} />
+                <CTA className={styles.cta} title={cta.title} description={cta.sub} buttonLabel={cta.button} href={localeLink("/app", lang)} />
             </div>
             <Footer lang={lang} spacerClass={styles.ctaAdjustements} />
         </>
