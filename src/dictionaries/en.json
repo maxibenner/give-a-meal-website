@@ -2,7 +2,7 @@
     "elements": {
         "nav": {
             "pickUp": "Get a Meal",
-            "donate": "Give a Meal",
+            "donate": "Donate",
             "partners": "Restaurant Partners",
             "apps": "Get the App"
         }

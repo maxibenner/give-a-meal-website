@@ -2,7 +2,7 @@
     "elements": {
         "nav": {
             "pickUp": "Obtener Comida",
-            "donate": "Donar Comida",
+            "donate": "Donar",
             "partners": "Restaurantes Asociados",
             "apps": "Descargar App"
         }
