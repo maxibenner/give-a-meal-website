@@ -1,3 +1,7 @@
+.link:hover {
+    opacity: 1;
+}
+
 .wrapper {
     position: relative;
     padding: 8px;

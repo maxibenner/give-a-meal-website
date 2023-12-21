@@ -17,6 +17,7 @@
 
 .container:hover {
     filter: invert(97%);
+    opacity: 1;
 }
 
 @media (max-width: 880px) {

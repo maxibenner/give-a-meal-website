@@ -7,7 +7,6 @@ import Button from "../button";
 
 export default async function NavigationDesktop({ lang, nav, className }: { lang: Locale, nav: { pickUp: string, donate: string, partners: string, apps: string }, className?: string }) {
     return <div className={`${styles.menuContainerDesktop} ${className}`}>
-        {/* <LocaleSwitcher className={styles.buttonBox} /> */}
         <div className={styles.contentBox}>
             <div className={styles.linkContainer}>
                 <LinkWithHover href={localeLink("/get-a-meal", lang)} className="body">{nav.pickUp}</LinkWithHover>

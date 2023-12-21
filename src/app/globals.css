@@ -60,13 +60,9 @@ body {
   color: var(--color-black);
 }
 
-main {
-  /* background-color: var(--color-background); */
-}
-
 /* Utilities */
 .bodyOverflowHidden {
-  overflow: hidden!important;
+  overflow: hidden !important;
   height: 100vh;
 }
 
@@ -82,6 +78,10 @@ main {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.5;
 }
 
 h1 {

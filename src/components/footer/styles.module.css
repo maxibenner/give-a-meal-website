@@ -7,21 +7,41 @@
 .footer {
     position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    gap: 48px;
     max-width: var(--max-width);
 
     margin: 0 auto;
-    padding: 16px 24px;
+    /* padding: 16px 24px; */
+    padding: 48px;
 
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-regular);
 }
 
-.footer>div {
+.footerLinks {
     display: flex;
-    gap: 36px;
+    gap: 96px;
+}
+
+.textWithIconLink {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    height: fit-content;
+}
+
+.textWithIconLink > svg {
+    width: 24px;
+    height: 24px;
+}
+
+.footerDocuments {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
 }
 
 @media (max-width: 950px) {
@@ -32,14 +52,13 @@
     .footer {
         flex-direction: column;
         align-items: flex-start;
-        gap: 48px;
         padding: 24px;
+        gap: 48px;
     }
 
-    .footer>div {
+    .footerLinks {
         flex-direction: column;
-        /* align-items: center; */
         width: 100%;
-        gap: 12px;
+        gap: 48px;
     }
 }
