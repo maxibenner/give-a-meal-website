@@ -27,11 +27,6 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
     const pathname = request.nextUrl.pathname
 
-    // Exclude specific paths, such as apple-app-site-association
-    if (pathname.endsWith('apple-app-site-association')) {
-        return NextResponse.next();
-    }
-
     // Check if there is any supported locale in the pathname
     const pathnameIsMissingLocale = i18n.locales.every(
         (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
