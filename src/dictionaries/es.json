@@ -78,6 +78,8 @@
                     "years": "Hace %d años",
                     "month": "Hace 1 mes",
                     "months": "Hace %d meses",
+                    "week": "Hace 1 semana",
+                    "weeks": "Hace %d semanas",
                     "day": "Hace 1 día",
                     "days": "Hace %d días",
                     "hour": "Hace 1 hora",
