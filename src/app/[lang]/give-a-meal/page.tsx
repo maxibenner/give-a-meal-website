@@ -7,6 +7,7 @@ import { Metadata } from 'next'
 import { getDictionary } from '@/get-dictionary-server';
 import { Locale } from '@/i18n-config';
 import Footer from '@/components/footer';
+import PartnerMap from '@/components/partnerMap/PartnerMap';
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } }
@@ -31,6 +32,8 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
         <h2 className={styles.description}>{hero.sub}</h2>
         <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>
         <InfoCards items={howTo.cards} className={styles.infoCardContainer} />
+        <Badge className={styles.badgeHowItWorks}>Partner Restaurants</Badge>
+        <PartnerMap />
         <Badge className={styles.badgeFAQ}>Frequently Asked Questions</Badge>
         <FAQ items={faq.questions} className={styles.faqContainer} />
       </div>
