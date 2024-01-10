@@ -37,13 +37,11 @@ export default async function CTA({ lang }: { lang: Locale }) {
                         <Button className={styles.button} href={localeLink("/restaurants", lang)}>{dictionary.pages.home.cta.button_3}</Button>
                     </div>
                 </div>
-                <div className={styles.recentItemsContainer}>
-                    {data &&
-                        <Marquee>
-                            {data.map((data: any) => <RecentItem lang={lang} key={data.id} action={data.action} businessName={data.businessName} time={data.time} donorName={data.donorName} item={data.item} />)}
-                        </Marquee>
-                    }
-                </div>
+                {data && <div className={styles.recentItemsContainer}>
+                    <Marquee>
+                        {data.map((data: any) => <RecentItem lang={lang} key={data.id} action={data.action} businessName={data.businessName} time={data.time} donorName={data.donorName} item={data.item} />)}
+                    </Marquee>
+                </div>}
             </div>
 
             <div className={styles.vegContainer}>
