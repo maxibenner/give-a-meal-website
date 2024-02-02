@@ -32,6 +32,11 @@
     margin-bottom: 120px;
 }
 
+.businessMap {
+    grid-column: 1 / 13;
+    margin-bottom: 120px;
+}
+
 .cta {
     grid-column: 1 / 13;
     margin-bottom: 120px;

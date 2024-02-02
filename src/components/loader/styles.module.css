@@ -1,0 +1,35 @@
+.wave {
+    position: relative;
+    width: fit-content;
+}
+
+.wave>.dot {
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    margin-right: 3px;
+    background: var(--color-black);
+    animation: wave 1s ease-in-out infinite;
+}
+
+.wave>.dot:nth-child(2) {
+    animation-delay: -0.9s;
+}
+
+.wave>.dot:nth-child(3) {
+    animation-delay: -0.7s;
+}
+
+@keyframes wave {
+
+    0%,
+    60%,
+    100% {
+        transform: initial;
+    }
+
+    30% {
+        transform: translateY(-6px);
+    }
+}

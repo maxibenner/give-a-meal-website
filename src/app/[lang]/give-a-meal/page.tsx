@@ -7,7 +7,7 @@ import { Metadata } from 'next'
 import { getDictionary } from '@/get-dictionary-server';
 import { Locale } from '@/i18n-config';
 import Footer from '@/components/footer';
-import PartnerMap from '@/components/partnerMap/PartnerMap';
+import NearbyRestaurants from '@/components/nearbyRestaurants';
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } }
@@ -23,7 +23,7 @@ export async function generateMetadata(
 
 export default async function Page({ params: { lang } }: { params: { lang: Locale } }) {
 
-  const { pages: { giveAMeal: { hero, howTo, faq } } } = await getDictionary(lang)
+  const { pages: { giveAMeal: { hero, howTo, faq, map } } } = await getDictionary(lang)
 
   return (
     <>
@@ -32,9 +32,9 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
         <h2 className={styles.description}>{hero.sub}</h2>
         <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>
         <InfoCards items={howTo.cards} className={styles.infoCardContainer} />
-        <Badge className={styles.badgeHowItWorks}>Partner Restaurants</Badge>
-        <PartnerMap />
-        <Badge className={styles.badgeFAQ}>Frequently Asked Questions</Badge>
+        <Badge className={styles.badgeHowItWorks}>{map.title}</Badge>
+        <NearbyRestaurants className={styles.businessMap} dict={map} />
+        <Badge className={styles.badgeFAQ}>{faq.title}</Badge>
         <FAQ items={faq.questions} className={styles.faqContainer} />
       </div>
       <Footer lang={lang} />

@@ -40,11 +40,13 @@
 
   --color-primary: #E5FF75;
   --color-background: #f6f6f6;
+  --color-bg-hover: rgb(245, 245, 245);
+  --color-border: rgba(0, 0, 0, 0.15);
   --color-black: #000000;
   --color-white: #ffffff;
   --color-text: rgba(0, 0, 0, 0.75);
 
-  --shadow-regular: 0px 4px 8px rgba(0, 0, 0, 0.05);
+  --shadow-regular: 0px 4px 8px rgba(177, 64, 64, 0.05);
 }
 
 * {
@@ -153,6 +155,11 @@ h5 {
   line-height: 115%;
 }
 
+input {
+  font-size: 16px;
+  line-height: 160%;
+}
+
 @media (max-width: 880px) {
 
   h1 {
@@ -222,4 +229,28 @@ h5 {
     font-size: 10px;
     line-height: 110%;
   }
+}
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: var(--color-black);
+}
+
+/* Fixes */
+/* Google maps focus state (bug, should be fixed in next GM update) */
+.gm-style iframe+div {
+  border: none !important;
 }

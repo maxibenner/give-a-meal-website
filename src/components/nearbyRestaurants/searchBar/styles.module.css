@@ -1,0 +1,99 @@
+.wrapper {
+    padding: 24px;
+    background-color: var(--color-primary);
+    border-top-left-radius: var(--border-radius);
+    border-top-right-radius: var(--border-radius);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+/* While input HAS NO text */
+.container input {
+    border: none;
+    padding: 0 43px 0 48px;
+    height: 48px;
+    background-color: var(--color-white);
+    border-radius: var(--border-radius);
+    width: 100%;
+}
+
+.buttonContainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 8px;
+}
+
+.searchButtonContainer,
+.closeButtonContainer,
+.searchIconContainer,
+.closeIconContainer {
+    display: flex;
+    align-items: center;
+}
+
+.locationButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 8px;
+}
+
+.locationButtonContainer>img {
+    opacity: 0.5;
+}
+
+.locationButtonContainer.enabled>img {
+    opacity: 1;
+}
+
+.locationButtonContainer,
+.searchIconContainer,
+.closeIconContainer {
+    padding: 8px;
+    border-radius: 8px;
+}
+
+.locationButtonContainer:hover,
+.closeIconContainer:hover {
+    cursor: pointer;
+    background-color: var(--color-bg-hover);
+    transition: .3s;
+}
+
+.searchButtonContainer {
+    transform: translateX(100%);
+    transition: .3s;
+    transition-delay: .2s;
+}
+
+.closeButtonContainer {
+    transform: scale(0.8);
+    opacity: 0;
+    pointer-events: none;
+    transition: .3s;
+}
+
+/* While input HAS text */
+.container input:not(:placeholder-shown) {
+    padding-right: 75px;
+}
+
+.container input:not(:placeholder-shown)+.buttonContainer .searchButtonContainer {
+    transform: translateX(0);
+    transition-delay: 0;
+
+}
+
+.container input:not(:placeholder-shown)+.buttonContainer .closeButtonContainer {
+    transform: scale(1);
+    opacity: 1;
+    pointer-events: all;
+    transition-delay: .3s;
+}

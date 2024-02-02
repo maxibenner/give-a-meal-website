@@ -1,287 +1,298 @@
 {
-    "elements": {
-        "nav": {
-            "pickUp": "Get a Meal",
-            "donate": "Donate",
-            "partners": "Restaurant Partners",
-            "apps": "Get the App"
-        }
-    },
-    "pages": {
-        "home": {
-            "meta": {
-                "title": "Give a Meal | Free Food",
-                "description": "We combat food insecurity and are fostering an environment of connection and compassion in local communities."
-            },
-            "hero": {
-                "title": "Find Donated Meals Near You",
-                "sub": "Together with our partner restaurants and their customers, Give A Meal provides meals to people in need in Brooklyn and beyond.",
-                "cta": "Get a Meal"
-            },
-            "why": {
-                "title": "Why We Exist",
-                "sub": "We believe in combating food insecurity and fostering an environment of connection and compassion in local communities."
-            },
-            "howTo": {
-                "title": "How It Works",
-                "cards": [
-                    {
-                        "title": "Restaurants Sign Up",
-                        "sub": "Restaurants interested in being part of our network enroll as a partner."
-                    },
-                    {
-                        "title": "Customers Donate Meals",
-                        "sub": "When you dine at a partner restaurant and order something for us, we add it to our meal list."
-                    },
-                    {
-                        "title": "Anyone Picks Them Up",
-                        "sub": "Pick a meal and it will be prepared and set aside for you, free of charge."
-                    }
-                ]
-            },
-            "faq": {
-                "title": "Frequently Asked Questions",
-                "questions": [
-                    {
-                        "title": "What is Give a Meal?",
-                        "text": "Give a Meal is a community-driven initiative that partners with local restaurants to combat food insecurity. We facilitate meal donations from customers to individuals who need them. Our goal is to ensure that everyone in our community has access to a meal."
-                    },
-                    {
-                        "title": "Who can benefit from Give a Meal?",
-                        "text": "Everyone can benefit from Give a Meal! If you're facing food insecurity, you can reserve a meal through our app. If you're able to donate, you can add a meal to your order at a partner restaurant. Restaurants can join us as partners to help their community and boost their business."
-                    },
-                    {
-                        "title": "How can I support Give a Meal?",
-                        "text": "There are several ways to support Give a Meal. You can donate a meal at one of our partner restaurants, spread the word about our program to friends, family, and favorite eateries, or even join us as a restaurant partner."
-                    },
-                    {
-                        "title": "Does Give a Meal operate in my area?",
-                        "text": "Give a Meal is expanding quickly across various cities. You can check our app to see if we're active in your area. If we're not there yet, stay tuned! We're working hard to reach as many communities as possible."
-                    },
-                    {
-                        "title": "Is Give a Meal a non-profit?",
-                        "text": "Give a Meal is an initiative run by Fotura, a digital product studio. While we're not a non-profit, our mission is centered around community service and combating food insecurity."
-                    },
-                    {
-                        "title": "How does Give a Meal ensure the meals reach the people who need them?",
-                        "text": "All donated meals are listed on our app, where they can be reserved by individuals in need. We do not impose any restrictions or require any proof of need to access these meals."
-                    }
-                ]
-            },
-            "cta": {
-                "title": "Become Part of the Give a Meal Community",
-                "button_1": "Get a Meal",
-                "button_2": "Donate",
-                "button_3": "Restaurant Partners",
-                "time": {
-                    "year": "1 year ago",
-                    "years": "%d years ago",
-                    "month": "1 month ago",
-                    "months": "%d months ago",
-                    "week": "1 week ago",
-                    "weeks": "%d weeks ago",
-                    "day": "1 day ago",
-                    "days": "%d days ago",
-                    "hour": "1 hour ago",
-                    "hours": "%d hours ago",
-                    "minute": "1 minute ago",
-                    "minutes": "%d minutes ago",
-                    "recently": "Just now"
-                }
-            }
-        },
-        "getAMeal": {
-            "meta": {
-                "title": "Get a Meal",
-                "description": "Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community."
-            },
-            "hero": {
-                "title": "Get a Meal",
-                "sub": "Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community."
-            },
-            "howTo": {
-                "title": "How It Works",
-                "cards": [
-                    {
-                        "title": "Get the App",
-                        "sub": "Need a meal? Just download the Give a Meal app, available for both Android and iOS."
-                    },
-                    {
-                        "title": "Find a Meal",
-                        "sub": "Check out the available free meals nearby on our app and reserve one."
-                    },
-                    {
-                        "title": "Enjoy Your Meal",
-                        "sub": "Ready to eat? Show the QR code from your app at the restaurant and enjoy your meal. It's that simple."
-                    }
-                ]
-            },
-            "faq": {
-                "title": "Frequently Asked Questions",
-                "questions": [
-                    {
-                        "title": "Is Give a Meal for me?",
-                        "text": "Yes! There are no requirements or documentation required to receive a meal. Food for those in need, no questions asked."
-                    },
-                    {
-                        "title": "Are the meals only available at certain times?",
-                        "text": "Meal availability depends on the operating hours of our partner restaurants."
-                    },
-                    {
-                        "title": "Can I reserve meals for my family or friends?",
-                        "text": "Yes, you can reserve up to three meals at a time."
-                    },
-                    {
-                        "title": "Do I have to eat my meal at the restaurant?",
-                        "text": "No, you can eat wherever you want. If you want to take your food to go, make sure to tell the restaurant when you order your meal."
-                    },
-                    {
-                        "title": "What if I don't have a smartphone?",
-                        "text": "Currently, a smartphone is needed to reserve and collect meals. We are exploring other options for those without smartphone access and will update our community when these are available."
-                    },
-                    {
-                        "title": "I have dietary restrictions. Can I still get meals?",
-                        "text": "Yes, our partner restaurants often provide various meal options. When you browse the app, you can see what each meal includes. Additionally, let the restaurants know of any allergies or restrictions when you pick up the meal."
-                    }
-                ]
-            },
-            "cta": {
-                "title": "Get a Meal Today",
-                "sub": "Download our free app to browse the meal list and reserve one to pick up.",
-                "button": "Get the App"
-            }
-        },
-        "giveAMeal": {
-            "meta": {
-                "title": "Donate",
-                "description": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
-            },
-            "hero": {
-                "title": "Give a Meal",
-                "sub": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
-            },
-            "howTo": {
-                "title": "How It Works",
-                "cards": [
-                    {
-                        "title": "Visit a Partner Restaurant",
-                        "sub": "Ready to make a difference? Visit one of our partner restaurants and choose the meal you'd like to share."
-                    },
-                    {
-                        "title": "Donate a Meal",
-                        "sub": "When placing your order, ask the restaurant to add it to Give a Meal."
-                    },
-                    {
-                        "title": "We Deliver Your Kindness",
-                        "sub": "Your donated meal is listed on our app, ready to be claimed and savored by someone facing food insecurity."
-                    }
-                ]
-            },
-            "faq": {
-                "title": "Frequently Asked Questions",
-                "questions": [
-                    {
-                        "title": "How do I know my donated meal reaches someone in need?",
-                        "text": "At Give a Meal, we ensure all donated meals are listed on our app for individuals facing food insecurity. You might not see the smiles, but rest assured, your kindness is making a difference."
-                    },
-                    {
-                        "title": "What's the cost of donating a meal?",
-                        "text": "The cost of donating a meal depends on the restaurant and the meal itself. The price is usually equivalent to the cost of the meal on the restaurant's menu."
-                    },
-                    {
-                        "title": "Can I choose what meal I donate?",
-                        "text": "Absolutely! When ordering at our partner restaurants, you can choose any meal to donate."
-                    },
-                    {
-                        "title": "Can I donate more than one meal at a time?",
-                        "text": "Yes, there is no limit to generosity. You can donate as many meals as you'd like."
-                    },
-                    {
-                        "title": "Can I donate a meal from any restaurant?",
-                        "text": "Donations can currently be made at our partner restaurants only. If your favorite restaurant isn't listed, why not suggest they join us?"
-                    },
-                    {
-                        "title": "Will I receive a confirmation of my donation?",
-                        "text": "Not currently. However, you can provide your name when you donate and then find your donation in the Give a Meal app."
-                    }
-                ]
-            }
-        },
-        "restaurantPartners": {
-            "meta": {
-                "title": "Partner Restaurants",
-                "description": "With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business."
-            },
-            "hero": {
-                "title": "Restaurant Partners",
-                "sub": "With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business."
-            },
-            "howTo": {
-                "title": "How It Works",
-                "cards": [
-                    {
-                        "title": "Register Your Restaurant",
-                        "sub": "Ready to join our mission? Download the Give a Meal Business app and register your restaurant to get started."
-                    },
-                    {
-                        "title": "Accept Meal Donations",
-                        "sub": "When customers donate a meal, add it to the Give a Meal list using the Give a Meal Business app."
-                    },
-                    {
-                        "title": "Serve Donated Meals",
-                        "sub": "When someone arrives with their Give a Meal QR code, prepare the meal and hand it over. You've just made someone's day a little brighter!"
-                    }
-                ]
-            },
-            "faq": {
-                "title": "Frequently Asked Questions",
-                "questions": [
-                    {
-                        "title": "Is there a cost to partner with Give a Meal?",
-                        "text": "No, there's no charge to become a Give a Meal partner. We believe in working together to benefit the community."
-                    },
-                    {
-                        "title": "What type of restaurants can join Give a Meal?",
-                        "text": "We welcome all types of restaurants! From fine dining to fast food, as long as you serve food, you can help serve the community."
-                    },
-                    {
-                        "title": "How will my restaurant be promoted?",
-                        "text": "Your restaurant will appear on the meal list, the occasional social media post, as well as the recent donations slider on the homepage."
-                    },
-                    {
-                        "title": "Can customers donate any meal?",
-                        "text": "That is the idea! However, in the end you decide which items can be donated."
-                    },
-                    {
-                        "title": "What do we do if someone comes to claim a meal?",
-                        "text": "When someone comes to claim a donated meal, they will show a QR code from the Give a Meal app. Simply scan the code using the Give a Meal Business app and provide the meal."
-                    }
-                ]
-            },
-            "cta": {
-                "title": "Register your restaurant today",
-                "sub": "Download our free Give a Meal Business app to register your restaurant and start accepting donations.",
-                "button": "Get the App"
-            }
-        },
-        "getTheApp": {
-            "meta": {
-                "title": "Get the App",
-                "description": "Download our free apps to browse the meal list or to manage your Give a Meal operations."
-            },
-            "hero": {
-                "title": "Get the App"
-            },
-            "apps": [
-                {
-                    "title": "Give a Meal",
-                    "sub": "For people looking for meals. Find meals near you and reserve them for free pick up."
-                },
-                {
-                    "title": "Give a Meal Business",
-                    "sub": "For partner restaurants. Manage Give a Meal operations, add and redeem donations."
-                }
-            ]
-        }
+  "elements": {
+    "nav": {
+      "pickUp": "Get a Meal",
+      "donate": "Donate",
+      "partners": "Restaurant Partners",
+      "apps": "Get the App"
     }
+  },
+  "pages": {
+    "home": {
+      "meta": {
+        "title": "Give a Meal | Free Food",
+        "description": "We combat food insecurity and are fostering an environment of connection and compassion in local communities."
+      },
+      "hero": {
+        "title": "Find Donated Meals Near You",
+        "sub": "Together with our partner restaurants and their customers, Give A Meal provides meals to people in need in Brooklyn and beyond.",
+        "cta": "Get a Meal"
+      },
+      "why": {
+        "title": "Why We Exist",
+        "sub": "We believe in combating food insecurity and fostering an environment of connection and compassion in local communities."
+      },
+      "howTo": {
+        "title": "How It Works",
+        "cards": [
+          {
+            "title": "Restaurants Sign Up",
+            "sub": "Restaurants interested in being part of our network enroll as a partner."
+          },
+          {
+            "title": "Customers Donate Meals",
+            "sub": "When you dine at a partner restaurant and order something for us, we add it to our meal list."
+          },
+          {
+            "title": "Anyone Picks Them Up",
+            "sub": "Pick a meal and it will be prepared and set aside for you, free of charge."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "questions": [
+          {
+            "title": "What is Give a Meal?",
+            "text": "Give a Meal is a community-driven initiative that partners with local restaurants to combat food insecurity. We facilitate meal donations from customers to individuals who need them. Our goal is to ensure that everyone in our community has access to a meal."
+          },
+          {
+            "title": "Who can benefit from Give a Meal?",
+            "text": "Everyone can benefit from Give a Meal! If you're facing food insecurity, you can reserve a meal through our app. If you're able to donate, you can add a meal to your order at a partner restaurant. Restaurants can join us as partners to help their community and boost their business."
+          },
+          {
+            "title": "How can I support Give a Meal?",
+            "text": "There are several ways to support Give a Meal. You can donate a meal at one of our partner restaurants, spread the word about our program to friends, family, and favorite eateries, or even join us as a restaurant partner."
+          },
+          {
+            "title": "Does Give a Meal operate in my area?",
+            "text": "Give a Meal is expanding quickly across various cities. You can check our app to see if we're active in your area. If we're not there yet, stay tuned! We're working hard to reach as many communities as possible."
+          },
+          {
+            "title": "Is Give a Meal a non-profit?",
+            "text": "Give a Meal is an initiative run by Fotura, a digital product studio. While we're not a non-profit, our mission is centered around community service and combating food insecurity."
+          },
+          {
+            "title": "How does Give a Meal ensure the meals reach the people who need them?",
+            "text": "All donated meals are listed on our app, where they can be reserved by individuals in need. We do not impose any restrictions or require any proof of need to access these meals."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Become Part of the Give a Meal Community",
+        "button_1": "Get a Meal",
+        "button_2": "Donate",
+        "button_3": "Restaurant Partners",
+        "time": {
+          "year": "1 year ago",
+          "years": "%d years ago",
+          "month": "1 month ago",
+          "months": "%d months ago",
+          "week": "1 week ago",
+          "weeks": "%d weeks ago",
+          "day": "1 day ago",
+          "days": "%d days ago",
+          "hour": "1 hour ago",
+          "hours": "%d hours ago",
+          "minute": "1 minute ago",
+          "minutes": "%d minutes ago",
+          "recently": "Just now"
+        }
+      }
+    },
+    "getAMeal": {
+      "meta": {
+        "title": "Get a Meal",
+        "description": "Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community."
+      },
+      "hero": {
+        "title": "Get a Meal",
+        "sub": "Nobody should go hungry. Pick up nutritious free meals from local restaurants, donated by your community."
+      },
+      "howTo": {
+        "title": "How It Works",
+        "cards": [
+          {
+            "title": "Get the App",
+            "sub": "Need a meal? Just download the Give a Meal app, available for both Android and iOS."
+          },
+          {
+            "title": "Find a Meal",
+            "sub": "Check out the available free meals nearby on our app and reserve one."
+          },
+          {
+            "title": "Enjoy Your Meal",
+            "sub": "Ready to eat? Show the QR code from your app at the restaurant and enjoy your meal. It's that simple."
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "questions": [
+          {
+            "title": "Is Give a Meal for me?",
+            "text": "Yes! There are no requirements or documentation required to receive a meal. Food for those in need, no questions asked."
+          },
+          {
+            "title": "Are the meals only available at certain times?",
+            "text": "Meal availability depends on the operating hours of our partner restaurants."
+          },
+          {
+            "title": "Can I reserve meals for my family or friends?",
+            "text": "Yes, you can reserve up to three meals at a time."
+          },
+          {
+            "title": "Do I have to eat my meal at the restaurant?",
+            "text": "No, you can eat wherever you want. If you want to take your food to go, make sure to tell the restaurant when you order your meal."
+          },
+          {
+            "title": "What if I don't have a smartphone?",
+            "text": "Currently, a smartphone is needed to reserve and collect meals. We are exploring other options for those without smartphone access and will update our community when these are available."
+          },
+          {
+            "title": "I have dietary restrictions. Can I still get meals?",
+            "text": "Yes, our partner restaurants often provide various meal options. When you browse the app, you can see what each meal includes. Additionally, let the restaurants know of any allergies or restrictions when you pick up the meal."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Get a Meal Today",
+        "sub": "Download our free app to browse the meal list and reserve one to pick up.",
+        "button": "Get the App"
+      }
+    },
+    "giveAMeal": {
+      "meta": {
+        "title": "Donate",
+        "description": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
+      },
+      "hero": {
+        "title": "Give a Meal",
+        "sub": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
+      },
+      "howTo": {
+        "title": "How It Works",
+        "cards": [
+          {
+            "title": "Visit a Partner Restaurant",
+            "sub": "Ready to make a difference? Visit one of our partner restaurants and choose the meal you'd like to share."
+          },
+          {
+            "title": "Donate a Meal",
+            "sub": "When placing your order, ask the restaurant to add it to Give a Meal."
+          },
+          {
+            "title": "We Deliver Your Kindness",
+            "sub": "Your donated meal is listed on our app, ready to be claimed and savored by someone facing food insecurity."
+          }
+        ]
+      },
+      "map": {
+        "title": "Partner Restaurants Near You",
+        "listTitle": "Partner Restaurants",
+        "listTitleEmpty": "No restaurants found",
+        "listSubEmpty": "Know a restaurant that would be a good fit? Ask them to join us!",
+        "addressPlaceholder": "Enter address",
+        "listItems": {
+          "mealsSingular": "Meal available",
+          "mealsPlural": "Meals available"
+        }
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "questions": [
+          {
+            "title": "How do I know my donated meal reaches someone in need?",
+            "text": "At Give a Meal, we ensure all donated meals are listed on our app for individuals facing food insecurity. You might not see the smiles, but rest assured, your kindness is making a difference."
+          },
+          {
+            "title": "What's the cost of donating a meal?",
+            "text": "The cost of donating a meal depends on the restaurant and the meal itself. The price is usually equivalent to the cost of the meal on the restaurant's menu."
+          },
+          {
+            "title": "Can I choose what meal I donate?",
+            "text": "Absolutely! When ordering at our partner restaurants, you can choose any meal to donate."
+          },
+          {
+            "title": "Can I donate more than one meal at a time?",
+            "text": "Yes, there is no limit to generosity. You can donate as many meals as you'd like."
+          },
+          {
+            "title": "Can I donate a meal from any restaurant?",
+            "text": "Donations can currently be made at our partner restaurants only. If your favorite restaurant isn't listed, why not suggest they join us?"
+          },
+          {
+            "title": "Will I receive a confirmation of my donation?",
+            "text": "Not currently. However, you can provide your name when you donate and then find your donation in the Give a Meal app."
+          }
+        ]
+      }
+    },
+    "restaurantPartners": {
+      "meta": {
+        "title": "Partner Restaurants",
+        "description": "With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business."
+      },
+      "hero": {
+        "title": "Restaurant Partners",
+        "sub": "With Give a Meal, your restaurant can join a mission to combat food insecurity, while building a stronger community and boosting your business."
+      },
+      "howTo": {
+        "title": "How It Works",
+        "cards": [
+          {
+            "title": "Register Your Restaurant",
+            "sub": "Ready to join our mission? Download the Give a Meal Business app and register your restaurant to get started."
+          },
+          {
+            "title": "Accept Meal Donations",
+            "sub": "When customers donate a meal, add it to the Give a Meal list using the Give a Meal Business app."
+          },
+          {
+            "title": "Serve Donated Meals",
+            "sub": "When someone arrives with their Give a Meal QR code, prepare the meal and hand it over. You've just made someone's day a little brighter!"
+          }
+        ]
+      },
+      "faq": {
+        "title": "Frequently Asked Questions",
+        "questions": [
+          {
+            "title": "Is there a cost to partner with Give a Meal?",
+            "text": "No, there's no charge to become a Give a Meal partner. We believe in working together to benefit the community."
+          },
+          {
+            "title": "What type of restaurants can join Give a Meal?",
+            "text": "We welcome all types of restaurants! From fine dining to fast food, as long as you serve food, you can help serve the community."
+          },
+          {
+            "title": "How will my restaurant be promoted?",
+            "text": "Your restaurant will appear on the meal list, the occasional social media post, as well as the recent donations slider on the homepage."
+          },
+          {
+            "title": "Can customers donate any meal?",
+            "text": "That is the idea! However, in the end you decide which items can be donated."
+          },
+          {
+            "title": "What do we do if someone comes to claim a meal?",
+            "text": "When someone comes to claim a donated meal, they will show a QR code from the Give a Meal app. Simply scan the code using the Give a Meal Business app and provide the meal."
+          }
+        ]
+      },
+      "cta": {
+        "title": "Register your restaurant today",
+        "sub": "Download our free Give a Meal Business app to register your restaurant and start accepting donations.",
+        "button": "Get the App"
+      }
+    },
+    "getTheApp": {
+      "meta": {
+        "title": "Get the App",
+        "description": "Download our free apps to browse the meal list or to manage your Give a Meal operations."
+      },
+      "hero": {
+        "title": "Get the App"
+      },
+      "apps": [
+        {
+          "title": "Give a Meal",
+          "sub": "For people looking for meals. Find meals near you and reserve them for free pick up."
+        },
+        {
+          "title": "Give a Meal Business",
+          "sub": "For partner restaurants. Manage Give a Meal operations, add and redeem donations."
+        }
+      ]
+    }
+  }
 }

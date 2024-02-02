@@ -9,21 +9,15 @@ import Onion from "@/public/assets/onion.svg"
 import { Locale } from "@/i18n-config";
 import { getDictionary } from "@/get-dictionary-client";
 import localeLink from "@/utils/localeLink";
-import fillTemplate from "@/utils/fillTemplate";
+import getRecentDonationsAndBusinesses from "@/functions/getRecentDonationsAndBusinesses";
 
-type recentData = {
-    action: "newDonation" | "newBusiness",
-    businessName: string,
-    time: string,
-    donorName: string,
-    item: string
-    id: string
-}
-
+/**
+ * CTA section displaying three buttons and a marquee of recent donations
+ * @param lang Sets the language of the component 
+ */
 export default async function CTA({ lang }: { lang: Locale }) {
     const dictionary = await getDictionary(lang)
     const data = await getRecentDonationsAndBusinesses(dictionary)
-
 
     if (!dictionary) return null
     return (
@@ -43,7 +37,6 @@ export default async function CTA({ lang }: { lang: Locale }) {
                     </Marquee>
                 </div>}
             </div>
-
             <div className={styles.vegContainer}>
                 <Image src={Tomato} alt="tomato" width={287} height={420} />
                 <Image src={Cucumber} alt="cucumber" width={377} height={430} />
@@ -57,99 +50,5 @@ export default async function CTA({ lang }: { lang: Locale }) {
 
 
 
-/**
- * Fetches recent donations and businesses from API
- * Combines donations and businesses into one array
- * Sorts by most recent
- * Transforms each object for use in RecentItem component
- * Limits to 4 results 
- * @param dictionary 
- */
-async function getRecentDonationsAndBusinesses(dictionary: any) {
-    try {
-        const res = await fetch("https://us-central1-give-a-meal-production.cloudfunctions.net/getRecentDonationsAndBusinesses", { next: { revalidate: 60 } })
-        const { donations, businesses } = await res.json()
 
-        const combinedData: recentData[] = [...donations, ...businesses]
-            .sort((a: any, b: any) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime())
-            .slice(0, 6)
-            .map((data: any) => {
-                if ("place_id" in data) {
-                    return {
-                        action: "newBusiness",
-                        businessName: data.business_name ? data.business_name.charAt(0).toUpperCase() + data.business_name.slice(1) : "",
-                        time: timeSince(data.created_at, dictionary),
-                        donorName: "",
-                        item: "",
-                        id: data.id + "_business"
-                    }
-                } else {
-                    return {
-                        action: "newDonation",
-                        businessName: data.business_id.business_name ? data.business_id.business_name.charAt(0).toUpperCase() + data.business_id.business_name.slice(1) : "",
-                        time: timeSince(data.created_at, dictionary),
-                        donorName: data.donor_name ? data.donor_name.charAt(0).toUpperCase() + data.donor_name.slice(1) : "",
-                        item: data.item_id.title ? data.item_id.title.charAt(0).toUpperCase() + data.item_id.title.slice(1) : "",
-                        id: data.id + "_donation"
-                    }
 
-                }
-            })
-
-        return combinedData
-
-    } catch (err) {
-        console.log(err)
-        return []
-    }
-}
-
-// Function to turn date string into formatted time (30 minutes ago, 1 hour ago, etc.)
-function timeSince(date: string, dictionary: any) {
-    const seconds = Math.floor((new Date().getTime() - new Date(date).getTime()) / 1000);
-
-    let interval = seconds / 31536000;
-
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.years, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.year
-    }
-
-    interval = seconds / 2592000;
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.months, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.month
-    }
-
-    interval = seconds / 604800; // 7 days in seconds
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.weeks, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.week
-    }
-
-    interval = seconds / 86400;
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.days, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.day
-    }
-
-    interval = seconds / 3600;
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.hours, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.hour
-    }
-
-    interval = seconds / 60;
-    if (interval >= 2) {
-        return fillTemplate(dictionary.pages.home.cta.time.minutes, Math.floor(interval))
-    } else if (interval >= 1) {
-        return dictionary.pages.home.cta.time.minute
-    }
-
-    return dictionary.pages.home.cta.time.recently
-}

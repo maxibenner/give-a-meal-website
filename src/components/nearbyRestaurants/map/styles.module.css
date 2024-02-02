@@ -1,0 +1,68 @@
+.wrapper,
+.container {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    border-radius: var(--border-radius);
+}
+
+.loader {
+    position: absolute;
+    padding: 6px 12px;
+    top: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--color-white);
+    border-radius: var(--border-radius-small);
+    box-shadow: var(--shadow-regular);
+}
+
+.loader>div {
+    margin-top: -2px;
+}
+
+.zoomControls {
+    position: absolute;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    bottom: 24px;
+    right: 24px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow-regular);
+}
+
+.zoomIn,
+.zoomOut {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    border-radius: 6px;
+    border: none;
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    cursor: pointer;
+}
+
+.zoomIn:hover,
+.zoomOut:hover {
+    opacity: 0.5;
+}
+
+.zoomDivider {
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-border);
+}
+
+@media (max-width: 880px) {
+    .container {
+        height: 450px;
+    }
+}
