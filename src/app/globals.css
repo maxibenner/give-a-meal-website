@@ -234,20 +234,20 @@ input {
 
 /* Scrollbar */
 /* width */
-::-webkit-scrollbar {
+/* ::-webkit-scrollbar {
   width: 4px;
   height: 4px;
-}
+} */
 
 /* Track */
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.05);
-}
+} */
 
 /* Handle */
-::-webkit-scrollbar-thumb {
+/* ::-webkit-scrollbar-thumb {
   background: var(--color-black);
-}
+} */
 
 /* Fixes */
 /* Google maps focus state (bug, should be fixed in next GM update) */
