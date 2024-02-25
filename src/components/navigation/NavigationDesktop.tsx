@@ -1,6 +1,5 @@
 import { Locale } from "@/i18n-config";
 import LinkWithHover from "../linkWithHover";
-import LocaleSwitcher from "../localeSwitcher/LocaleSwitcher";
 import styles from "./styles.module.css";
 import localeLink from "@/utils/localeLink";
 import Button from "../button";
