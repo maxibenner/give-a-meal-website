@@ -293,6 +293,15 @@
           "sub": "Para restaurantes asociados. Gestiona las operaciones de Give a Meal, añade y canjea donaciones."
         }
       ]
+    },
+    "donorLogin": {
+      "meta": {
+        "title": "Inicio de Sesión del Donante",
+        "description": "Inicia sesión en tu cuenta de Give a Meal para gestionar tus donaciones y ver tu historial de donaciones."
+      },
+      "hero": {
+        "title": "Juntos contra la inseguridad alimentaria"
+      }
     }
   }
 }

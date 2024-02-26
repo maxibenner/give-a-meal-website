@@ -293,6 +293,15 @@
           "sub": "For partner restaurants. Manage Give a Meal operations, add and redeem donations."
         }
       ]
+    },
+    "donorLogin": {
+      "meta": {
+        "title": "Donor Login",
+        "description": "Log in to your Give a Meal account to manage your donations and view your donation history."
+      },
+      "hero": {
+        "title": "Together against food insecurity"
+      }
     }
   }
 }
