@@ -2,11 +2,13 @@
   "name": "give-a-meal-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "translate": "node translateDictionaries.js"
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.1",
@@ -29,6 +31,8 @@
   },
   "devDependencies": {
     "@types/google.maps": "^3.55.0",
-    "@types/negotiator": "^0.6.1"
+    "@types/negotiator": "^0.6.1",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2"
   }
 }
