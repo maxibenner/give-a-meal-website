@@ -4,8 +4,14 @@
 
 .input {
     border: 1px solid #E5E5E5;
-    border-radius: var(--border-radius);
+    border-radius: var(--border-radius-button);
     padding: 14px;
     width: 100%;
     line-height: 100%;
 }
+
+.input.small {
+    padding: 9px;
+    border-radius: var(--border-radius-xs);
+}
+

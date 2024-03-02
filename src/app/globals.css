@@ -35,7 +35,7 @@
 
 :root {
   --max-width: 1440px;
-  --border-radius-xs: 4px;
+  --border-radius-xs: 5px;
   --border-radius-small: 8px;
   --border-radius: 12px;
 
@@ -56,6 +56,7 @@
 
   --color-grey-75: #E0E0E0;
   --color-grey-50: #ECECEC;
+  --color-grey-25: #F0F0F0;
 
   --color-white: #ffffff;
   --color-text: rgba(0, 0, 0, 0.75);
@@ -66,6 +67,9 @@
 
   /* Menu Item */
   --bg-menu-item-hover: var(--color-grey-50);
+
+  /* Action Item */
+  --color-action-item-bar: var(--color-grey-25);
 
 
   /* Border */
