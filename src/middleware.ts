@@ -43,7 +43,10 @@ export function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  let response;
+  let response = NextResponse.next();
+
+  // Regardless of the locale presence, add the pathname to the response header
+  // response.headers.set("X-Next-Pathname", pathname);
 
   // Redirect if there is no locale, using the browser preference
   if (pathnameIsMissingLocale) {
@@ -56,11 +59,7 @@ export function middleware(request: NextRequest) {
     );
 
     response = NextResponse.redirect(newUrl);
-  } else {
-    // If a locale is present, or the path is not excluded, rewrite the URL to include the pathname as a query parameter
-    const urlWithQuery = new URL(request.url);
-    urlWithQuery.searchParams.set("pathname", pathname);
-    response = NextResponse.rewrite(urlWithQuery);
+    response.headers.set("X-Next-Pathname", pathname);
   }
 
   return response;

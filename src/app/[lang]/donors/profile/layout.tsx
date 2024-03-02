@@ -17,16 +17,15 @@ export default async function Layout({ children, params: { lang } }: { children:
             <hr />
             <div className={s.contentWrapper}>
                 <Menu menuItems={[
-                    { label: menu.profile, link: localeLink("/donors/profile", lang), active: true },
-                    { label: menu.donations, link: localeLink('/donors/profile/donations', lang), active: false },
-                    { label: menu.notifications, link: localeLink('/donors/profile/notifications', lang), active: false },
-                    { label: menu.billing, link: localeLink("/donors/profile/billing", lang), active: false },
+                    { label: menu.profile, link: localeLink("/donors/profile", lang) },
+                    { label: menu.donations, link: localeLink('/donors/profile/donations', lang) },
+                    { label: menu.notifications, link: localeLink('/donors/profile/notifications', lang) },
+                    { label: menu.billing, link: localeLink("/donors/profile/billing", lang) },
 
                 ]} />
                 <div className={s.pageWrapper}>
                     {children}
                 </div>
-
             </div>
         </div>
     )
