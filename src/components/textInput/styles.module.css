@@ -1,0 +1,11 @@
+.container>*:nth-child(2) {
+    margin-top: 12px;
+}
+
+.input {
+    border: 1px solid #E5E5E5;
+    border-radius: var(--border-radius);
+    padding: 14px;
+    width: 100%;
+    line-height: 100%;
+}

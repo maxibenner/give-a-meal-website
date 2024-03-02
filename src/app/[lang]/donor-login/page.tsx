@@ -7,6 +7,10 @@ import Image from 'next/image';
 import Tomato from '@/public/assets/tomato.svg';
 import Cucumber from '@/public/assets/cucumber.svg';
 import Onion from '@/public/assets/onion.svg';
+import Button from '@/components/button';
+import TextInput from '@/components/textInput';
+import Link from 'next/link';
+import localeLink from '@/utils/localeLink';
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }
@@ -22,7 +26,7 @@ export async function generateMetadata(
 
 export default async function Page({ params: { lang } }: { params: { lang: Locale } }) {
 
-    const { pages: { donorLogin: { hero } } } = await getDictionary(lang)
+    const { pages: { donorLogin: { hero, form } }, elements: { footer } } = await getDictionary(lang)
 
     return (
         <div className={`grid ${s.container}`}>
@@ -35,10 +39,16 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
                 <h1 className={s.heroTitle}>{hero.title}</h1>
             </div>
             <div className={s.panel}>
-                <form className={s.form}>
-                    <h3>Placeholder</h3>
-                    <input type="text" placeholder="Email" />
-                    <button>Placeholder</button>
+                <h2 className={s.wordmark}>Give a Meal</h2>
+                <form className={s.form} action={localeLink("/donor", lang)}>
+                    <h3>{form.title}</h3>
+                    <TextInput name="email" label={form.emailLabel} type="email" />
+                    <Button large>{form.button}</Button>
+                    <div className={s.linkContainer}>
+                        <Link href={localeLink("/terms-of-use", lang)} className="label">{footer.terms}</Link>
+                        <span className="label">·</span>
+                        <Link href={localeLink("/privacy-notice", lang)} className="label">{footer.privacy}</Link>
+                    </div>
                 </form>
             </div>
         </div>

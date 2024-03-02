@@ -18,13 +18,33 @@
 
 .panel:nth-child(1) {
     background-color: var(--color-primary);
-    grid-column: 1 / 7;
+    grid-column: 1 / 6;
     overflow: hidden;
 }
 
 .panel:nth-child(2) {
-    border: 1px solid var(--color-border);
-    grid-column: 7 / 13;
+    background-color: white;
+    /* border: 1px solid var(--color-border); */
+    grid-column: 6 / 13;
+}
+
+.wordmark {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media (max-width: 1000px) {
+    .panel:nth-child(1) {
+        display: none;
+    }
+
+    .panel:nth-child(2) {
+        grid-column: 1 / 13;
+
+    }
 }
 
 .heroTitle {
@@ -65,6 +85,18 @@
 }
 
 .form {
+    max-width: 320px;
     display: flex;
+    gap: 24px;
     flex-direction: column;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContainer>span {
+    margin: 0 6px;
 }

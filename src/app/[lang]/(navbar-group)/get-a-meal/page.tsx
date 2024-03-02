@@ -1,7 +1,7 @@
 import Header from '@/components/header';
 import styles from './page.module.css';
 import Badge from '@/components/badge';
-import InfoCards from '../../../components/infoCards';
+import InfoCards from '@/components/infoCards';
 import FAQ from '@/components/faq';
 import CTA from '@/components/cta';
 import { Metadata } from 'next'

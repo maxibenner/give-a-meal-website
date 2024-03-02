@@ -5,6 +5,12 @@
       "donate": "Donate",
       "partners": "Restaurant Partners",
       "apps": "Get the App"
+    },
+    "footer": {
+      "cookies": "Cookie Policy",
+      "terms": "Terms of Use",
+      "privacy": "Privacy Policy",
+      "contact": "Contact"
     }
   },
   "pages": {
@@ -301,6 +307,11 @@
       },
       "hero": {
         "title": "Together against food insecurity"
+      },
+      "form": {
+        "title": "Access your donor profile",
+        "emailLabel": "Email",
+        "button": "Log in / Sign up"
       }
     }
   }

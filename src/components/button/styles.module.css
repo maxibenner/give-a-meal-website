@@ -9,14 +9,23 @@
     min-height: 36px;
     padding: 0 16px;
     border-radius: 10px;
+    bordeR: none;
 
     text-decoration: none;
-    background-color: var(--color-black) !important;
-    color: var(--color-white) !important;
+    cursor: pointer;
+    background-color: var(--color-button-primary);
+    color: var(--color-white);
+}
+
+.container.large {
+    padding: 14px;
+    min-height: 48px;
+    width: 100%;
+    border-radius: var(--border-radius);
 }
 
 .container:hover {
-    filter: invert(97%);
+    background-color: var(--color-button-primary-hover);
     opacity: 1;
 }
 

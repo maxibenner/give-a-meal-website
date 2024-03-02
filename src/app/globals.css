@@ -38,14 +38,28 @@
   --border-radius-small: 8px;
   --border-radius: 12px;
 
+
+  /*****************
+  ***** COLORS *****
+  *****************/
+
   --color-primary: #E5FF75;
   --color-background: #f6f6f6;
   --color-bg-hover: rgb(245, 245, 245);
-  --color-border: rgba(0, 0, 0, 0.15);
   --color-black: #000000;
+  --color-black-80: rgba(0, 0, 0, 0.8);
+  --color-black-15: rgba(0, 0, 0, 0.15);
   --color-white: #ffffff;
   --color-text: rgba(0, 0, 0, 0.75);
 
+  /* Button */
+  --color-button-primary: var(--color-black);
+  --color-button-primary-hover: var(--color-black-80);
+
+  /* Border */
+  --color-border: var(--color-black-15);
+
+  /* Effects */
   --shadow-regular: 0px 4px 8px rgba(177, 64, 64, 0.05);
 }
 

@@ -5,6 +5,12 @@
       "donate": "Donar",
       "partners": "Restaurantes Asociados",
       "apps": "Descargar App"
+    },
+    "footer": {
+      "cookies": "Política de cookies",
+      "terms": "Términos de Uso",
+      "privacy": "Política de Privacidad",
+      "contact": "Contacto"
     }
   },
   "pages": {
@@ -296,11 +302,16 @@
     },
     "donorLogin": {
       "meta": {
-        "title": "Inicio de Sesión del Donante",
+        "title": "Inicio de sesión de donantes",
         "description": "Inicia sesión en tu cuenta de Give a Meal para gestionar tus donaciones y ver tu historial de donaciones."
       },
       "hero": {
         "title": "Juntos contra la inseguridad alimentaria"
+      },
+      "form": {
+        "emailLabel": "Correo electrónico",
+        "button": "Iniciar sesión / Registrarse",
+        "title": "Accede a tu perfil de donante."
       }
     }
   }
