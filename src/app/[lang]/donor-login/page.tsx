@@ -40,7 +40,7 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
             </div>
             <div className={s.panel}>
                 <h2 className={s.wordmark}>Give a Meal</h2>
-                <form className={s.form} action={localeLink("/donor", lang)}>
+                <form className={s.form} action={"/api/auth/sendMagicLink"} method='POST'>
                     <h3>{form.title}</h3>
                     <TextInput name="email" label={form.emailLabel} type="email" />
                     <Button large>{form.button}</Button>
