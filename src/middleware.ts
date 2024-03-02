@@ -7,7 +7,6 @@ import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
 function getLocale(request: NextRequest): string | undefined {
-  // Negotiator expects plain object so we need to transform headers
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
@@ -44,6 +43,8 @@ export function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
+  let response;
+
   // Redirect if there is no locale, using the browser preference
   if (pathnameIsMissingLocale) {
     const locale = getLocale(request) || i18n.defaultLocale; // Fallback to default locale if undefined
@@ -54,10 +55,13 @@ export function middleware(request: NextRequest) {
       request.url
     );
 
-    // Perform the redirection
-    return NextResponse.redirect(newUrl);
+    response = NextResponse.redirect(newUrl);
+  } else {
+    // If a locale is present, or the path is not excluded, rewrite the URL to include the pathname as a query parameter
+    const urlWithQuery = new URL(request.url);
+    urlWithQuery.searchParams.set("pathname", pathname);
+    response = NextResponse.rewrite(urlWithQuery);
   }
 
-  // Proceed with the request if a locale is present
-  return NextResponse.next();
+  return response;
 }
