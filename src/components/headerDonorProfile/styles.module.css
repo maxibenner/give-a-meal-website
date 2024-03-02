@@ -1,0 +1,15 @@
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+    padding: 60px;
+
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+}
+
+.container h1 {
+    position: relative;
+}

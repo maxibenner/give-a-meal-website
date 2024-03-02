@@ -11,14 +11,10 @@ function getLocale(request: NextRequest): string | undefined {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-ignore locales are readonly
-  const locales: string[] = i18n.locales;
-
-  // Use negotiator and intl-localematcher to get best locale
+  const locales = Array.from(i18n.locales);
   let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
     locales
   );
-
   const locale = matchLocale(languages, locales, i18n.defaultLocale);
 
   return locale;
@@ -40,7 +36,7 @@ export function middleware(request: NextRequest) {
   // Check if the current path should be excluded
   const shouldExclude = excludePaths.some((path) => pathname.startsWith(path));
   if (shouldExclude) {
-    return; // Skip middleware logic for excluded paths
+    return NextResponse.next(); // Proceed without redirection
   }
 
   // Check if there is any supported locale in the pathname
@@ -48,21 +44,20 @@ export function middleware(request: NextRequest) {
     (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Redirect if there is no locale
+  // Redirect if there is no locale, using the browser preference
   if (pathnameIsMissingLocale) {
-    const locale = getLocale(request);
+    const locale = getLocale(request) || i18n.defaultLocale; // Fallback to default locale if undefined
 
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(
-      new URL(
-        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-        request.url
-      )
+    // Construct the new URL with the preferred locale
+    const newUrl = new URL(
+      `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+      request.url
     );
-  }
-}
 
-export const config = {
-  matcher: ["/((?!).*)"],
-};
+    // Perform the redirection
+    return NextResponse.redirect(newUrl);
+  }
+
+  // Proceed with the request if a locale is present
+  return NextResponse.next();
+}

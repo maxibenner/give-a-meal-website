@@ -32,7 +32,7 @@ export default function RootLayout({
         <noscript>
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XJTLZGM" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
         </noscript>
-        {/* <Navigation lang={params.lang} /> */}
+        <Navigation lang={params.lang} />
         <main>{children}</main>
       </body>
     </html>

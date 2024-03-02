@@ -11,12 +11,13 @@ import Button from '@/components/button';
 import TextInput from '@/components/textInput';
 import Link from 'next/link';
 import localeLink from '@/utils/localeLink';
+import MagicLinkForm from '@/components/magicLinkForm';
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }
 ): Promise<Metadata> {
 
-    const { pages: { donorLogin: { meta } } } = await getDictionary(params.lang)
+    const { pages: { donors: { login: { meta } } } } = await getDictionary(params.lang)
 
     return {
         title: meta.title,
@@ -26,7 +27,7 @@ export async function generateMetadata(
 
 export default async function Page({ params: { lang } }: { params: { lang: Locale } }) {
 
-    const { pages: { donorLogin: { hero, form } }, elements: { footer } } = await getDictionary(lang)
+    const { pages: { donors: { login: { hero, form } } }, elements: { footer } } = await getDictionary(lang)
 
     return (
         <div className={`grid ${s.container}`}>
@@ -39,17 +40,16 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
                 <h1 className={s.heroTitle}>{hero.title}</h1>
             </div>
             <div className={s.panel}>
-                <h2 className={s.wordmark}>Give a Meal</h2>
-                <form className={s.form} action={"/api/auth/sendMagicLink"} method='POST'>
-                    <h3>{form.title}</h3>
-                    <TextInput name="email" label={form.emailLabel} type="email" />
-                    <Button large>{form.button}</Button>
-                    <div className={s.linkContainer}>
-                        <Link href={localeLink("/terms-of-use", lang)} className="label">{footer.terms}</Link>
-                        <span className="label">·</span>
-                        <Link href={localeLink("/privacy-notice", lang)} className="label">{footer.privacy}</Link>
-                    </div>
-                </form>
+                <MagicLinkForm
+                    title={form.title}
+                    buttonLabel={form.button}
+                    emailLabel={form.emailLabel}
+                    termsLabel={footer.terms}
+                    privacyLabel={footer.privacy}
+                    termsLink={localeLink("/terms-of-use", lang)}
+                    privacyLink={localeLink("/privacy-notice", lang)}
+                    lang={lang}
+                />
             </div>
         </div>
     )

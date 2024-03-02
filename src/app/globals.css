@@ -35,8 +35,11 @@
 
 :root {
   --max-width: 1440px;
+  --border-radius-xs: 4px;
   --border-radius-small: 8px;
   --border-radius: 12px;
+
+  --border-radius-button: var(--border-radius-xs);
 
 
   /*****************
@@ -46,15 +49,23 @@
   --color-primary: #E5FF75;
   --color-background: #f6f6f6;
   --color-bg-hover: rgb(245, 245, 245);
-  --color-black: #000000;
+
+  --color-black: rgba(0, 0, 0, 1);
   --color-black-80: rgba(0, 0, 0, 0.8);
   --color-black-15: rgba(0, 0, 0, 0.15);
+
+  --color-grey-50: #ECECEC;
+
   --color-white: #ffffff;
   --color-text: rgba(0, 0, 0, 0.75);
 
   /* Button */
   --color-button-primary: var(--color-black);
   --color-button-primary-hover: var(--color-black-80);
+
+  /* Menu Item */
+  --bg-menu-item-hover: var(--color-grey-50);
+
 
   /* Border */
   --color-border: var(--color-black-15);
@@ -88,6 +99,11 @@ body {
   grid-template-columns: repeat(12, 1fr);
   gap: 12px;
   padding: 0 24px;
+}
+
+/* Tags */
+hr {
+  border-color: var(--color-border);
 }
 
 /* Text */
@@ -244,24 +260,6 @@ input {
     line-height: 110%;
   }
 }
-
-
-/* Scrollbar */
-/* width */
-/* ::-webkit-scrollbar {
-  width: 4px;
-  height: 4px;
-} */
-
-/* Track */
-/* ::-webkit-scrollbar-track {
-  background: rgba(0, 0, 0, 0.05);
-} */
-
-/* Handle */
-/* ::-webkit-scrollbar-thumb {
-  background: var(--color-black);
-} */
 
 /* Fixes */
 /* Google maps focus state (bug, should be fixed in next GM update) */

@@ -2,7 +2,7 @@
     max-width: var(--max-width);
     margin: 0 auto;
     min-height: 100vh;
-    padding-top: 24px;
+    padding-top: 74px;
     padding-bottom: 24px;
 }
 
@@ -26,14 +26,6 @@
     background-color: white;
     /* border: 1px solid var(--color-border); */
     grid-column: 6 / 13;
-}
-
-.wordmark {
-    position: absolute;
-    top: 24px;
-    left: 24px;
-    font-size: 20px;
-    font-weight: bold;
 }
 
 @media (max-width: 1000px) {
@@ -82,21 +74,4 @@
     top: 0;
     right: -100px;
     transform: translateY(-50%) rotate(140deg);
-}
-
-.form {
-    max-width: 320px;
-    display: flex;
-    gap: 24px;
-    flex-direction: column;
-}
-
-.linkContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.linkContainer>span {
-    margin: 0 6px;
 }

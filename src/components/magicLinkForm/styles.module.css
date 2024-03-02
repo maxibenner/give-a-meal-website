@@ -1,0 +1,20 @@
+.form {
+    max-width: 320px;
+    display: flex;
+    gap: 24px;
+    flex-direction: column;
+}
+
+.textContainer {
+    max-width: 320px;
+}
+
+.linkContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.linkContainer>span {
+    margin: 0 6px;
+}

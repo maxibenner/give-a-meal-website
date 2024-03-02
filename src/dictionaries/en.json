@@ -300,18 +300,29 @@
         }
       ]
     },
-    "donorLogin": {
-      "meta": {
-        "title": "Donor Login",
-        "description": "Log in to your Give a Meal account to manage your donations and view your donation history."
+    "donors": {
+      "layout": {
+        "header": { "title": "Donor Profile" },
+        "menu": {
+          "profile": "Profile",
+          "donations": "Donations",
+          "notifications": "Notifications",
+          "billing": "Billing"
+        }
       },
-      "hero": {
-        "title": "Together against food insecurity"
-      },
-      "form": {
-        "title": "Access your donor profile",
-        "emailLabel": "Email",
-        "button": "Log in / Sign up"
+      "login": {
+        "meta": {
+          "title": "Donor Login",
+          "description": "Log in to your Give a Meal account to manage your donations and view your donation history."
+        },
+        "hero": {
+          "title": "Together against food insecurity"
+        },
+        "form": {
+          "title": "Access your donor profile",
+          "emailLabel": "Email",
+          "button": "Log in / Sign up"
+        }
       }
     }
   }

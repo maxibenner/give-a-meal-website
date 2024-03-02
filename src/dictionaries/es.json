@@ -300,18 +300,31 @@
         }
       ]
     },
-    "donorLogin": {
-      "meta": {
-        "title": "Inicio de sesión de donantes",
-        "description": "Inicia sesión en tu cuenta de Give a Meal para gestionar tus donaciones y ver tu historial de donaciones."
+    "donors": {
+      "layout": {
+        "header": {
+          "title": "Perfil del Donante"
+        },
+        "menu": {
+          "profile": "Perfil",
+          "donations": "Donaciones",
+          "notifications": "Notificaciones",
+          "billing": "Facturación"
+        }
       },
-      "hero": {
-        "title": "Juntos contra la inseguridad alimentaria"
-      },
-      "form": {
-        "emailLabel": "Correo electrónico",
-        "button": "Iniciar sesión / Registrarse",
-        "title": "Accede a tu perfil de donante."
+      "login": {
+        "meta": {
+          "title": "Inicio de sesión de donantes",
+          "description": "Inicia sesión en tu cuenta de Give a Meal para gestionar tus donaciones y ver tu historial de donaciones."
+        },
+        "hero": {
+          "title": "Juntos contra la inseguridad alimentaria"
+        },
+        "form": {
+          "title": "Accede a tu perfil de donante",
+          "emailLabel": "Correo electrónico",
+          "button": "Iniciar sesión / Registrarse"
+        }
       }
     }
   }

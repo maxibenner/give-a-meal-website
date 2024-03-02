@@ -1,0 +1,11 @@
+.container {
+    padding: 14px;
+    border-radius: var(--border-radius-button);
+}
+
+.container:hover {
+    background-color: var(--bg-menu-item-hover);
+    cursor: pointer;
+}
+
+.label {}
