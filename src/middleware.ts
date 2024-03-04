@@ -2,10 +2,14 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 import { i18n } from "./i18n-config";
-
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
+/**
+ * Get the locale from the request headers
+ * @param {NextRequest} request
+ * @returns {string | undefined} The locale or undefined if not found
+ */
 function getLocale(request: NextRequest): string | undefined {
   const negotiatorHeaders: Record<string, string> = {};
   request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
@@ -19,10 +23,34 @@ function getLocale(request: NextRequest): string | undefined {
   return locale;
 }
 
-export function middleware(request: NextRequest) {
+// Adjusted routing logic to only determine the target pathname
+function determinePathname(request: NextRequest): string {
   const pathname = request.nextUrl.pathname;
 
-  // Paths to exclude
+  const pathnameIsMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+  );
+
+  if (pathnameIsMissingLocale) {
+    const locale = getLocale(request);
+    return `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`; // Return modified pathname with locale
+  }
+
+  return pathname; // Return the current pathname if no modifications are needed
+}
+
+// Placeholder for authentication logic
+function isAuthenticated(request: NextRequest): boolean {
+  console.log(request.headers);
+  // Implement authentication logic here
+  // Example: return request.headers.get("Authorization")?.startsWith("Bearer ");
+  return true; // Assuming all requests are authenticated for this example
+}
+
+export function middleware(request: NextRequest) {
+  let pathname = request.nextUrl.pathname;
+
+  // Paths to exclude from routing logic
   const excludePaths = [
     "/_next/",
     "/api/",
@@ -32,35 +60,21 @@ export function middleware(request: NextRequest) {
     "/robots.txt",
   ];
 
-  // Check if the current path should be excluded
+  // Localization: Update pathname with proper locale if necessary
   const shouldExclude = excludePaths.some((path) => pathname.startsWith(path));
-  if (shouldExclude) {
-    return NextResponse.next(); // Proceed without redirection
+  if (!shouldExclude) {
+    pathname = determinePathname(request);
   }
 
-  // Check if there is any supported locale in the pathname
-  const pathnameIsMissingLocale = i18n.locales.every(
-    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
-  );
-
-  let response = NextResponse.next();
-
-  // Regardless of the locale presence, add the pathname to the response header
-  // response.headers.set("X-Next-Pathname", pathname);
-
-  // Redirect if there is no locale, using the browser preference
-  if (pathnameIsMissingLocale) {
-    const locale = getLocale(request) || i18n.defaultLocale; // Fallback to default locale if undefined
-
-    // Construct the new URL with the preferred locale
-    const newUrl = new URL(
-      `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
-      request.url
-    );
-
-    response = NextResponse.redirect(newUrl);
-    response.headers.set("X-Next-Pathname", pathname);
+  // Authentication: Check if url is email signin link
+  if (pathname.includes("/donors/profile")) {
   }
 
-  return response;
+  // If the target pathname differs from the current, redirect to the target
+  if (pathname !== request.nextUrl.pathname) {
+    return NextResponse.redirect(new URL(pathname, request.url));
+  }
+
+  // Proceed with the original request if no redirection is needed
+  return NextResponse.next();
 }

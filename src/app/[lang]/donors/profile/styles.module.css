@@ -5,7 +5,7 @@
 }
 
 .actionText {
-    opacity: 0.5;
+    color: var(--color-action-item-bar-text)
 }
 
 .textInput {

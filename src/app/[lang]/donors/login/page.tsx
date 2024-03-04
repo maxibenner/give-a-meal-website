@@ -1,17 +1,13 @@
-import Footer from '@/components/footer';
+import MagicLinkLoginForm from "@/components/magicLinkLoginForm";
 import { getDictionary } from "@/get-dictionary-server";
 import { Locale } from '@/i18n-config';
-import { Metadata } from 'next';
-import s from './page.module.css';
-import Image from 'next/image';
-import Tomato from '@/public/assets/tomato.svg';
 import Cucumber from '@/public/assets/cucumber.svg';
 import Onion from '@/public/assets/onion.svg';
-import Button from '@/components/button';
-import TextInput from '@/components/textInput';
-import Link from 'next/link';
+import Tomato from '@/public/assets/tomato.svg';
 import localeLink from '@/utils/localeLink';
-import MagicLinkForm from '@/components/magicLinkForm';
+import { Metadata } from 'next';
+import Image from 'next/image';
+import s from './page.module.css';
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }
@@ -40,7 +36,7 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
                 <h1 className={s.heroTitle}>{hero.title}</h1>
             </div>
             <div className={s.panel}>
-                <MagicLinkForm
+                <MagicLinkLoginForm
                     title={form.title}
                     buttonLabel={form.button}
                     emailLabel={form.emailLabel}

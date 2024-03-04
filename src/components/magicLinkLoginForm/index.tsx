@@ -5,10 +5,10 @@ import Button from "../button";
 import TextInput from "../textInput";
 import s from "./styles.module.css"
 import { useState } from "react";
-import { auth } from "@/constants/firebase";
+import { auth } from "@/lib/firebase";
 import { sendSignInLinkToEmail } from "firebase/auth";
 
-export default function MagicLinkForm({ title, emailLabel, buttonLabel, termsLabel, privacyLabel, termsLink, privacyLink, lang }: { title: string, emailLabel: string, buttonLabel: string, termsLabel: string, privacyLabel: string, termsLink: string, privacyLink: string, lang: string }) {
+export default function MagicLinkLoginForm({ title, emailLabel, buttonLabel, termsLabel, privacyLabel, termsLink, privacyLink, lang }: { title: string, emailLabel: string, buttonLabel: string, termsLabel: string, privacyLabel: string, termsLink: string, privacyLink: string, lang: string }) {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [success, setSuccess] = useState(false);
@@ -19,7 +19,7 @@ export default function MagicLinkForm({ title, emailLabel, buttonLabel, termsLab
         setLoading(true);
 
         const email = (e.target as HTMLFormElement).email.value;
-        const link = window.location.origin + "/" + lang + "/donors" + "?email=" + email;
+        const link = window.location.origin + "/" + lang + "/donors/profile";
         const actionCodeSettings = {
             url: link,
             handleCodeInApp: true
@@ -30,6 +30,9 @@ export default function MagicLinkForm({ title, emailLabel, buttonLabel, termsLab
                 setLoading(false);
                 setEmail(email);
                 setSuccess(true);
+
+                // Save email for a smooth auth flow on the same device
+                window.localStorage.setItem('emailForSignIn', email);
             })
             .catch((error) => {
                 console.log(error.message)

@@ -20,7 +20,7 @@ export default function Page() {
             <ActionItem actionText={emailActionText}>
                 <p className="body_l_bold">Email</p>
                 <p>Please enter the email address you want to use to log in with Give a Meal.</p>
-                <TextInput defaultValue={userEmail} small className={s.textInput} />
+                <TextInput disabled defaultValue={userEmail} small className={s.textInput} />
             </ActionItem>
         </div>
     )
