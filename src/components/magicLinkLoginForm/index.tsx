@@ -8,7 +8,24 @@ import { useState } from "react";
 import { auth } from "@/lib/firebase";
 import { sendSignInLinkToEmail } from "firebase/auth";
 
-export default function MagicLinkLoginForm({ title, emailLabel, buttonLabel, termsLabel, privacyLabel, termsLink, privacyLink, lang }: { title: string, emailLabel: string, buttonLabel: string, termsLabel: string, privacyLabel: string, termsLink: string, privacyLink: string, lang: string }) {
+export default function MagicLinkLoginForm({ title,
+    emailLabel,
+    buttonLabel,
+    termsLabel,
+    privacyLabel,
+    termsLink,
+    privacyLink,
+    lang
+}: {
+    title: string,
+    emailLabel: string,
+    buttonLabel: string,
+    termsLabel: string,
+    privacyLabel: string,
+    termsLink: string,
+    privacyLink: string,
+    lang: string
+}) {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [success, setSuccess] = useState(false);
@@ -19,7 +36,8 @@ export default function MagicLinkLoginForm({ title, emailLabel, buttonLabel, ter
         setLoading(true);
 
         const email = (e.target as HTMLFormElement).email.value;
-        const link = window.location.origin + "/" + lang + "/donors/profile";
+
+        const link = window.location.origin + "/api/auth/verify-email-link?email=" + email + "&user-lang=" + lang;
         const actionCodeSettings = {
             url: link,
             handleCodeInApp: true
@@ -30,9 +48,6 @@ export default function MagicLinkLoginForm({ title, emailLabel, buttonLabel, ter
                 setLoading(false);
                 setEmail(email);
                 setSuccess(true);
-
-                // Save email for a smooth auth flow on the same device
-                window.localStorage.setItem('emailForSignIn', email);
             })
             .catch((error) => {
                 console.log(error.message)

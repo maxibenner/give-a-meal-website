@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
+import getDecodedSessionCookie from "./utils/getDecodedSessionCookie";
+import { cookies } from "next/headers";
 
 import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
@@ -40,11 +42,8 @@ function determinePathname(request: NextRequest): string {
 }
 
 // Placeholder for authentication logic
-function isAuthenticated(request: NextRequest): boolean {
-  console.log(request.headers);
-  // Implement authentication logic here
-  // Example: return request.headers.get("Authorization")?.startsWith("Bearer ");
-  return true; // Assuming all requests are authenticated for this example
+function isAuthenticated(request: NextRequest) {
+  // TODO: Get session token from cookies and verify it
 }
 
 export function middleware(request: NextRequest) {
@@ -68,6 +67,7 @@ export function middleware(request: NextRequest) {
 
   // Authentication: Check if url is email signin link
   if (pathname.includes("/donors/profile")) {
+    isAuthenticated(request);
   }
 
   // If the target pathname differs from the current, redirect to the target
