@@ -5,10 +5,9 @@ import { NextRequest, NextResponse } from "next/server";
 initAdminApp();
 
 export async function GET(request: NextRequest) {
-  const session = request.cookies.get("session");
-
-  if (session) {
-    try {
+  try {
+    const session = request.cookies.get("session");
+    if (session) {
       const decodedToken = await auth().verifySessionCookie(
         session.value,
         true
@@ -17,8 +16,10 @@ export async function GET(request: NextRequest) {
       const email = decodedToken.email;
 
       return NextResponse.json({ email: email, uid: uid }, { status: 200 });
-    } catch (error: any) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
+    } else {
+      return NextResponse.json({ error: "Not auhtorized" }, { status: 403 });
     }
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 403 });
   }
 }
