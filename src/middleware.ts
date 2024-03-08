@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import getDecodedSessionCookie from "./utils/getDecodedSessionCookie";
-import { cookies } from "next/headers";
 
 import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
@@ -41,13 +39,38 @@ function determinePathname(request: NextRequest): string {
   return pathname; // Return the current pathname if no modifications are needed
 }
 
-// Placeholder for authentication logic
-function isAuthenticated(request: NextRequest) {
-  // TODO: Get session token from cookies and verify it
+/**
+ * Verifies a firebase ID token
+ * @param request
+ * @returns The user's email and uid or null
+ */
+async function authenticate(
+  request: NextRequest
+): Promise<null | { uid: string; email: string }> {
+  try {
+    const response = await fetch(
+      `${request.nextUrl.origin}/api/auth/verify-id-token`,
+      {
+        headers: { cookie: request.headers.get("cookie") || "" },
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    } else {
+      console.error("Authentication verification failed");
+      return null;
+    }
+  } catch (error) {
+    console.error("Error verifying authentication:", error);
+    return null;
+  }
 }
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   let pathname = request.nextUrl.pathname;
+  let userInfo = null;
 
   // Paths to exclude from routing logic
   const excludePaths = [
@@ -65,16 +88,25 @@ export function middleware(request: NextRequest) {
     pathname = determinePathname(request);
   }
 
-  // Authentication: Check if url is email signin link
+  // Authentication: Prevent access to donor profile page if not authenticated
   if (pathname.includes("/donors/profile")) {
-    isAuthenticated(request);
+    userInfo = await authenticate(request);
+
+    if (userInfo === null) {
+      return NextResponse.redirect(
+        new URL(`${getLocale(request)}/donors/login`, request.nextUrl.origin)
+      );
+    }
   }
 
-  // If the target pathname differs from the current, redirect to the target
-  if (pathname !== request.nextUrl.pathname) {
-    return NextResponse.redirect(new URL(pathname, request.url));
+  // Construct new url / or keep existing
+  let url = new URL(pathname, request.url);
+
+  // Add user info if authenticated
+  if (userInfo !== null) {
+    url.searchParams.append("uid", userInfo.uid);
+    url.searchParams.append("email", userInfo.email);
   }
 
-  // Proceed with the original request if no redirection is needed
-  return NextResponse.next();
+  return NextResponse.rewrite(url);
 }

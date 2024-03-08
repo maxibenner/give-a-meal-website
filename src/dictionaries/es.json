@@ -309,7 +309,8 @@
           "profile": "Perfil",
           "donations": "Donaciones",
           "notifications": "Notificaciones",
-          "billing": "Facturación"
+          "billing": "Facturación",
+          "logout": "Cerrar sesión"
         }
       },
       "login": {

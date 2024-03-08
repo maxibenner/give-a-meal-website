@@ -28,16 +28,19 @@ export async function GET(request: NextRequest) {
 
   if (userCredential) {
     const idToken = await userCredential.user.getIdToken();
-    const expiresIn = 5 * 60 * 1000;
+    // 2 weeks in milliseconds
+    const expiresIn = 14 * 24 * 60 * 60 * 1000;
     const sessionCookie = await auth().createSessionCookie(idToken, {
       expiresIn,
     });
+
+    const isDev = process.env.NODE_ENV === "development";
     const options = {
       name: "session",
       value: sessionCookie,
       maxAge: expiresIn,
       httpOnly: true,
-      secure: true,
+      secure: isDev ? false : true,
     };
 
     cookies().set(options);

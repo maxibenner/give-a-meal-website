@@ -21,6 +21,7 @@ export default async function Layout({ children, params: { lang } }: { children:
                     { label: menu.donations, link: localeLink('/donors/profile/donations', lang) },
                     { label: menu.notifications, link: localeLink('/donors/profile/notifications', lang) },
                     { label: menu.billing, link: localeLink("/donors/profile/billing", lang) },
+                    { label: menu.logout, link: "/api/auth/logout" }
 
                 ]} />
                 <div className={s.pageWrapper}>
