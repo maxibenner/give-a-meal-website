@@ -14,7 +14,7 @@ export default async function Page({ searchParams }: { searchParams?: { [key: st
         <div>
             <p>Donations</p>
             <div>
-                {donations?.map((donation) => <p>{donation.item_id.title}</p>)}
+                {donations?.map((donation) => <p key={donation.id}>{donation.item_id.title}</p>)}
             </div>
         </div>
     )
