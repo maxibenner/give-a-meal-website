@@ -66,23 +66,22 @@ export async function middleware(request: NextRequest) {
     currentPathname = result.pathname;
   }
 
+  // Add user data to the query parameters
   if (result.data) {
-    uid = result.data.uid;
-    email = result.data.email;
+    const params = new URLSearchParams();
+    params.append("uid", result.data.uid);
+    params.append("email", result.data.email);
+    currentPathname = `${currentPathname}?${params.toString()}`;
   }
 
   // Response: create new URL
   const url = new URL(currentPathname, request.nextUrl.origin);
 
-  // Response: add params if data is available
-  if (uid && email) {
-    url.searchParams.append("email", email);
-    url.searchParams.append("uid", uid);
-  }
-
   // Response: return the modified url and query parameters
   // Prevent re-direct if the current pathname is the same as the request pathname
-  if (currentPathname === request.nextUrl.pathname) {
+  console.log(currentPathname);
+  console.log(request.nextUrl.pathname);
+  if (currentPathname === request.nextUrl.pathname + request.nextUrl.search) {
     return NextResponse.next();
   } else {
     return NextResponse.redirect(url);
@@ -160,7 +159,6 @@ async function handleAuthentication(
     // Return user data
     if (response.ok) {
       const res = await response.json();
-      console.log(res);
       authResulst.data = { email: res.email, uid: res.uid };
     } else {
       // Redirect to login if not authenticated

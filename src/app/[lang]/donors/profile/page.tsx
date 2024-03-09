@@ -4,6 +4,7 @@ import TextInput from "@/components/textInput";
 import s from "./styles.module.css"
 
 export default function Page({ searchParams }: { searchParams?: { [key: string]: string | undefined }; }) {
+    console.log(searchParams)
     const userName = "Maximilian";
     const userEmail: string = searchParams?.email || "";
     const userId: string = searchParams?.uid || "";

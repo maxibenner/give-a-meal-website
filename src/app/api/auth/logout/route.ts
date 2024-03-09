@@ -6,10 +6,11 @@ initAdminApp();
 
 export async function GET(request: NextRequest) {
   const session = cookies().get("session");
+  const lang = request.nextUrl.searchParams.get("lang");
 
   if (session) {
     try {
-      const response = NextResponse.redirect(new URL("/", request.url));
+      const response = NextResponse.redirect(new URL(`/${lang}`, request.url));
       response.cookies.delete("session");
       return response;
     } catch (error: any) {
