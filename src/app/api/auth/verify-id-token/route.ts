@@ -1,11 +1,12 @@
 import { initAdminApp } from "@/lib/firebaseAdmin";
 import { auth } from "firebase-admin";
+import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 initAdminApp();
 
 export async function GET(request: NextRequest) {
-  const session = request.cookies.get("session");
+  const session = cookies().get("session");
 
   if (session) {
     try {
