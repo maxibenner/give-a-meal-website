@@ -1,15 +1,14 @@
 import { initAdminApp } from "@/lib/firebaseAdmin";
 import { auth } from "firebase-admin";
-import { cookies } from "next/headers";
 import { NextRequest, NextResponse } from "next/server";
 
 initAdminApp();
 
 export async function GET(request: NextRequest) {
-  const session = cookies().get("session");
+  try {
+    const session = request.cookies.get("session");
 
-  if (session) {
-    try {
+    if (session) {
       const decodedToken = await auth().verifySessionCookie(
         session.value,
         true
@@ -18,8 +17,10 @@ export async function GET(request: NextRequest) {
       const email = decodedToken.email;
 
       return NextResponse.json({ email: email, uid: uid }, { status: 200 });
-    } catch (error: any) {
-      return NextResponse.json({ error: error.message }, { status: 403 });
     }
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 403 });
   }
+
+  return NextResponse.json({ error: "Unauthorized" }, { status: 403 });
 }

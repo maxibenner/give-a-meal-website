@@ -4,7 +4,6 @@ import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-const securedPaths = ["/donors/profile"];
 const pathsWithoutLocale = [
   "/_next/",
   "/api/",
@@ -13,6 +12,7 @@ const pathsWithoutLocale = [
   "/sitemap.xml",
   "/robots.txt",
 ];
+const protectedPaths = ["/donors/profile"];
 
 /**
  * Transforms the request object by adding locale and auth data
@@ -22,33 +22,66 @@ const pathsWithoutLocale = [
 export async function middleware(request: NextRequest) {
   let currentPathname = request.nextUrl.pathname;
 
-  // Locale: Determine pathname based on locale
-  currentPathname = handlePathnameLocale(request, pathsWithoutLocale);
+  // Skip: paths that should not have a locale
+  const shouldExclude = pathsWithoutLocale.some((path) =>
+    currentPathname.startsWith(path)
+  );
+
+  if (shouldExclude) {
+    return NextResponse.next();
+  }
+
+  // Locale: paths that are missing a locale
+  currentPathname = getPathnameWithLocale(request);
+
+  // Skip: paths that should not have authentication
+  let pathIsProtected = false;
+  for (const path of protectedPaths) {
+    if (currentPathname.includes(path)) {
+      pathIsProtected = true;
+    }
+  }
+
+  // Response: redirect to login if the path is protected and not authenticated
+  if (!pathIsProtected) {
+    // Prevent re-direct if the current pathname is the same as the request pathname
+    if (currentPathname === request.nextUrl.pathname) {
+      return NextResponse.next();
+    } else {
+      return NextResponse.redirect(
+        new URL(currentPathname, request.nextUrl.origin)
+      );
+    }
+  }
 
   // Authentication:
   // 1) Return pathname unchanged if no autnetication is needed
   // 2) Return data with user info if authenticated
   // 3) Return pathname to login url if not authenticated
-  const result = await handleAuthentication(
-    request,
-    currentPathname,
-    securedPaths
-  );
+  const result = await handleAuthentication(request, currentPathname);
+  let uid: string | null = null;
+  let email: string | null = null;
 
-  if (result.data) {
+  if (result.pathname) {
     currentPathname = result.pathname;
   }
 
-  // Create new URL
-  const url = new URL(currentPathname, request.nextUrl.origin);
-
-  // Add params if data is available
   if (result.data) {
-    url.searchParams.append("email", result.data.email);
-    url.searchParams.append("uid", result.data.uid);
+    uid = result.data.uid;
+    email = result.data.email;
   }
 
-  // Return the modified url and query parameters
+  // Response: create new URL
+  const url = new URL(currentPathname, request.nextUrl.origin);
+
+  // Response: add params if data is available
+  if (uid && email) {
+    url.searchParams.append("email", email);
+    url.searchParams.append("uid", uid);
+  }
+
+  // Response: return the modified url and query parameters
+  // Prevent re-direct if the current pathname is the same as the request pathname
   if (currentPathname === request.nextUrl.pathname) {
     return NextResponse.next();
   } else {
@@ -66,17 +99,8 @@ type AuthResult = {
 };
 
 // Adjusted routing logic to only determine the target pathname
-function handlePathnameLocale(
-  request: NextRequest,
-  excludedPaths: string[]
-): string {
+function getPathnameWithLocale(request: NextRequest): string {
   let pathname = request.nextUrl.pathname;
-
-  // Localization: Update pathname with proper locale if necessary
-  const shouldExclude = excludedPaths.some((path) => pathname.startsWith(path));
-  if (shouldExclude) {
-    return pathname;
-  }
 
   // Check if pathname is missing locale
   const pathnameIsMissingLocale = i18n.locales.every(
@@ -118,37 +142,30 @@ function getLocale(request: NextRequest): string | undefined {
  */
 async function handleAuthentication(
   request: NextRequest,
-  pathname: string,
-  protectedPaths: string[]
+  pathname: string
 ): Promise<AuthResult> {
   let authResulst: AuthResult = {
     pathname: pathname,
     data: null,
   };
 
-  // Check if path is protected
-  let pathIsProtected = false;
-  for (const path of protectedPaths) {
-    if (authResulst.pathname.includes(path)) {
-      pathIsProtected = true;
-    }
-  }
-
-  if (pathIsProtected) {
-    // Verify ID token
-    const response = await fetch(
+  // Verify ID token
+  try {
+    const cookie = request.headers.get("cookie") || "";
+    let response = await fetch(
       `${request.nextUrl.origin}/api/auth/verify-id-token`,
-      {
-        headers: { cookie: request.headers.get("cookie") || "" },
-      }
+      { headers: { cookie } }
     );
 
     // Return user data
     if (response.ok) {
-      const { email, uid } = await response.json();
-      authResulst.data = { email, uid };
+      const res = await response.json();
+      console.log(res);
+      authResulst.data = { email: res.email, uid: res.uid };
+    } else {
+      // Redirect to login if not authenticated
+      authResulst.pathname = "donors/login";
     }
-  }
-
+  } catch (err) {}
   return authResulst;
 }
