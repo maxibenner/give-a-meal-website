@@ -29,6 +29,7 @@ export default async function Page({ searchParams }: { searchParams?: { [key: st
                         chip={donation.redeemed_at ? "Claimed" : null}
                     />
                 )}
+                {!donations || donations.length === 0 ? <p className={s.placeholder}>No donations, yet. Provide your email address when you donate to track your giving here.</p> : null}
             </div>
         </div>
     )

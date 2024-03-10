@@ -5,6 +5,10 @@
     margin-top: 24px;
 }
 
+.placeholder {
+    color: var(--color-grey-100);
+}
+
 /* Loading */
 .loadingSkeleton {
     height: 113px;
