@@ -35,8 +35,6 @@ export async function GET(request: NextRequest) {
     });
 
     const isDev = process.env.NODE_ENV === "development";
-    console.log("Node env");
-    console.log(process.env.NODE_ENV);
     const options = {
       name: "session",
       value: sessionCookie,

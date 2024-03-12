@@ -13,15 +13,33 @@ export default async function Page({
     params: { lang: Locale }
 }) {
     const userId: string = searchParams?.uid || "";
+    const userEmail: string = searchParams?.email || "";
 
     // Get donations by donor id
-    const { data, error } = await supabaseService
+    let dbResponse;
+    dbResponse = await supabaseService
         .from('profiles')
         .select('first_name, email, auth_id')
         .eq('auth_id', userId)
         .single();
 
-    if (!data || error) throw new Error("Error getting user data");;
+    // If data but no auth connection
+    if (dbResponse.data && !dbResponse.data.auth_id) {
+        dbResponse = await supabaseService
+            .from('profiles')
+            .update([{ auth_id: userId }])
+            .eq("email", userEmail)
+    }
+
+    // If no data, insert a new profile
+    if (!dbResponse.data) {
+        dbResponse = await supabaseService
+            .from('profiles')
+            .upsert([{ auth_id: userId, email: userEmail }])
+            .eq("email", userEmail)
+    }
+
+    if (dbResponse.error) throw new Error("Error getting user data");;
 
     return (
         <div className={s.container}>
@@ -29,7 +47,7 @@ export default async function Page({
                 <SettingsFormGapContainer>
                     <p className="body_l_bold">Display Name</p>
                     <p>Please enter your full name, or a display name you are comfortable with. This will be displayed on donations you make.</p>
-                    <TextInput maxLength={24} defaultValue={data.first_name} small name="profileName" className={s.textInput} />
+                    <TextInput placeholder="Your name" maxLength={24} defaultValue={dbResponse?.data?.first_name || ""} small name="profileName" className={s.textInput} />
                 </SettingsFormGapContainer>
                 <TextInput hidden defaultValue={lang} name="lang" />
             </SettingsForm>
@@ -37,7 +55,7 @@ export default async function Page({
                 <SettingsFormGapContainer>
                     <p className="body_l_bold">Email</p>
                     <p>Please enter the email address you want to use to log in with Give a Meal.</p>
-                    <TextInput disabled defaultValue={data.email} small className={s.textInput} />
+                    <TextInput disabled defaultValue={dbResponse?.data?.email} small className={s.textInput} />
                 </SettingsFormGapContainer>
             </SettingsForm>
         </div>

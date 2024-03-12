@@ -67,6 +67,7 @@ export async function middleware(request: NextRequest) {
   if (result.data) {
     const params = new URLSearchParams();
     params.append("uid", result.data.uid);
+    params.append("email", result.data.email);
     currentPathname = `${currentPathname}?${params.toString()}`;
   }
 

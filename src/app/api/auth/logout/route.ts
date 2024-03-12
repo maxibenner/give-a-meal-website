@@ -18,5 +18,9 @@ export async function GET(request: NextRequest) {
         status: 500,
       });
     }
+  } else {
+    const response = NextResponse.redirect(new URL(`/${lang}`, request.url));
+    response.cookies.delete("session");
+    return response;
   }
 }
