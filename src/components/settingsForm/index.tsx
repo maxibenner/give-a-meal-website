@@ -3,7 +3,6 @@
 import s from "./styles.module.css"
 import { useFormStatus } from "react-dom";
 import Button from "../button";
-import { toast } from 'react-hot-toast';
 
 export default function SettingsForm(
     {
