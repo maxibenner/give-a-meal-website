@@ -1,5 +1,5 @@
 import { Locale } from '@/i18n-config';
-import { ImageResponse } from 'next/server';
+import { ImageResponse } from 'next/og';
 
 export default async function Image({ params }: { params: { lang: Locale } }) {
 
