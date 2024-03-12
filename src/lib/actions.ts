@@ -18,6 +18,7 @@ export async function updateProfileName(formData: FormData) {
     name: formData.get("profileName"),
     authId: token.uid,
     lang: formData.get("lang"),
+    formName: formData.get("formName"),
   };
 
   // Check if form data is valid
@@ -25,7 +26,8 @@ export async function updateProfileName(formData: FormData) {
     typeof rawFormData.name !== "string" ||
     rawFormData.name.length > 24 ||
     typeof rawFormData.authId !== "string" ||
-    !rawFormData.lang
+    !rawFormData.lang ||
+    !rawFormData.formName
   ) {
     throw new Error("Invalid form data");
   }
@@ -40,5 +42,7 @@ export async function updateProfileName(formData: FormData) {
   }
 
   revalidatePath(`/${rawFormData.lang}/donors/profile`);
-  redirect(`/${rawFormData.lang}/donors/profile?success=true&name=${rawFormData.name}`);
+  redirect(
+    `/${rawFormData.lang}/donors/profile?success-form-name=${rawFormData.formName}`
+  );
 }

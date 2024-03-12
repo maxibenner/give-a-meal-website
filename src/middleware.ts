@@ -59,9 +59,6 @@ export async function middleware(request: NextRequest) {
   // 2) Return data with user info if authenticated
   // 3) Return pathname to login url if not authenticated
   const result = await handleAuthentication(request, currentPathname);
-  let uid: string | null = null;
-  let email: string | null = null;
-
   if (result.pathname) {
     currentPathname = result.pathname;
   }
@@ -70,7 +67,6 @@ export async function middleware(request: NextRequest) {
   if (result.data) {
     const params = new URLSearchParams();
     params.append("uid", result.data.uid);
-    params.append("email", result.data.email);
     currentPathname = `${currentPathname}?${params.toString()}`;
   }
 

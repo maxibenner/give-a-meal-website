@@ -23,11 +23,9 @@ export default async function Page({
 
     if (!data || error) throw new Error("Error getting user data");;
 
-
-
     return (
         <div className={s.container}>
-            <SettingsForm action={updateProfileName}>
+            <SettingsForm successText="Successfully updated display name" formName="displayName" action={updateProfileName}>
                 <SettingsFormGapContainer>
                     <p className="body_l_bold">Display Name</p>
                     <p>Please enter your full name, or a display name you are comfortable with. This will be displayed on donations you make.</p>
