@@ -10,5 +10,8 @@
 
 .textInput {
     max-width: 300px;
-    ;
+}
+
+.link {
+    color: var(--color-accent);
 }

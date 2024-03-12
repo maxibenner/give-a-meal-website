@@ -79,8 +79,6 @@ export async function middleware(request: NextRequest) {
 
   // Response: return the modified url and query parameters
   // Prevent re-direct if the current pathname is the same as the request pathname
-  console.log(currentPathname);
-  console.log(request.nextUrl.pathname);
   if (currentPathname === request.nextUrl.pathname + request.nextUrl.search) {
     return NextResponse.next();
   } else {

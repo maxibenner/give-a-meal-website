@@ -9,7 +9,8 @@ export default function Button({
     children,
     icon,
     large,
-    isLoading
+    isLoading,
+    disabled
 }: {
     href?: string,
     children: any,
@@ -19,12 +20,13 @@ export default function Button({
     icon?: JSX.Element,
     large?: boolean,
     isLoading?: boolean
+    disabled?: boolean
 }) {
 
     const content = (
-        <button type="submit" onClick={onClick} className={`body ${styles.container} ${large && styles.large} ${isLoading && styles.isLoading} ${className}`}>
-            {/* <div className={styles.spinner} /> */}
-            <div className={styles.content}>{icon && icon}{children}</div>
+        <button disabled={disabled} type="submit" onClick={onClick} className={`body ${styles.container} ${large && styles.large} ${isLoading && styles.isLoading} ${className}`}>
+            {isLoading && <div className={styles.spinner} />}
+            {!isLoading && <div className={styles.content}>{icon && icon}{children}</div>}
         </button>
     )
 
