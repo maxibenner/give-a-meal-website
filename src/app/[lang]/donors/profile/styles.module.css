@@ -15,3 +15,22 @@
 .link {
     color: var(--color-accent);
 }
+
+/* FUNCTIONAL STYLES */
+.desktopOnly {
+    display: block;
+}
+
+.mobileOnly {
+    display: none;
+}
+
+@media(max-width: 768px) {
+    .desktopOnly {
+        display: none !important;
+    }
+
+    .mobileOnly {
+        display: block;
+    }
+}

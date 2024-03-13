@@ -1,0 +1,32 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.backLinkMobile {
+    margin: 0 -24px;
+    display: none !important;
+}
+
+@media(max-width: 768px) {
+    .container {
+        padding-top: 24px;
+    }
+
+    .backLinkMobile {
+        display: flex !important;
+    }
+}
+
+.actionText {
+    color: var(--color-action-item-bar-text)
+}
+
+.textInput {
+    max-width: 300px;
+}
+
+.link {
+    color: var(--color-accent);
+}

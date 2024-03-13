@@ -9,6 +9,21 @@
     color: var(--color-grey-100);
 }
 
+.backLinkMobile {
+    margin: 0 -24px;
+    display: none !important;
+}
+
+@media(max-width: 768px) {
+    .container {
+        padding-top: 24px;
+    }
+
+    .backLinkMobile {
+        display: flex !important;
+    }
+}
+
 /* Loading */
 .loadingSkeleton {
     height: 113px;

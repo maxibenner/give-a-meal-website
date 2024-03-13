@@ -1,0 +1,74 @@
+import SettingsForm, { SettingsFormGapContainer } from "@/components/settingsForm";
+import TextInput from "@/components/textInput";
+import { supabaseService } from "@/lib/supabase";
+import s from "./styles.module.css";
+import { updateProfileName } from "@/lib/actions";
+import { Locale } from "@/i18n-config";
+
+export default async function Page({
+    searchParams,
+    params: { lang }
+}: {
+    searchParams?: { [key: string]: string | undefined },
+    params: { lang: Locale }
+}) {
+    const userId: string = searchParams?.uid || "";
+    const userEmail: string = searchParams?.email || "";
+
+    // Get donations by donor id
+    let dbResponse;
+    dbResponse = await supabaseService
+        .from('profiles')
+        .select('first_name, email, auth_id')
+        .eq('auth_id', userId)
+        .single();
+
+    // If data but no auth connection
+    if (dbResponse.data && !dbResponse.data.auth_id) {
+        dbResponse = await supabaseService
+            .from('profiles')
+            .update([{ auth_id: userId }])
+            .eq("email", userEmail)
+    }
+
+    // If no data, insert a new profile
+    if (!dbResponse.data) {
+        dbResponse = await supabaseService
+            .from('profiles')
+            .upsert([{ auth_id: userId, email: userEmail }])
+            .eq("email", userEmail)
+    }
+
+    if (dbResponse.error) throw new Error("Error getting user data");;
+
+    return (
+        <div className={s.container}>
+            <SettingsForm successText="Successfully updated display name" formName="displayName" action={updateProfileName}>
+                <SettingsFormGapContainer>
+                    <p className="body_l_bold">Display Name</p>
+                    <p>Please enter your full name, or a display name you are comfortable with. This will be displayed on donations you make.</p>
+                    <TextInput placeholder="Your name" maxLength={24} defaultValue={dbResponse?.data?.first_name || ""} small name="profileName" className={s.textInput} />
+                </SettingsFormGapContainer>
+                <TextInput hidden defaultValue={lang} name="lang" />
+            </SettingsForm>
+            <SettingsForm subText={<EmailActionText />}>
+                <SettingsFormGapContainer>
+                    <p className="body_l_bold">Email</p>
+                    <p>Please enter the email address you want to use to log in with Give a Meal.</p>
+                    <TextInput disabled defaultValue={dbResponse?.data?.email} small className={s.textInput} />
+                </SettingsFormGapContainer>
+            </SettingsForm>
+        </div>
+    )
+}
+
+function EmailActionText() {
+    return (
+        <span className={s.actionText}>
+            If you need to change your email, please contact us at {" "}
+            <a className={s.link} href="mailto:max@give-a-meal.org">
+                max@give-a-meal.org
+            </a>
+        </span>
+    )
+}

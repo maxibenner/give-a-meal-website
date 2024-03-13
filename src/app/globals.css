@@ -115,7 +115,9 @@ body {
 
 /* Tags */
 hr {
-  border-color: var(--color-border);
+  box-shadow: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
 }
 
 /* Text */

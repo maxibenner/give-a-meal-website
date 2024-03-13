@@ -16,16 +16,15 @@ export default async function Layout({ children, params: { lang } }: { children:
             </div>
             <hr />
             <div className={s.contentWrapper}>
-                <Menu menuItems={[
+                {/* Desktop only */}
+                <Menu className={s.desktopElement} menuItems={[
                     { label: menu.profile, link: localeLink("/donors/profile", lang) },
                     { label: menu.donations, link: localeLink('/donors/profile/donations', lang) },
                     { label: menu.logout, link: `/api/auth/logout?lang=${lang}` }
 
                 ]} />
-                <div className={s.pageWrapper}>
-                    {children}
-                </div>
+                <div>{children}</div>
             </div>
         </div>
     )
-}
+} 

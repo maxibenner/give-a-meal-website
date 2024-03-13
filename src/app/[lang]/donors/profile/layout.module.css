@@ -14,4 +14,25 @@
     padding: 24px;
 }
 
-.pageWrapper {}
+.mobileContentWrapper {
+    display: none;
+}
+
+@media(max-width: 768px) {
+
+    .mobileContentWrapper {
+        display: block;
+        border: 4px solid green;
+        width: 100%;
+        height: 50px;
+    }
+
+    .contentWrapper {
+        grid-template-columns: 1fr;
+        padding-top: 0;
+    }
+
+    .desktopElement {
+        display: none !important;
+    }
+}

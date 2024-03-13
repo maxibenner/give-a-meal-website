@@ -43,6 +43,6 @@ export async function updateProfileName(formData: FormData) {
 
   revalidatePath(`/${rawFormData.lang}/donors/profile`);
   redirect(
-    `/${rawFormData.lang}/donors/profile?success-form-name=${rawFormData.formName}`
+    `/${rawFormData.lang}/donors/profile/general?success-form-name=${rawFormData.formName}`
   );
 }
