@@ -1,5 +1,8 @@
 {
   "elements": {
+    "buttons": {
+      "save": "Save"
+    },
     "nav": {
       "pickUp": "Get a Meal",
       "donate": "Donate",
@@ -322,7 +325,34 @@
         "form": {
           "title": "Access your donor profile",
           "emailLabel": "Email",
-          "button": "Log in / Sign up"
+          "button": "Log in / Sign up",
+          "successMessage": "We sent an email to <b>%d</b>. Check your email and click the link to log in."
+        },
+        "successMessage": "We sent an email to maxibenner@gmail.com. Check your email and click the link to log in."
+      },
+      "profile": {
+        "sections": {
+          "displayName": {
+            "title": "Display Name",
+            "description": "Please enter your full name, or a display name you are comfortable with. This will be displayed on donations you make.",
+            "placeholder": "Your name",
+            "toasts": {
+              "updateSuccess": "Successfully updated display name"
+            }
+          },
+          "email": {
+            "title": "Email",
+            "description": "Please enter the email address you want to use to log in with Give a Meal.",
+            "subText": "If you need to change your email, please contact us at"
+          }
+        }
+      },
+      "donations": {
+        "title": "Donations",
+        "donationElement": {
+          "badge": {
+            "claimed": "Claimed"
+          }
         }
       }
     }

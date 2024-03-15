@@ -4,9 +4,12 @@ import Link from "next/link";
 import Button from "../button";
 import TextInput from "../textInput";
 import s from "./styles.module.css"
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { auth } from "@/lib/firebase";
 import { sendSignInLinkToEmail } from "firebase/auth";
+import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary-client";
+import fillTemplate from "@/utils/fillTemplate";
 
 export default function MagicLinkLoginForm({ title,
     emailLabel,
@@ -24,12 +27,17 @@ export default function MagicLinkLoginForm({ title,
     privacyLabel: string,
     termsLink: string,
     privacyLink: string,
-    lang: string
+    lang: Locale
 }) {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
     const [success, setSuccess] = useState(false);
+    const [dict, setDict] = useState<any>(null)
 
+
+    useEffect(() => {
+        getDictionary(lang).then((res) => setDict(res))
+    }, [])
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault();
@@ -56,7 +64,7 @@ export default function MagicLinkLoginForm({ title,
     }
 
     if (success) return (
-        <p className={`body ${s.textContainer}`}>We sent an email to <b>{email}</b>. Check your email and click the link to log in.</p>
+        <p className={`body ${s.textContainer}`} dangerouslySetInnerHTML={{ __html: fillTemplate(dict.pages.donors.login.form.successMessage, email) }}></p>
     )
     else return (
         <form className={s.form} onSubmit={handleSubmit} method='POST'>

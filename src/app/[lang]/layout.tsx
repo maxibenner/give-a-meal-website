@@ -1,8 +1,8 @@
 import Navigation from "@/components/navigation";
 import { Locale, i18n } from "@/i18n-config";
 import Script from 'next/script';
-import { Toaster } from "react-hot-toast";
 import "../globals.css";
+import Toaster from "@/components/toaster";
 
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
@@ -34,25 +34,10 @@ export default function RootLayout({
           <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5XJTLZGM" height="0" width="0" style={{ display: "none", visibility: "hidden" }}></iframe>
         </noscript>
         <Navigation lang={params.lang} />
-        <Toaster position="bottom-right"
-          toastOptions={{
-            duration: 5000,
-            style: {
-              padding: "12px 24px"
-            },
-            success: {
-              style: {
-                backgroundColor: '#3C7EF8',
-                color: 'white',
-              },
-              iconTheme: {
-                primary: 'white',
-                secondary: '#3C7EF8',
-              },
-            }
-          }} />
+        <Toaster />
         <main>{children}</main>
       </body>
     </html>
   );
 }
+

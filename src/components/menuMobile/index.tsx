@@ -9,8 +9,8 @@ type MenuItem = {
 /**
  * Renders a menu component.
  * Adds activity state based on the current route.
- * @param {MenuItem[]} menuItems - The array of menu items.
- * @returns {JSX.Element} The rendered menu component.
+ * @param menuItems - The array of menu items.
+ * @returns The rendered menu component.
  */
 export default function MenuMobile({ menuItems, className }: { menuItems: MenuItem[], className?: string }) {
 

@@ -8,6 +8,7 @@ import localeLink from '@/utils/localeLink';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import s from './page.module.css';
+import fillTemplate from "@/utils/fillTemplate";
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }

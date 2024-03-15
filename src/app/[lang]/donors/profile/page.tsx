@@ -2,6 +2,8 @@ import MenuMobile from "@/components/menuMobile";
 import { Locale } from "@/i18n-config";
 import GeneralPage from "./general/page";
 import s from "./styles.module.css";
+import localeLink from "@/utils/localeLink";
+import { getDictionary } from "@/get-dictionary-server";
 
 export default async function Page({
     searchParams,
@@ -10,6 +12,8 @@ export default async function Page({
     searchParams?: { [key: string]: string | undefined },
     params: { lang: Locale }
 }) {
+
+    const { pages: { donors: { layout: { menu } } } } = await getDictionary(params.lang)
 
     return (
         <>
@@ -20,9 +24,9 @@ export default async function Page({
             {/* Mobile only */}
             <div className={s.mobileOnly}>
                 <MenuMobile menuItems={[
-                    { label: "General", link: "/donors/profile/general" },
-                    { label: "Donations", link: "/donors/profile/donations" },
-                    { label: "Logout", link: `/api/auth/logout?lang=${params.lang}` }
+                    { label: menu.profile, link: localeLink("/donors/profile/general", params.lang) },
+                    { label: menu.donations, link: localeLink("/donors/profile/donations", params.lang) },
+                    { label: menu.logout, link: `/api/auth/logout?lang=${params.lang}` }
                 ]} />
             </div>
         </>

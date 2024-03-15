@@ -4,6 +4,7 @@ import { supabaseService } from "@/lib/supabase";
 import s from "./styles.module.css";
 import { updateProfileName } from "@/lib/actions";
 import { Locale } from "@/i18n-config";
+import { getDictionary } from "@/get-dictionary-server";
 
 export default async function Page({
     searchParams,
@@ -12,6 +13,8 @@ export default async function Page({
     searchParams?: { [key: string]: string | undefined },
     params: { lang: Locale }
 }) {
+    const { elements: { buttons }, pages: { donors: { profile: { sections: { displayName, email } } } } } = await getDictionary(lang)
+
     const userId: string = searchParams?.uid || "";
     const userEmail: string = searchParams?.email || "";
 
@@ -39,36 +42,36 @@ export default async function Page({
             .eq("email", userEmail)
     }
 
-    if (dbResponse.error) throw new Error("Error getting user data");;
+    if (dbResponse.error) throw new Error("Error getting user data");
+
+    function EmailActionText() {
+        return (
+            <span className={s.actionText}>
+                {email.subText} {" "}
+                <a className={s.link} href="mailto:max@give-a-meal.org">
+                    max@give-a-meal.org
+                </a>
+            </span>
+        )
+    }
 
     return (
         <div className={s.container}>
-            <SettingsForm successText="Successfully updated display name" formName="displayName" action={updateProfileName}>
+            <SettingsForm buttonText={buttons.save} successText={displayName.toasts.updateSuccess} formName="displayName" action={updateProfileName}>
                 <SettingsFormGapContainer>
-                    <p className="body_l_bold">Display Name</p>
-                    <p>Please enter your full name, or a display name you are comfortable with. This will be displayed on donations you make.</p>
-                    <TextInput placeholder="Your name" maxLength={24} defaultValue={dbResponse?.data?.first_name || ""} small name="profileName" className={s.textInput} />
+                    <p className="body_l_bold">{displayName.title}</p>
+                    <p>{displayName.description}</p>
+                    <TextInput placeholder={displayName.placeholder} maxLength={24} defaultValue={dbResponse?.data?.first_name || ""} small name="profileName" className={s.textInput} />
                 </SettingsFormGapContainer>
                 <TextInput hidden defaultValue={lang} name="lang" />
             </SettingsForm>
             <SettingsForm subText={<EmailActionText />}>
                 <SettingsFormGapContainer>
-                    <p className="body_l_bold">Email</p>
-                    <p>Please enter the email address you want to use to log in with Give a Meal.</p>
+                    <p className="body_l_bold">{email.title}</p>
+                    <p>{email.description}</p>
                     <TextInput disabled defaultValue={dbResponse?.data?.email} small className={s.textInput} />
                 </SettingsFormGapContainer>
             </SettingsForm>
         </div>
-    )
-}
-
-function EmailActionText() {
-    return (
-        <span className={s.actionText}>
-            If you need to change your email, please contact us at {" "}
-            <a className={s.link} href="mailto:max@give-a-meal.org">
-                max@give-a-meal.org
-            </a>
-        </span>
     )
 }

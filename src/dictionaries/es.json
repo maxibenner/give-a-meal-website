@@ -11,6 +11,9 @@
       "terms": "Términos de Uso",
       "privacy": "Política de Privacidad",
       "contact": "Contacto"
+    },
+    "buttons": {
+      "save": "Guardar"
     }
   },
   "pages": {
@@ -324,7 +327,34 @@
         "form": {
           "title": "Accede a tu perfil de donante",
           "emailLabel": "Correo electrónico",
-          "button": "Iniciar sesión / Registrarse"
+          "button": "Iniciar sesión / Registrarse",
+          "successMessage": "Enviamos un correo electrónico a <b>%d</b>. Revisa tu correo electrónico y haz clic en el enlace para iniciar sesión."
+        },
+        "successMessage": "Hemos enviado un correo electrónico a maxibenner@gmail.com. Por favor, revisa tu correo electrónico y haz clic en el enlace para iniciar sesión."
+      },
+      "profile": {
+        "sections": {
+          "displayName": {
+            "title": "Nombre de usuario",
+            "description": "Por favor, ingresa tu nombre completo o un nombre de usuario con el que te sientas cómodo. Este se mostrará en las donaciones que realices.",
+            "placeholder": "Su nombre",
+            "toasts": {
+              "updateSuccess": "Nombre de visualización actualizado con éxito"
+            }
+          },
+          "email": {
+            "title": "Correo electrónico",
+            "description": "Por favor, ingresa la dirección de correo electrónico que deseas utilizar para iniciar sesión en Give a Meal.",
+            "subText": "Si necesitas cambiar tu correo electrónico, por favor contáctanos en"
+          }
+        }
+      },
+      "donations": {
+        "title": "Donaciones",
+        "donationElement": {
+          "badge": {
+            "claimed": "Reclamado"
+          }
         }
       }
     }

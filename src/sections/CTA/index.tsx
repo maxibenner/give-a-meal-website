@@ -7,7 +7,7 @@ import Tomato from "@/public/assets/tomato.svg"
 import Cucumber from "@/public/assets/cucumber.svg"
 import Onion from "@/public/assets/onion.svg"
 import { Locale } from "@/i18n-config";
-import { getDictionary } from "@/get-dictionary-client";
+import { getDictionary } from "@/get-dictionary-server";
 import localeLink from "@/utils/localeLink";
 import getRecentDonationsAndBusinesses from "@/functions/getRecentDonationsAndBusinesses";
 
