@@ -6,7 +6,7 @@ export default function HeaderLinkMobile({ icon, children, href, className }: { 
     return (
         <Link href={href} className={`${s.container} ${className}`}>
             {icon && <Image className={s.icon} src={icon} alt="link icon" />}
-            <p className="body_bold">{children}</p>
+            <p className="body">{children}</p>
         </Link>
     )
 }
