@@ -7,7 +7,7 @@ import localeLink from "@/utils/localeLink";
 import Button from "../button";
 import React, { useEffect } from "react";
 
-export default function NavigationMobile({ lang, nav, className }: { lang: Locale, nav: { pickUp: string, donate: string, partners: string, apps: string }, className?: string }) {
+export default function NavigationMobile({ lang, nav, className }: { lang: Locale, nav: { pickUp: string, donate: string, partners: string, apps: string, donorProfile: string }, className?: string }) {
     const [active, setActive] = React.useState(false)
 
     // Prevent body from scrolling while drawer is open
@@ -28,6 +28,7 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
                 <div className={styles.menuContainerMobile}>
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/get-a-meal", lang)} className="body">{nav.pickUp}</LinkWithHover>
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body">{nav.donate}</LinkWithHover>
+                    <LinkWithHover onClick={() => setActive(false)} href={localeLink("/donors/profile", lang)} className="body">{nav.donorProfile}</LinkWithHover>
                     <LinkWithHover onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body">{nav.partners}</LinkWithHover>
                     <Button onClick={() => setActive(false)} href={localeLink("/app", lang)}>{nav.apps}</Button >
                 </div>
