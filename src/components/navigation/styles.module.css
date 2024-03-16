@@ -93,6 +93,7 @@
     background-color: var(--color-white);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-regular);
+    border: 1px solid var(--color-border);
 }
 
 .menuContainerMobile {
@@ -146,6 +147,7 @@
         transition: .3s;
         z-index: 2;
         box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05);
+        border: 1px solid var(--color-border);
     }
 
     .navButton:hover {
