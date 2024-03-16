@@ -6,6 +6,7 @@ import styles from "./styles.module.css";
 import localeLink from "@/utils/localeLink";
 import Button from "../button";
 import React, { useEffect } from "react";
+import NavLinkMobile from "../navLinkMobile";
 
 export default function NavigationMobile({ lang, nav, className }: { lang: Locale, nav: { pickUp: string, donate: string, partners: string, apps: string, donorProfile: string }, className?: string }) {
     const [active, setActive] = React.useState(false)
@@ -26,13 +27,14 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
             </button>
             <div className={`${styles.drawer} ${active && styles.drawerActive}`}>
                 <div className={styles.menuContainerMobile}>
-                    <LinkWithHover onClick={() => setActive(false)} href={localeLink("/get-a-meal", lang)} className="body">{nav.pickUp}</LinkWithHover>
-                    <LinkWithHover onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body">{nav.donate}</LinkWithHover>
-                    <LinkWithHover onClick={() => setActive(false)} href={localeLink("/donors/profile", lang)} className="body">{nav.donorProfile}</LinkWithHover>
-                    <LinkWithHover onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body">{nav.partners}</LinkWithHover>
-                    <Button onClick={() => setActive(false)} href={localeLink("/app", lang)}>{nav.apps}</Button >
+                    <NavLinkMobile label={nav.pickUp} onClick={() => setActive(false)} href={localeLink("/get-a-meal", lang)} className="body"></NavLinkMobile>
+                    <NavLinkMobile label={nav.donate} onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body">
+                        <NavLinkMobile.Sub label={nav.donorProfile} onClick={() => setActive(false)} href={localeLink("/donors/profile", lang)} className="body"></NavLinkMobile.Sub>
+                    </NavLinkMobile>
+                    <NavLinkMobile label={nav.partners} onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body"></NavLinkMobile>
+                    <Button className={styles.mobileButton} onClick={() => setActive(false)} href={localeLink("/app", lang)}>{nav.apps}</Button >
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

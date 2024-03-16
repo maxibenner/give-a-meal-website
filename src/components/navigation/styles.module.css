@@ -23,11 +23,12 @@
     width: 100%;
     height: 100vh;
     pointer-events: none;
+    background-color: rgba(0, 0, 0, 0);
+    transition: .3s;
 }
 
 .drawer>.menuContainerMobile {
     transform: scale(0);
-    border-radius: 0;
     transition: transform 0.3s ease;
     /* Ensure transition is defined here */
 }
@@ -97,11 +98,14 @@
 }
 
 .menuContainerMobile {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
     background-color: var(--color-white);
-    border-radius: var(--border-radius);
+    /* border-radius: var(--border-radius); */
     box-shadow: var(--shadow-regular);
-    padding: 8px 8px 8px 24px;
-    height: 100%;
+    padding: 82px 24px 24px 32px;
+    /* height: 100%; */
 }
 
 .wordmark {
@@ -168,30 +172,15 @@
         gap: 12px;
     }
 
-    .drawerActive {
-        pointer-events: all;
-    }
-
-    .drawerActive>.menuContainerMobile {
-        transform: scale(1);
-        border-radius: 0;
-    }
-
-    .drawerActive>.menuContainerMobile a {
-        opacity: 1;
-    }
-
     .menuContainerMobile {
         display: flex;
-        align-items: center;
-        gap: 36px;
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 0 48px 48px 48px;
+        /* align-items: center; */
+        /* justify-content: center; */
+        /* padding: 0 48px 48px 48px; */
         transform-origin: calc(100% - 18px) 18px;
         transform: scale(0);
-        border-radius: 48px;
+        border-radius: var(--border-radius);
         width: 100%;
         transition: .3s;
     }
@@ -202,13 +191,30 @@
         transition: .3s;
     }
 
-    .mobileButton {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .drawerActive {
+        pointer-events: all;
+        background-color: rgba(0, 0, 0, 0.3);
     }
 
+    .drawerActive>.menuContainerMobile {
+        transform: scale(1);
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-radius: 0;
+        /* border-radius: 0; */
+    }
 
+    .drawerActive>.menuContainerMobile a {
+        opacity: 1;
+    }
+
+    .mobileButton {
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+        margin-top: 24px;
+        width: 100%;
+    }
 
 
 }
