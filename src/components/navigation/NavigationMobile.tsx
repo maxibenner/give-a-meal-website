@@ -34,6 +34,7 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
                     <NavLinkMobile label={nav.partners} onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body"></NavLinkMobile>
                     <Button className={styles.mobileButton} onClick={() => setActive(false)} href={localeLink("/app", lang)}>{nav.apps}</Button >
                 </div>
+                <div onClick={() => setActive(false)} className={styles.bgClickCatcher}></div>
             </div>
         </div >
     )
