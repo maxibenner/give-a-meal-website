@@ -30,6 +30,6 @@ export default function Button({
         </button>
     )
 
-    if (href) return <Link className={wrapperClassName} href={href}>{content}</Link>
+    if (href) return <Link className={`${styles.link} ${wrapperClassName}`} href={href}>{content}</Link>
     else return <div className={wrapperClassName}>{content}</div>
 }

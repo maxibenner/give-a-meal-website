@@ -24,6 +24,10 @@
     border-radius: var(--border-radius);
 }
 
+.link:hover {
+    opacity: 1;
+}
+
 .container:hover {
     background-color: var(--color-button-primary-hover);
     opacity: 1;
