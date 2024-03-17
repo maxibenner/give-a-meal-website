@@ -71,14 +71,12 @@ export async function middleware(request: NextRequest) {
 
   // Add user data to the query parameters
   if (result.data) {
-    params.append("uid", result.data.uid);
-    params.append("email", result.data.email);
+    !params.get("uid") && params.append("uid", result.data.uid);
+    !params.get("email") && params.append("email", result.data.email);
   }
 
   // Edit pathname with query parameters
   currentPathname = `${currentPathname}?${params.toString()}`;
-
-  console.log("currentPathname", currentPathname);
 
   // Response: create new URL
   const url = new URL(currentPathname, request.nextUrl.origin);
