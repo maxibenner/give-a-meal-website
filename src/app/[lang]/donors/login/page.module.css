@@ -4,9 +4,6 @@
     min-height: 100vh;
     padding-top: 74px;
     padding-bottom: 24px;
-
-    /* For iOS */
-    min-height: calc(100vh - constant(safe-area-inset-top));
 }
 
 .panel {
@@ -39,6 +36,17 @@
     .panel:nth-child(2) {
         grid-column: 1 / 13;
 
+    }
+}
+
+@media (max-width: 880px) {
+    .container {
+        min-height: 0px;
+    }
+
+    .panel:nth-child(2) {
+        padding-top: 72px;
+        padding-bottom: 72px;
     }
 }
 
