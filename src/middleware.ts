@@ -49,7 +49,10 @@ export async function middleware(request: NextRequest) {
       return NextResponse.next();
     } else {
       return NextResponse.redirect(
-        new URL(currentPathname, request.nextUrl.origin)
+        new URL(
+          currentPathname + request.nextUrl.search,
+          request.nextUrl.origin
+        )
       );
     }
   }
@@ -63,13 +66,19 @@ export async function middleware(request: NextRequest) {
     currentPathname = result.pathname;
   }
 
+  // Pass through existing query parameters
+  const params = new URLSearchParams(request.nextUrl.search);
+
   // Add user data to the query parameters
   if (result.data) {
-    const params = new URLSearchParams();
     params.append("uid", result.data.uid);
     params.append("email", result.data.email);
-    currentPathname = `${currentPathname}?${params.toString()}`;
   }
+
+  // Edit pathname with query parameters
+  currentPathname = `${currentPathname}?${params.toString()}`;
+
+  console.log("currentPathname", currentPathname);
 
   // Response: create new URL
   const url = new URL(currentPathname, request.nextUrl.origin);

@@ -18,7 +18,8 @@ export default function MagicLinkLoginForm({ title,
     privacyLabel,
     termsLink,
     privacyLink,
-    lang
+    lang,
+    defaultEmail
 }: {
     title: string,
     emailLabel: string,
@@ -27,7 +28,8 @@ export default function MagicLinkLoginForm({ title,
     privacyLabel: string,
     termsLink: string,
     privacyLink: string,
-    lang: Locale
+    lang: Locale,
+    defaultEmail?: string | null
 }) {
     const [loading, setLoading] = useState(false);
     const [email, setEmail] = useState("");
@@ -69,7 +71,7 @@ export default function MagicLinkLoginForm({ title,
     else return (
         <form className={s.form} onSubmit={handleSubmit} method='POST'>
             <h3>{title}</h3>
-            <TextInput name="email" label={emailLabel} type="email" />
+            <TextInput defaultValue={defaultEmail || undefined} name="email" label={emailLabel} type="email" />
             <Button large>{buttonLabel}</Button>
             <div className={s.linkContainer}>
                 <Link href={termsLink} className="label">{termsLabel}</Link>

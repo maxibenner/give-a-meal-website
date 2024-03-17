@@ -17,6 +17,10 @@ export async function GET(request: NextRequest) {
         { status: 200 }
       );
     }
+    return NextResponse.json(
+      { error: "Couldn't find session" },
+      { status: 403 }
+    );
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 403 });
   }

@@ -8,7 +8,6 @@ import localeLink from '@/utils/localeLink';
 import { Metadata } from 'next';
 import Image from 'next/image';
 import s from './page.module.css';
-import fillTemplate from "@/utils/fillTemplate";
 
 export async function generateMetadata(
     { params }: { params: { lang: Locale } }
@@ -22,9 +21,9 @@ export async function generateMetadata(
     }
 }
 
-export default async function Page({ params: { lang } }: { params: { lang: Locale } }) {
-
-    const { pages: { donors: { login: { hero, form } } }, elements: { footer } } = await getDictionary(lang)
+export default async function Page({ params, searchParams }: { params: { lang: Locale }, searchParams: any }) {
+    const { pages: { donors: { login: { hero, form } } }, elements: { footer } } = await getDictionary(params.lang)
+    const defaultEmail = searchParams?.pe || undefined
 
     return (
         <div className={`grid ${s.container}`}>
@@ -38,14 +37,15 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
             </div>
             <div className={s.panel}>
                 <MagicLinkLoginForm
+                    defaultEmail={defaultEmail}
                     title={form.title}
                     buttonLabel={form.button}
                     emailLabel={form.emailLabel}
                     termsLabel={footer.terms}
                     privacyLabel={footer.privacy}
-                    termsLink={localeLink("/terms-of-use", lang)}
-                    privacyLink={localeLink("/privacy-notice", lang)}
-                    lang={lang}
+                    termsLink={localeLink("/terms-of-use", params.lang)}
+                    privacyLink={localeLink("/privacy-notice", params.lang)}
+                    lang={params.lang}
                 />
             </div>
         </div>
