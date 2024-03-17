@@ -14,7 +14,8 @@
       "contact": "Contacto"
     },
     "buttons": {
-      "save": "Guardar"
+      "save": "Guardar",
+      "back": "Volver"
     }
   },
   "pages": {

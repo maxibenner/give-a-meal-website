@@ -7,11 +7,11 @@ import BackArrow from "@/public/assets/icons/back-arrow.svg"
 
 export default async function Layout({ children, params: { lang } }: { children: React.ReactNode, params: { lang: Locale } }) {
 
-    const { pages: { donors: { layout: { menu, header } } } } = await getDictionary(lang)
+    const { elements: { buttons }, pages: { donors: { layout: { menu, header } } } } = await getDictionary(lang)
 
     return (
         <>
-            <HeaderLinkMobile icon={BackArrow} href={localeLink("/donors/profile", lang)} className={s.backLinkMobile}>Back</HeaderLinkMobile>
+            <HeaderLinkMobile icon={BackArrow} href={localeLink("/donors/profile", lang)} className={s.backLinkMobile}>{buttons.back}</HeaderLinkMobile>
             <div>{children}</div>
         </>
     )

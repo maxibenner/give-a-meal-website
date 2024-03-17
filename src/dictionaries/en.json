@@ -1,7 +1,8 @@
 {
   "elements": {
     "buttons": {
-      "save": "Save"
+      "save": "Save",
+      "back": "Back"
     },
     "nav": {
       "pickUp": "Get a Meal",
