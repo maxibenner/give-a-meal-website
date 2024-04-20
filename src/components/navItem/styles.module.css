@@ -1,13 +1,15 @@
 .container {
     position: relative;
     height: 36px;
-    width: 90px;
+    width: min-content;
 }
 
-.container>a {
+.menuItem {
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     width: max-content;
     min-height: 36px;
@@ -18,18 +20,25 @@
     color: var(--color-black) !important;
 }
 
-.container>a:hover {
+.menuItem:hover {
     filter: invert(3%);
     opacity: 1;
 }
 
+.menuItem>img {
+    margin-right: -8px;
+}
+
 .dropdownWrapper {
+    position: absolute;
     padding-top: 18px;
     pointer-events: none;
     width: fit-content;
 }
 
 .dropdownMenu {
+    display: flex;
+    flex-direction: column;
     position: relative;
     padding: 8px;
     background-color: var(--color-white);
@@ -41,15 +50,25 @@
 
     /* Transition with slgiht bounce effect */
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.27, 1.55);
-    transition-delay: .05s;
 }
 
-.container:hover .dropdownWrapper {
+.dropdownMenu>a {
+    width: 100%;
+    white-space: nowrap;
+    justify-content: flex-start;
+}
+
+.container.active .menuItem > img {
+    /* transform: rotate(-180deg); */
+    transform: scale(-1);
+}
+
+.container.active .dropdownWrapper {
     pointer-events: all;
 }
 
-.container:hover .dropdownMenu,
-.dropdownWrapper:hover .dropdownMenu {
+.container.active .dropdownMenu,
+.dropdownWrapper.active .dropdownMenu {
     opacity: 1;
     transform: translateY(0px);
     pointer-events: all;
