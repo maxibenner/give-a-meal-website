@@ -20,10 +20,12 @@
 
 .subLinkContainer {
     display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
     align-items: stretch;
     margin-left: 12px;
     border-left: 1px solid var(--color-border);
     margin: 12px;
+    gap: 12px;
 }

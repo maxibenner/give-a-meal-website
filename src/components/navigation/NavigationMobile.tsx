@@ -28,6 +28,7 @@ export default function NavigationMobile({ lang, nav, className }: { lang: Local
                 <div className={styles.menuContainerMobile}>
                     <NavLinkMobile label={nav.pickUp} onClick={() => setActive(false)} href={localeLink("/get-a-meal", lang)} className="body"></NavLinkMobile>
                     <NavLinkMobile label={nav.donate} onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body">
+                        <NavLinkMobile.Sub label={nav.donate} onClick={() => setActive(false)} href={localeLink("/give-a-meal", lang)} className="body"></NavLinkMobile.Sub>
                         <NavLinkMobile.Sub label={nav.donorProfile} onClick={() => setActive(false)} href={localeLink("/donors/profile", lang)} className="body"></NavLinkMobile.Sub>
                     </NavLinkMobile>
                     <NavLinkMobile label={nav.partners} onClick={() => setActive(false)} href={localeLink("/restaurants", lang)} className="body"></NavLinkMobile>
