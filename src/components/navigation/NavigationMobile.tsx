@@ -1,7 +1,6 @@
 "use client"
 
 import { Locale } from "@/i18n-config";
-import LinkWithHover from "../linkWithHover";
 import styles from "./styles.module.css";
 import localeLink from "@/utils/localeLink";
 import Button from "../button";

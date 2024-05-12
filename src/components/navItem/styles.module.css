@@ -20,6 +20,10 @@
     color: var(--color-black) !important;
 }
 
+.menuItem.active {
+    text-decoration: underline;
+}
+
 .menuItem:hover {
     filter: invert(3%);
     opacity: 1;
@@ -58,7 +62,7 @@
     justify-content: flex-start;
 }
 
-.container.active .menuItem > img {
+.container.active .menuItem>img {
     /* transform: rotate(-180deg); */
     transform: scale(-1);
 }

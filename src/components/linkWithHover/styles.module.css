@@ -13,6 +13,10 @@
     color: var(--color-black) !important;
 }
 
+.container.active {
+    text-decoration: underline;
+}
+
 .container:hover {
     filter: invert(3%);
     opacity: 1;

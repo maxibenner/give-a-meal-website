@@ -5,7 +5,7 @@ import s from "./styles.module.css"
 import Arrow from "@/public/assets/icons/expand-arrow.svg"
 import Image from "next/image";
 
-export default function NavItem({ label, children }: { label: string, children?: any }) {
+export default function NavItem({ label, active = false, children }: { label: string, active?: boolean, children?: any }) {
     const itemRef = useRef<HTMLDivElement>(null);
     const tagClass = "navDropdownElement"
 
@@ -45,7 +45,7 @@ export default function NavItem({ label, children }: { label: string, children?:
 
     return (
         <div ref={itemRef} className={`${s.container} navDropdownElement`} onClick={toggleActive}>
-            <div className={s.menuItem}>
+            <div className={`${s.menuItem} ${active && s.active}`}>
                 <p>{label}</p>
                 <Image src={Arrow} alt="expandable menu arrow" />
             </div>
