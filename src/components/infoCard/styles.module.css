@@ -19,6 +19,8 @@
     flex-direction: column;
     gap: 24px;
     overflow: hidden;
+    min-height: 200px;
+    justify-content: flex-start;
 
     transition: .3s;
 }
@@ -80,6 +82,10 @@
     .number {
         font-size: 18px;
         line-height: 115%;
+    }
+
+    .textContainer {
+        min-height: unset;
     }
 
     .textContainer h3 {
