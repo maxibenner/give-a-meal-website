@@ -18,6 +18,14 @@
   margin: 0 auto;
 }
 
+@media(max-width: 880px) {
+  .maxWidth {
+    gap: 100px;
+    padding: 60px 0 120px 0;
+  }
+
+}
+
 .badgePartnerMarquee {
   grid-column: 2/ 10;
 }
