@@ -3,8 +3,6 @@
     z-index: 1;
     background-color: var(--color-primary);
     border-radius: var(--border-radius);
-    margin-top: 272px;
-    margin-bottom: 180px;
     grid-column: 2 / 12;
 }
 

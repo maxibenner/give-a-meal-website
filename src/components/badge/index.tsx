@@ -1,5 +1,5 @@
 import styles from "./styles.module.css"
 
-export default function Badge({ children, className }: { children: any, className?: string }) {
-    return <div className={`${styles.container} ${className}`}>{children}</div>
+export default function Badge({ children, className, style }: { children: any, className?: string, style?: any }) {
+    return <div className={`${styles.container} ${className}`} style={style}>{children}</div>
 }

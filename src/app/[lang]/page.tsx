@@ -9,6 +9,7 @@ import Badge from "@/components/badge";
 import InfoCards from "@/components/infoCards";
 import Footer from "@/components/footer";
 import { Metadata } from "next";
+import PartnerMarquee from "@/components/partnerMarquee";
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } }
@@ -23,13 +24,17 @@ export async function generateMetadata(
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 
-  const { pages: { home: { faq, howTo } } } = await getDictionary(lang)
+  const { pages: { home: { faq, howTo, partners } } } = await getDictionary(lang)
 
   return (
     <div className={styles.container}>
       <Hero lang={lang} />
       <div className={styles.overlay}>
         <div className={styles.maxWidth}>
+          <div className="grid" style={{ padding: 0 }}>
+            <Badge className={styles.badgePartnerMarquee} style={{ margin: "0 24px" }}>{partners.title}</Badge>
+            <PartnerMarquee className={styles.partnerMarqueeContainer} />
+          </div>
           <Why lang={lang} />
           <div className="grid">
             <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>

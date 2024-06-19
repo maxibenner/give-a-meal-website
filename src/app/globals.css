@@ -65,7 +65,8 @@
 
   /* Button */
   --color-button-primary: var(--color-black);
-  --color-button-primary-hover: var(--color-black-80);
+  /* --color-button-primary-hover: var(--color-black-80); */
+  --color-button-primary-hover: rgb(45, 45, 45);
 
   /* Input */
   --color-input-bg-deactivated: var(--color-grey-25);
@@ -127,7 +128,7 @@ a {
 }
 
 a:hover {
-  opacity: 0.5;
+  /* opacity: 0.8; */
 }
 
 h1 {

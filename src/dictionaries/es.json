@@ -99,6 +99,9 @@
           "minutes": "Hace %d minutos",
           "recently": "Ahora mismo"
         }
+      },
+      "partners": {
+        "title": "Nuestros Socios"
       }
     },
     "getAMeal": {
