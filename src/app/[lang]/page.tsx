@@ -32,7 +32,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
       <div className={styles.overlay}>
         <div className={styles.maxWidth}>
           <div className="grid" style={{ padding: 0 }}>
-            <Badge className={styles.badgePartnerMarquee} style={{ margin: "0 24px" }}>{partners.title}</Badge>
+            {/* <Badge className={styles.badgePartnerMarquee} style={{ margin: "0 24px" }}>{partners.title}</Badge> */}
             <PartnerMarquee className={styles.partnerMarqueeContainer} />
           </div>
           <Why lang={lang} />
