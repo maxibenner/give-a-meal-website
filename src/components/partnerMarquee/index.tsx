@@ -12,11 +12,11 @@ import { useEffect, useState } from "react";
 
 export default function PartnerMarquee({ className }: { className: string }) {
 
-    const [gradientWidth, setGradientWidth] = useState(30);
+    const [gradientWidth, setGradientWidth] = useState(24);
 
     const handleResize = () => {
         if (window.innerWidth < 200) {
-            setGradientWidth(30);
+            setGradientWidth(24);
         } else {
             setGradientWidth(200);
         }
