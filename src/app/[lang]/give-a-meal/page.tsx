@@ -8,6 +8,7 @@ import { getDictionary } from '@/get-dictionary-server';
 import { Locale } from '@/i18n-config';
 import Footer from '@/components/footer';
 import NearbyRestaurants from '@/components/nearbyRestaurants';
+import DonationCard from '@/components/donationCard';
 
 export async function generateMetadata(
   { params }: { params: { lang: Locale } }
@@ -23,7 +24,7 @@ export async function generateMetadata(
 
 export default async function Page({ params: { lang } }: { params: { lang: Locale } }) {
 
-  const { pages: { giveAMeal: { hero, howTo, faq, map } } } = await getDictionary(lang)
+  const { pages: { giveAMeal: { hero, howTo, faq, map, donate } } } = await getDictionary(lang)
 
   return (
     <>
@@ -32,6 +33,7 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
         <h2 className={styles.description}>{hero.sub}</h2>
         <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>
         <InfoCards items={howTo.cards} className={styles.infoCardContainer} />
+        <DonationCard dict={donate} className={styles.donationCardContainer} />
         <Badge className={styles.badgeHowItWorks}>{map.title}</Badge>
         <NearbyRestaurants className={styles.businessMap} dict={map} />
         <Badge className={styles.badgeFAQ}>{faq.title}</Badge>

@@ -168,28 +168,35 @@
     "giveAMeal": {
       "meta": {
         "title": "Donate",
-        "description": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
+        "description": "We partner with local restaurants to enable generous community members to donate meals for neighbors in need."
       },
       "hero": {
         "title": "Donate",
-        "sub": "We partner with local restaurants to enable generous community members to donate meals. A simple gesture with the power to change someone's day."
+        "sub": "We partner with local restaurants to enable generous community members to donate meals for neighbors in need."
       },
       "howTo": {
         "title": "How It Works",
         "cards": [
           {
-            "title": "Visit a Partner Restaurant",
-            "sub": "Ready to make a difference? Visit one of our partner restaurants and choose the meal you'd like to share."
+            "title": "Choose How to Donate",
+            "sub": "Donate online or in-store at any of our partner restaurants."
           },
           {
-            "title": "Donate a Meal",
-            "sub": "When placing your order, ask the restaurant to add it to Give a Meal."
+            "title": "Make a Meal Donation",
+            "sub": "Donate online or let the store know you'd like to purchase an extra meal for Give a Meal."
           },
           {
-            "title": "We Deliver Your Kindness",
-            "sub": "Your donated meal is listed on our app, ready to be claimed and savored by someone facing food insecurity."
+            "title": "Stores Deliver Your Donation",
+            "sub": "Stores list your donated meal on our app for someone in need to claim."
           }
         ]
+      },
+      "donate": {
+        "title": "Donate",
+        "subOne": "We will send your online donation to where it is needed most.",
+        "button": "Donate a Meal Online",
+        "divider": "or",
+        "subTwo": "Donate in-store at any of our partners from the map below."
       },
       "map": {
         "title": "Partner Restaurants Near You",

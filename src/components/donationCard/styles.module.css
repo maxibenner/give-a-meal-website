@@ -1,0 +1,56 @@
+.container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+
+    width: 100%;
+    padding: 48px;
+    margin-top: 0;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+
+    background-color: var(--color-primary);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.container * {
+    max-width: 300px;
+    z-index: 2;
+}
+
+.button {
+    min-width: 240px;
+    font-weight: bold;
+}
+
+.tomato,
+.cucumber {
+    position: absolute;
+    z-index: 1;
+}
+
+.tomato {
+    left: -50px;
+    top: -70px;
+    transform: rotate(160deg);
+}
+
+.cucumber {
+    right: -100px;
+    bottom: -50px;
+}
+
+@media(max-width: 768px) {
+
+    .tomato {
+        left: -90px;
+    }
+
+    .cucumber {
+        right: -130px;
+    }
+}

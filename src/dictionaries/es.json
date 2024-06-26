@@ -168,26 +168,26 @@
     "giveAMeal": {
       "meta": {
         "title": "Donar",
-        "description": "Nos asociamos con restaurantes locales para que los miembros generosos de la comunidad puedan donar comidas. Es un gesto sencillo pero con el poder de alegrar el día de alguien."
+        "description": "Nos asociamos con restaurantes locales para permitir que miembros generosos de la comunidad donen comidas a vecinos necesitados."
       },
       "hero": {
         "title": "Donar",
-        "sub": "Nos asociamos con restaurantes locales para que los miembros generosos de la comunidad puedan donar comidas. Es un gesto sencillo pero con el poder de alegrar el día de alguien."
+        "sub": "Nos asociamos con restaurantes locales para permitir que miembros generosos de la comunidad donen comidas para vecinos necesitados."
       },
       "howTo": {
         "title": "Cómo Funciona",
         "cards": [
           {
-            "title": "Visita un Restaurante Asociado",
-            "sub": "¿Estás listo para marcar la diferencia? Visita uno de nuestros restaurantes asociados y elige la comida que deseas compartir."
+            "title": "Elige Cómo Donar",
+            "sub": "Donar en línea o en la tienda en cualquiera de nuestros restaurantes asociados."
           },
           {
-            "title": "Donar Comida",
-            "sub": "Cuando hagas tu pedido, solicita al restaurante que lo añada a Give a Meal."
+            "title": "Hacer una donación de comida",
+            "sub": "Done en línea o avisa a la tienda que te gustaría comprar una comida extra para Dar una Comida."
           },
           {
-            "title": "Entregamos Tu Generosidad",
-            "sub": "Tu comida donada se muestra en nuestra aplicación, lista para que alguien que enfrenta inseguridad alimentaria la reclame y la disfrute."
+            "title": "Las tiendas entregan tu donación",
+            "sub": "Las tiendas listan tu comida donada en nuestra aplicación para que alguien necesitado pueda reclamarla."
           }
         ]
       },
@@ -230,6 +230,13 @@
             "text": "Puede proporcionar su dirección de correo electrónico al restaurante al donar una comida. Le enviaremos una notificación una vez que la comida esté listada en nuestra aplicación y cuando alguien la reclame."
           }
         ]
+      },
+      "donate": {
+        "title": "Donar",
+        "divider": "o",
+        "subOne": "Enviaremos tu donación en línea a donde más se necesite.",
+        "button": "Donar una comida en línea",
+        "subTwo": "Dona en la tienda en cualquiera de nuestros socios del mapa a continuación."
       }
     },
     "restaurantPartners": {

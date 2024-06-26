@@ -22,6 +22,11 @@
     margin-bottom: 120px;
 }
 
+.donationCardContainer {
+    grid-column: 4 / 10;
+    margin-bottom: 120px;
+}
+
 .badgeFAQ {
     grid-column: 4 / 7;
     justify-self: flex-end;
@@ -44,6 +49,10 @@
 
 @media (max-width: 880px) {
     .description {
+        grid-column: 1 / 13;
+    }
+
+    .donationCardContainer {
         grid-column: 1 / 13;
     }
 
