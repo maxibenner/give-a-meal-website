@@ -29,11 +29,12 @@ export default async function Page({ params: { lang } }: { params: { lang: Local
   return (
     <>
       <div className={`grid ${styles.container}`}>
-        <Header title={hero.title} className={styles.header} variant={2} />
+        {/* <Header title={hero.title} className={styles.header} variant={2} />*/}
         <h2 className={styles.description}>{hero.sub}</h2>
+        <DonationCard className={styles.donationCardContainer} dict={donate} />
+
         <Badge className={styles.badgeHowItWorks}>{howTo.title}</Badge>
         <InfoCards items={howTo.cards} className={styles.infoCardContainer} />
-        <DonationCard dict={donate} className={styles.donationCardContainer} />
         <Badge className={styles.badgeHowItWorks}>{map.title}</Badge>
         <NearbyRestaurants className={styles.businessMap} dict={map} />
         <Badge className={styles.badgeFAQ}>{faq.title}</Badge>
