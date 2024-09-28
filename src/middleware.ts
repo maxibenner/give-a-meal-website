@@ -42,12 +42,6 @@ export async function middleware(request: NextRequest) {
     }
   }
 
-  //Remove
-  console.log(
-    "Request Headers:",
-    Object.fromEntries(request.headers.entries())
-  );
-
   // Response: redirect to login if the path is protected and not authenticated
   if (!pathIsProtected) {
     // Prevent re-direct if the current pathname is the same as the request pathname
