@@ -4,8 +4,6 @@ import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-export const runtime = "nodejs";
-
 const pathsWithoutLocale = [
   "/_next/",
   "/api/",
