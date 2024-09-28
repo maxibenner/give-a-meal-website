@@ -153,6 +153,7 @@ async function handleAuthentication(
   // Verify ID token
   try {
     const cookie = request.headers.get("cookie") || "";
+    console.log(cookie);
     console.log(
       "Auth path: " + request.nextUrl.origin + "/api/auth/verify-id-token"
     );
