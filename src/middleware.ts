@@ -66,6 +66,9 @@ export async function middleware(request: NextRequest) {
     currentPathname = result.pathname;
   }
 
+  // Remove
+  console.log("middleware (result.pathname): " + result.pathname);
+
   // Pass through existing query parameters
   const params = new URLSearchParams(request.nextUrl.search);
 
@@ -80,6 +83,9 @@ export async function middleware(request: NextRequest) {
 
   // Response: create new URL
   const url = new URL(currentPathname, request.nextUrl.origin);
+
+  // Remove
+  console.log("middleware (new URL): " + url);
 
   // Response: return the modified url and query parameters
   // Prevent re-direct if the current pathname is the same as the request pathname

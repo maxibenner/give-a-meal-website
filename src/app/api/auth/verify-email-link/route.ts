@@ -20,6 +20,12 @@ export async function GET(request: NextRequest) {
   const lang = request.nextUrl.searchParams.get("user-lang");
 
   const isValid = isSignInWithEmailLink(authConfig, request.url);
+
+  // Remove
+  console.log("verify-email-link (request.url): " + request.url);
+  console.log(
+    "verify-email-link (request.nextUrl.origin): " + request.nextUrl.origin
+  );
   if (email && isValid) {
     userCredential = await signInWithEmailLink(authConfig, email, request.url);
   } else {
