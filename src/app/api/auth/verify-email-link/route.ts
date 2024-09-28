@@ -14,18 +14,17 @@ initAdminApp();
 
 export async function GET(request: NextRequest) {
   let userCredential: UserCredential | undefined;
-  let url = `${process.env.NEXT_HOST}${request.nextUrl.pathname}${request.nextUrl.search}`;
 
   // Get email query parameters
   const email = request.nextUrl.searchParams.get("email");
   const lang = request.nextUrl.searchParams.get("user-lang");
 
-  const isValid = isSignInWithEmailLink(authConfig, url);
+  const isValid = isSignInWithEmailLink(authConfig, request.url);
 
   if (email && isValid) {
-    userCredential = await signInWithEmailLink(authConfig, email, url);
+    userCredential = await signInWithEmailLink(authConfig, email, request.url);
   } else {
-    NextResponse.redirect(url + "/donors/login");
+    NextResponse.redirect(request.url + "/donors/login");
   }
 
   if (userCredential) {
