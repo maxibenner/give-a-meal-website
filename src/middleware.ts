@@ -153,6 +153,9 @@ async function handleAuthentication(
   // Verify ID token
   try {
     const cookie = request.headers.get("cookie") || "";
+    console.log(
+      "Auth path: " + request.nextUrl.origin + "/api/auth/verify-id-token"
+    );
     let response = await fetch(
       `${request.nextUrl.origin}/api/auth/verify-id-token`,
       { headers: { cookie } }
