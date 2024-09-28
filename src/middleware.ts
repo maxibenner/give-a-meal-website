@@ -19,7 +19,12 @@ const protectedPaths = ["/donors/profile"];
  * @param request
  * @returns request
  */
-export async function middleware(request: NextRequest) {
+export async function middleware(_request: NextRequest) {
+  const request: any = {
+    ..._request,
+  };
+  request.nextUrl.origin = `${process.env.NEXT_HOST}${request.nextUrl.pathname}${request.nextUrl.search}`;
+
   let currentPathname = request.nextUrl.pathname;
 
   // Skip: paths that should not have a locale

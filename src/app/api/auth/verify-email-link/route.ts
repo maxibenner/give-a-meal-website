@@ -21,12 +21,9 @@ export async function GET(request: NextRequest) {
   const lang = request.nextUrl.searchParams.get("user-lang");
 
   const isValid = isSignInWithEmailLink(authConfig, url);
-  console.log("Email URl: ", url);
-  console.log("Is valid: ", isValid);
 
   if (email && isValid) {
     userCredential = await signInWithEmailLink(authConfig, email, url);
-    console.log("User credential: ", userCredential);
   } else {
     NextResponse.redirect(url + "/donors/login");
   }
